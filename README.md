@@ -1,1 +1,1 @@
-# voca-corona-landing-page
+voice-app-landing-page
