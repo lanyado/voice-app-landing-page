@@ -1,0 +1,21 @@
+:root {
+    --font-family: ariel;
+    --font-family: ariel;
+    --main-color:  #FFFFFF;
+    --second-color: #12218D; /* dark blue */
+}
+
+body{
+    font-family: var(--font-family);
+    font-style: normal;
+    text-align: center;
+    color: var(--main-color);
+}
+
+h2{
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 43px;
+    text-align: center;
+    margin: 1em 1em;
+}
