@@ -4,17 +4,17 @@
     padding: 1em 5em 1em;
     color: var(--second-color);
 }
-.title-container{
+.welcome .title-container{
     display: inline-block;
     right: 0;
     text-align: right;
     line-height: 57px;
 }
-.title-container h1{
+.welcome .title-container h1{
     font-weight: bold;
     font-size: 48px;
 }
-.title-container h3{
+.welcome .title-container h3{
     font-weight: normal;
     font-size: 24px;
 }
@@ -33,4 +33,41 @@
     display: inline-block;
     width: 3em;
     height: 6em;
+}
+
+.explenation{
+    
+}
+
+.explenation .container{
+    padding: 1em 3em 1em 3em;
+    display: flex; 
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+.explenation .step img{
+    display: block;
+    width: 100%;
+    height: 50%;
+}
+.explenation .step p{
+    display: block;
+    position: absolute;
+    width: 100%;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+}
+.explenation .read-more{
+    display: block;
+    width: 116px;
+    height: 45px;
+    margin: 0 auto;   
+    padding: 0px 10px;   
+    background: var(--second-color);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
 }

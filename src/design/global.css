@@ -10,6 +10,7 @@ body{
     font-style: normal;
     text-align: center;
     color: var(--main-color);
+    direction: rtl;
 }
 
 h2{
