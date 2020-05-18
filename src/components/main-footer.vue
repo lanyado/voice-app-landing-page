@@ -1,7 +1,8 @@
 <template>
-  <div>
-    footer!!!
-  </div>
+<footer>
+mail@mail.com
+03.555.5555
+</footer>  
 </template>
 
 <script>
