@@ -1,21 +1,49 @@
-:root {
-    --font-family: ariel;
-    --font-family: ariel;
-    --main-color:  #FFFFFF;
-    --second-color: #12218D; /* dark blue */
+@font-face {
+    font-family: "Rubik";
+    font-weight: normal;
+    src: url('../assets/fonts/Rubik/Rubik-Regular.ttf');
 }
-
+@font-face {
+    font-family: "Rubik";
+    font-weight: bold;
+    src: url('../assets/fonts/Rubik/Rubik-Bold.ttf');
+}
+@font-face {
+    font-family: "Rubik";
+    font-weight: 200;
+    src: url('../assets/fonts/Rubik/Rubik-Light.ttf');
+}
+:root {
+    --font-family: "Rubik";
+    --main-color: #12218D; /* dark blue */
+    --second-color:  #FFFFFF;
+}
 body{
     font-family: var(--font-family);
     font-style: normal;
     text-align: center;
     color: var(--main-color);
+    direction: rtl;
 }
-
+body .ltr{
+    direction: ltr;
+}
+h1, h2, h3, h4{
+    font-weight: bold;
+    margin: 1em 1em;
+}
+h1{
+    font-size: 48px;
+}
 h2{
     font-size: 36px;
-    font-weight: bold;
-    line-height: 43px;
-    text-align: center;
-    margin: 1em 1em;
+}
+h3{
+    font-size: 30px;
+}
+h4{
+    font-size: 36px;
+}
+ul{
+    list-style-type: none;
 }
