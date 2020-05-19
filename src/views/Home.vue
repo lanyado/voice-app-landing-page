@@ -1,89 +1,95 @@
 <template>
   <div>
+     <meta http-equiv="refresh" content="500">
+
+<p>{{ $t('message')}}</p>
+
     <nav-bar />
 
     <div class="welcome-container">
-      <h1>הקול שלך יכול לנצח את הקורונה</h1>
-      <h2>תרומת קול של דקה תוכל לעזור לקדם כלי איתור חינמי, מהיר וזמין לכולם</h2>
-      <img src="../assets/svg/logo_big.svg" alt="Logo" />
-      <button>הקליקו עכשיו!</button>
-    </div>assets/svg/how_it_works_3.svg
+      <div class="title-container">
+        <h1>{{ $t('welcome-container.title.main')}}</h1>
+        <h2>{{ $t('welcome-container.title.sub')}}</h2>        
+      </div>
+      <img class="logo" src="../assets/svg/logo_big.svg" alt="Logo" />   
+      <button>{{ $t('welcome-container.btn')}}</button>
+    </div>
+
     <div class="illustration-container"></div>
 
     <div class="explanation-container">
-      <h3>איך זה עובד?</h3>
+      <h3>{{ $t('explanation-container.title')}}</h3>
       <ul>
         <li>
           <img src="../assets/svg/how_it_works_3.svg" />
-          <div>חוזרים לשגרה</div>
-          <span>מפתחים אבחון לקורונה</span>
-          <span>וחוזרים לשגרה</span>
+          <h4>{{ $t('explanation-container.action1.title')}}</h4>
+          <span>{{ $t('explanation-container.action1.sub1')}}</span>
+          <span>{{ $t('explanation-container.action1.sub2')}}</span>
         </li>
 
         <li>
           <img src="../assets/svg/how_it_works_2.svg" />
-          <div>מקליטים</div>
-          <span>מקליטים את הקול</span>
-          <span>וממלאים עוד כמה פרטים</span>
+          <h4>{{ $t('explanation-container.action2.title')}}</h4>
+          <span>{{ $t('explanation-container.action2.sub1')}}</span>
+          <span>{{ $t('explanation-container.action2.sub2')}}</span>
         </li>
 
         <li>
           <img src="../assets/svg/how_it_works_1.svg" />
-          <div>נכנסים</div>
-          <span>נכנסים לאתר פעם ביום ועוד</span>
-          <span>קצת מילים אולי</span>
+          <h4>{{ $t('explanation-container.action3.title')}}</h4>
+          <span>{{ $t('explanation-container.action3.sub1')}}</span>
+          <span>{{ $t('explanation-container.action3.sub2')}}</span>
         </li>
       </ul>
 
-      <button>קרא עוד</button>
+      <button class="read-more">{{ $t('explanation-container.read_btn')}}</button>
     </div>
 
     <div class="actions-container">
-      <h2>קחו חלק במאבק בקורונה!</h2>
-
-      <div>
-        <img src="../assets/svg/hearts.svg" />
-        <span>גם כן- יחד אנחנו חזקים יותר</span>
-        <span>עודדו את המשפחה והחברים להקליט</span>
+      <h2>{{ $t('actions-container.title')}}</h2>
+      <div class="card">
+        <img src="../assets/svg/hearts.svg" class="icon"/>
+        <span>{{ $t('actions-container.card1.sub1')}}</span>
+        <span>{{ $t('actions-container.card1.sub2')}}</span>
         <button>
-          שתפו
-          <img src />
+          {{ $t('actions-container.card1.share_btn')}}
+          <img src="../assets/svg/share.svg" alt="share icon"/>
         </button>
       </div>
 
-      <div>
-        <img src="../assets/svg/calendar.svg" />
-        <span>תקדם את היוזמה אפילו יותר</span>
-        <span>הקלטה יומית למשך כשבוע</span>
+      <div class="card">
+        <img src="../assets/svg/calendar.svg" class="icon"/>
+        <span>{{ $t('actions-container.card2.sub1')}}</span>
+        <span>{{ $t('actions-container.card2.sub2')}}</span>
         <button>
-          קבעו תזכורת ביומן
-          <img src />
+         {{$t('actions-container.card2.appointment_btn')}} 
+          <img src="../assets/svg/clock.svg" alt="clock icon"/>
         </button>
       </div>
     </div>
 
     <div class="sponsors-container">
-      <h4>המיזם שלנו מתקיים בזכותם</h4>
+      <h4>{{$t('sponsors-container.title')}} </h4>
       <ul>
         <li>
-          <div>Platinum</div>
-          <img src alt />
+          <span>Platinum</span>
+          <img src="../assets/svg/sponsor.svg" alt="Platinum sponsor" />
         </li>
 
         <li>
-          <div>Gold</div>
-          <img src alt />
+          <span>Gold</span>
+          <img src="../assets/svg/sponsor.svg" alt="Gold sponsor" />
         </li>
 
         <li>
-          <div>Silver</div>
-          <img src alt />
+          <span>Silver</span>
+          <img src="../assets/svg/sponsor.svg" alt="Silver sponsor" />
         </li>
       </ul>
     </div>
 
     <div class="members-container">
-      <h5>מי אנחנו</h5>
+      <h5>{{$t('members-container.title')}} </h5>
       <ul class="special-members">
         <li>
           <img src="../assets/jpeg/member_1.jpeg" alt />
@@ -103,7 +109,7 @@
         </li>
       </ul>
 
-      <ul class="members-names">
+      <ul class="members">
         <li>עמית גבסו</li>
         <li>עמית גבסו</li>
         <li>עמית גבסו</li>
@@ -135,16 +141,19 @@
         <li>עמית גבסו</li>
         <li>עמית גבסו</li>
       </ul>
-      <button>לפרטים נוספים</button>
     </div>
+  <button class="read-more">{{$t('more_details_btn')}}</button>
 
     <main-footer />
   </div>
 </template>
 
 <script>
+
 import navBar from "../components/nav-bar";
 import mainFooter from "../components/main-footer";
+import globalStyles from '../design/global.css';
+import homeStyles from '../design/components/home.css';
 
 export default {
   name: "Home",
