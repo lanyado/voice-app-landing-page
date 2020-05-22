@@ -1,0 +1,52 @@
+$fontFamily: 'Rubik';
+$mainColor: #12218D; /* dark blue */
+$secondColor: #FFFFFF;
+
+@font-face {
+    font-family: 'Rubik';
+    font-weight: normal;
+    src: url('../assets/fonts/Rubik/Rubik-Regular.ttf') format('truetype');;
+}
+@font-face {
+    font-family: 'Rubik';
+    font-weight: bold;
+    src: url('../assets/fonts/Rubik/Rubik-Bold.ttf') format('truetype');;
+}
+@font-face {
+    font-family: 'Rubik';
+    font-weight: 200;
+    src: url('../assets/fonts/Rubik/Rubik-Light.ttf') format('truetype');;
+}
+
+body, body * {
+    font-family: $fontFamily !important;
+    font-style: normal;
+    text-align: center;
+    color: var(--main-color);
+    direction: rtl;
+    background-image: url('../assets/jpeg/background.jpeg');
+    
+    .ltr{
+        direction: ltr;
+    }
+}
+ 
+h1, h2, h3, h4{
+    font-weight: bold;
+    margin: 1em 1em;
+}
+h1{
+    font-size: 48px;
+}
+h2{
+    font-size: 36px;
+}
+h3{
+    font-size: 30px;
+}
+h4{
+    font-size: 36px;
+}
+ul{
+    list-style-type: none;
+}

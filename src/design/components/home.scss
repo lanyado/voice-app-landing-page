@@ -1,0 +1,19 @@
+@import "./_global";
+@import "./_welcomeContainer";
+@import "./_explanationContainer";
+@import "./_actionsContainer";
+@import "./_sponsorsContainer";
+@import "./_membersContainer";
+
+//* ========= reusable classes ============ */
+.read-more{
+    display: block;
+    width: 116px;
+    height: 45px;
+    margin: 0 auto;   
+    padding: 0px 10px;   
+    background: var(--second-color);
+    color: #5A88FF; /* purple blue */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}

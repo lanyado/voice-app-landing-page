@@ -1,4 +1,10 @@
-/* ========= reusable classes ============ */
+@import "./welcomeContainer";
+@import "./explanationContainer";
+@import "./actionsContainer";
+@import "./sponsorsContainer";
+@import "./membersContainer";
+
+//* ========= reusable classes ============ */
 .read-more{
     display: block;
     width: 116px;
