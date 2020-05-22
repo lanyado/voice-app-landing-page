@@ -21,21 +21,21 @@
       <h3>{{ $t('explanation-container.title')}}</h3>
       <ul>
         <li>
-          <img src="../assets/svg/how_it_works_3.svg" />
+          <img src="../assets/png/how_it_works_3.png" />
           <h4>{{ $t('explanation-container.action1.title')}}</h4>
           <span>{{ $t('explanation-container.action1.sub1')}}</span>
           <span>{{ $t('explanation-container.action1.sub2')}}</span>
         </li>
 
         <li>
-          <img src="../assets/svg/how_it_works_2.svg" />
+          <img src="../assets/png/how_it_works_2.png" />
           <h4>{{ $t('explanation-container.action2.title')}}</h4>
           <span>{{ $t('explanation-container.action2.sub1')}}</span>
           <span>{{ $t('explanation-container.action2.sub2')}}</span>
         </li>
 
         <li>
-          <img src="../assets/svg/how_it_works_1.svg" />
+          <img src="../assets/png/how_it_works_1.png" />
           <h4>{{ $t('explanation-container.action3.title')}}</h4>
           <span>{{ $t('explanation-container.action3.sub1')}}</span>
           <span>{{ $t('explanation-container.action3.sub2')}}</span>
@@ -47,15 +47,6 @@
 
     <div class="actions-container">
       <h2>{{ $t('actions-container.title')}}</h2>
-      <div class="card">
-        <img src="../assets/svg/hearts.svg" class="icon"/>
-        <span>{{ $t('actions-container.card1.sub1')}}</span>
-        <span>{{ $t('actions-container.card1.sub2')}}</span>
-        <button>
-          {{ $t('actions-container.card1.share_btn')}}
-          <img src="../assets/svg/share.svg" alt="share icon"/>
-        </button>
-      </div>
 
       <div class="card">
         <img src="../assets/svg/calendar.svg" class="icon"/>
@@ -67,6 +58,16 @@
         </button>
       </div>
     </div>
+
+    <div class="card">
+        <img src="../assets/svg/hearts.svg" class="icon"/>
+        <span>{{ $t('actions-container.card1.sub1')}}</span>
+        <span>{{ $t('actions-container.card1.sub2')}}</span>
+        <button>
+          {{ $t('actions-container.card1.share_btn')}}
+          <img src="../assets/svg/share.svg" alt="share icon"/>
+        </button>
+      </div>
 
     <div class="sponsors-container">
       <h4>{{$t('sponsors-container.title')}} </h4>
@@ -160,6 +161,7 @@ export default {
   components: {
     navBar,
     mainFooter
-  }
+  },
+  
 };
 </script>

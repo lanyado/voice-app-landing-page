@@ -8,25 +8,8 @@
         <router-link to>
           <span>{{$t('nav_bar.about')}}</span>
         </router-link>
-        <!-- <router-link to="" > -->
-        <span title="change language" @click="setLocale(i18n.locale)">{{$t('nav_bar.changeLang')}}</span>
-        <!-- </router-link> -->
 
-        <ul>
-          <li v-for="locale in locales" :key="locale" @click="switchLocale(locale)">
-            {{locale}}
-          </li>
-        </ul>
-
-
-
-
-
-
-        <!-- <select name="LeaveType" @change="onChange($event)" class="form-control" v-model="key">
-          <option value="1">Annual Leave/ Off-Day</option>
-          <option value="2">On Demand Leave</option>
-        </select>-->
+        <span title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
 
         <!-- <div class="locale-changer">
           <select v-model="$i18n.locale" @change="setLocale">
@@ -54,25 +37,35 @@
 </template>
 
 <script>
+// import { langService } from "../services/language.service.js";
+
 export default {
   data() {
     return {
-      langs: ["he", "en"],
-      locales: process.env.VUE_APP_I18N_SUPPORTED_LOCALE.split(',')
     };
   },
+ created() {
+    //  if(this.$route.params.lang==='en'){
+    // console.log('en')
+    // }
+  },
   methods: {
-    setLocale(x) {
-      // this.$18n.locale= locale
-      console.log("localeeeeeeee", x);
-      ///לגלות מה השפה לפי הURL PARAM כמו בMAIN.JS
-    },
-   switchLocale(locale){
-     if(this.i18n.locale!==false){
-       this.i18n.locale=locale;
-       const to = this.$router.resolve({ paprams: {locale}})
-     }
-   }
+    setLang() {
+      switch (this.$route.params.lang) {
+        case "he":
+          this.$router.push({
+            params: { lang: "en" }
+          });
+          break;
+        case "en":
+          this.$router.push({
+            params: { lang: "he" }
+          });
+          break;
+        default:
+        // code block
+      }
+    },   
   }
 };
 </script>
