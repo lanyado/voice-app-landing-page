@@ -1,19 +1,192 @@
-@import "./_global";
-@import "./_welcomeContainer";
-@import "./_explanationContainer";
-@import "./_actionsContainer";
-@import "./_sponsorsContainer";
-@import "./_membersContainer";
+@import "./base/_fonts";
+@import "./base/_variables";
+@import "./base/_base";
 
 //* ========= reusable classes ============ */
-.read-more{
+section{
+  margin-bottom: 6em;
+}
+.read-more {
+  display: block;
+  width: 116px;
+  height: 45px;
+  margin: 0 auto;   
+  padding: 0px 10px;   
+  background: $secondColor;
+  color: #5A88FF; /* purple blue */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+/* ========= welcome-container ============ */
+.welcome-container {
+  display: block;
+  width: 100%;
+  padding: 1em 5em 1em;
+  color: $second Color;
+  background-color: blue;
+  margin-bottom: 6em;
+
+  .title-container {
+    display: inline-block;
+    right: 0;
+    text-align: right;
+  }
+
+  button {
     display: block;
-    width: 116px;
-    height: 45px;
-    margin: 0 auto;   
-    padding: 0px 10px;   
-    background: var(--second-color);
-    color: #5A88FF; /* purple blue */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
+    right: 0;
+    padding: 10px;
+    width: 10em;
+    height: 5em;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+    border-radius: 32px;
+  }
+  .logo {
+    display: inline-block;
+    width: 100px;
+    height: 300px;
+  }
+}
+
+/* ========= explanation-container ============ */
+.explanation-container {
+  ul {
+    padding: 1em 5em 1em 5em;
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+  
+    li {
+      img {
+        display: block;
+        width: 100%;
+        height: 50%;
+        box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+      }
+      span{
+        display: block;
+        width: 100%;
+        font-weight: normal;
+        font-size: 18px;
+        margin-top: 0.1em;
+      }
+    }
+  }
+}
+
+/* ========= actions-container ============ */
+.actions-container {
+  .card {
+    display: inline-block;
+    width: 575px;
+    height: 338px;
+    margin: 1em 5em 1em 5em; 
+    background: $secondColor;
+    box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+    border-radius: 4px;
+  
+    .icon {
+      display: block;
+      margin: 2em auto;
+      width: 30%;
+    }
+    span {
+      display: block;
+      margin: 0.1em auto;
+      font-size: 24px;
+    }
+    button {
+      position: relative;
+      width: auto;
+      height: 45px;
+      margin: 3em auto;
+      padding: 0px 12px;
+      background: $mainColor;  
+      box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+      border-radius: 3px;
+      color: $second Color;
+      font-size: 18px;
+    
+      img {
+        display: inline-block;
+        width: 50px;
+        position: absolute;
+        right: 0;
+        color: $second Color;
+      }
+    }
+  }
+}
+
+/* ========= sponsors-container ============ */
+.sponsors-container{
+  ul {
+    width: 5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 0 auto;
+    width: 5em;
+  }
+  
+  li {
+    width: 100%;
+    height: 5em;
+    margin: 1em auto;
+
+    span {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    img {
+      display: block;
+      width: 100%;
+      margin: 2em;
+    }
+  }
+}
+
+/* ========= members-container ============ */
+.special-members{
+  /*padding: 1em 5em 1em 5em;*/
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+
+  li {
+    margin: 0 2em;
+    img {
+      display: block;
+      width: 3em;
+      height: 3em;
+      border-radius: 50%;
+    }
+    span {
+      display: block;
+      width: 100%;
+      margin-top: 0.1em;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
+.members {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+  margin: 2em auto;
+  width: 70%;
+  font-weight: normal;
 }
