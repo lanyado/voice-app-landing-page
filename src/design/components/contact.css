@@ -17,6 +17,14 @@
 }
 
 /* dark blue */
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+}
+
 body {
   font-family: "Rubik" !important;
   font-style: normal;
@@ -71,10 +79,6 @@ button {
 
 button:hover {
   opacity: 0.8;
-}
-
-nav {
-  display: none;
 }
 
 h1 {
