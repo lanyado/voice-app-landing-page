@@ -110,8 +110,7 @@
         </li>
       </ul>
 
-      <ul class="members">
-        <li>עמית גבסו</li>
+      <ul class="members">        
         <li>עמית גבסו</li>
         <li>עמית גבסו</li>
         <li>עמית גבסו</li>
