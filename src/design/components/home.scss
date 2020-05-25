@@ -1,0 +1,211 @@
+@import "../base/_fonts";
+@import "../base/_variables";
+@import "../base/_base";
+
+//* ========= reusable classes ============ */
+section{
+  width: 100%;
+  min-height: 500px;
+}
+.read-more {
+  display: block;
+  width: 116px;
+  height: 45px;
+  margin: 0 auto;   
+  padding: 0px 10px;   
+  background: $secondColor;
+  color: #5A88FF; /* purple blue */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  font-size: 15px;
+}
+
+/* ========= welcome-container ============ */
+.welcome-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 5% 10% 0 0;
+  color: $secondColor;
+
+  .title-container {
+    display: block;
+    text-align: right;
+    width: 100%;
+  }
+  h1{
+    font-size: 40px;
+    margin: 0.5em 0 0.5em 0;
+  }
+  h2{
+    font-size: 20px;
+    font-weight: normal;
+  }
+  button {
+    display: block;
+    right: 0;
+    width: auto;
+    height: 50px;
+    background-color: $mainColor;
+    color: $secondColor;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+    border-radius: 32px;
+    font-size: 20px;
+    padding: 0px 20px 0px 20px;
+
+    img{
+      width: 15px;
+    }
+  }
+  .logo {
+    position: absolute;
+    width: 15%;
+    top: 15%;
+  }
+}
+
+/* ========= explanation-container ============ */
+.explanation-container {
+  ul {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin: 3em auto;
+    width: 60%;
+  
+    li {
+      margin: 0 2em;
+      img {
+        display: block;
+        width: 100%;
+       /* box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);*/
+      }
+      span{
+        font-size: 15px;
+        margin-top: 0.1em;
+      }
+    }
+  }
+}
+
+/* ========= actions-container ============ */
+.actions-container ul{
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+  width:100%;
+  padding:0;
+
+  .card {
+    display: inline-block;
+    width: 40%;
+    background: $secondColor;
+    box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+    border-radius: 4px;
+  
+    .icon {
+      display: block;
+      margin: 2em auto;
+      width: 30%;
+    }
+    span {
+      display: block;
+      margin: 0.1em auto;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    button {
+      position: relative;
+      width: auto;
+      min-width: 20%;
+      height: 45px;
+      margin: 3em auto;
+      padding: 0px 20px 0px 20px;
+      background: $mainColor;  
+      box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+      border-radius: 3px;
+      color: $secondColor;
+      font-size: 15px;
+    
+      img {
+        display: inline-block;
+        color: $secondColor;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+/* ========= sponsors-container ============ */
+.sponsors-container{
+  ul {
+    width: 5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 0 auto;
+    width: 5em;
+  }
+  
+  li {
+    width: 100%;
+    height: 5em;
+    margin: 1em auto;
+
+    span {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    img {
+      display: block;
+      width: 100%;
+      margin: 2em;
+    }
+  }
+}
+
+/* ========= members-container ============ */
+.special-members{
+  /*padding: 1em 5em 1em 5em;*/
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+
+  li {
+    margin: 0 2em;
+    img {
+      display: block;
+      width: 3em;
+      height: 3em;
+      border-radius: 50%;
+    }
+    span {
+      display: block;
+      width: 100%;
+      margin-top: 0.1em;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
+.members {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+  margin: 2em auto;
+  width: 70%;
+  font-weight: normal;
+}

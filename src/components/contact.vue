@@ -22,7 +22,6 @@
 
 <script>
 import emailjs from 'emailjs-com';
-import globalStyles from '../design/global.css';
 import navBar from "../components/nav-bar";
 import cintactStyles from '../design/components/contact.css';
 
