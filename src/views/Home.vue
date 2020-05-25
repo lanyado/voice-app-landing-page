@@ -1,9 +1,9 @@
 <template>
   <div>
      <meta http-equiv="refresh" content="500">
-
+<!--
 <p>{{ $t('message')}}</p>
-
+-->
     <nav-bar />
 
     <section class="welcome-container">

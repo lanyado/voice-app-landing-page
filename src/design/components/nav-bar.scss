@@ -1,0 +1,148 @@
+@import "../base/_fonts";
+@import "../base/_variables";
+@import "../base/_base";
+
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  padding-top:10px;
+  padding-bottom:10px;
+
+  @media only screen and (min-width: 980px) {
+    &.scrolled {
+      background-color: #fff !important;
+      transition: background-color 200ms linear;
+    }
+  }
+}
+#logo {
+  width: 150px;
+  margin: 0 auto;
+}
+nav {
+	width: auto;
+  float: right;
+  width: 100%;
+  
+	ul {
+		li {
+			float: left;
+			&:last-child {
+				padding-right: 0px;
+			}
+			a {
+				color: #002e5b;
+				font-size: 18px;
+				padding: 25px 20px;
+				display: inline-block;
+				transition: all 0.2s ease 0s;
+				&:hover {
+					color: #ffff;
+					transition: all 0.2s ease 0s;
+					
+				}
+			
+			}
+		}
+  }
+  .spnoserd-container{
+    float:right;
+
+    span{
+      display: inline;
+    }
+    img{
+      margin-left: 10px;
+    }
+  }
+}
+.toggle-menu {
+	ul {
+		display: table;
+		width: 25px;
+		li {
+			width: 100%;
+			height: 3px;
+			background-color: #002e5b;
+			margin-bottom: 4px;
+			&:last-child {
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+input[type=checkbox] {
+	display: none;
+}
+label {
+	display: none;
+}
+
+@media only screen and (max-width: 980px) {
+	header {
+		padding: 20px 0px;
+  }
+  nav{
+    width: 30%;
+  }
+  #logo, .spnoserd-container{
+		display: none;
+	}
+	input[type=checkbox] {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+		background: none;
+		&:fous {
+			background: none;
+		}
+		&:checked {
+			~ {
+				nav {
+					display: block;
+				}
+			}
+		}
+	}
+	label {
+		float: right;
+		padding: 8px 0px;
+		display: block;
+		cursor: pointer;
+	}
+	nav {
+		display: none;
+		position: absolute;
+		right: 0px;
+		top: 53px;
+		background-color: #002e5b;
+		padding: 0px;
+		z-index: 99;
+		ul {
+			width: auto;
+			li {
+				float: none;
+				padding: 0px;
+				width: 100%;
+				display: table;
+				a {
+					color: #FFF;
+					font-size: 15px;
+					padding: 10px 20px;
+					display: block;
+					border-bottom: 1px solid rgba(225,225,225,0.1);
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 460px) {
+  nav {
+		top: 47px;
+  }
+	label {
+		padding: 5px 0px;
+	}
+}
