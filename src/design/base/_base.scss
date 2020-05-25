@@ -1,10 +1,12 @@
-body, body * {
+body {
     font-family: $fontFamily !important;
     font-style: normal;
     text-align: center;
     color: $mainColor;
     direction: rtl;
-    background-image: url('../assets/jpeg/background.jpeg');
+    background: url('../../assets/jpeg/background.jpg') repeat 0 0;
+    background-image: url('../../assets/jpeg/background.jpg') repeat 0 0;
+    background-size: 100%;
     
     .ltr{
         direction: ltr;
@@ -12,21 +14,38 @@ body, body * {
 }
  
 h1, h2, h3, h4 {
+    display: block;
     font-weight: bold;
-    margin: 1em 1em;
+    width: 100%;
+    margin: 1em 0 1em 0;
 }
 h1 {
-    font-size: 48px;
+    font-size:38px;
 }
 h2 {
-    font-size: 36px;
-}
-h3 {
     font-size: 30px;
 }
+h3 {
+    font-size: 25px;
+}
 h4 {
-    font-size: 36px;
+    font-size: 25px;
+}
+span{
+    display: block;
+    width: 100%;
+    font-weight: normal;
 }
 ul {
     list-style-type: none;
+}
+button{
+    cursor: pointer;
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+nav{
+    display: none;
 }

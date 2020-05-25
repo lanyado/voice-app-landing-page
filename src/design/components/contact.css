@@ -1,8 +1,87 @@
+@font-face {
+  font-family: 'Rubik';
+  font-weight: normal;
+  src: url("../../assets/fonts/Rubik/Rubik-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-weight: bold;
+  src: url("../../assets/fonts/Rubik/Rubik-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 200;
+  src: url("../../assets/fonts/Rubik/Rubik-Light.ttf") format("truetype");
+}
+
+/* dark blue */
+body {
+  font-family: "Rubik" !important;
+  font-style: normal;
+  text-align: center;
+  color: #12218D;
+  direction: rtl;
+  background: url("../../assets/jpeg/background.jpg") repeat 0 0;
+  background-image: url("../../assets/jpeg/background.jpg") repeat 0 0;
+  background-size: 100%;
+}
+
+body .ltr {
+  direction: ltr;
+}
+
+h1, h2, h3, h4 {
+  display: block;
+  font-weight: bold;
+  width: 100%;
+  margin: 1em 0 1em 0;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h4 {
+  font-size: 25px;
+}
+
+span {
+  display: block;
+  width: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+nav {
+  display: none;
+}
+
 h1 {
   float: right;
   right: 20%;
   font-size: 72px;
-  color: var(--second-color);
+  color: #FFFFFF;
 }
 
 .contact-container {
@@ -27,7 +106,7 @@ h1 {
   display: block;
   width: 90%;
   margin: 1em;
-  background: var(--second-color);
+  background: #FFFFFF;
   -webkit-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
           box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
   border-radius: 4px;
@@ -52,7 +131,7 @@ h1 {
 }
 
 .contact-container form input[type=submit] {
-  color: var(--second-color);
+  color: #FFFFFF;
   float: right;
   padding: 0px 12px;
   width: 83px;
