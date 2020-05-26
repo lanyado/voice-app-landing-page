@@ -1,23 +1,22 @@
 <template>
 <div>
     <nav-bar />
-  <h1>צור קשר</h1>
+  <h1>{{ $t('contact.main_title')}}</h1>
   <div class="contact-container">
 
     <span>mail@mail.com</span>
     <span>03.555.5555</span>
-    <span>או כתבו לנו -</span>
+    <span>{{ $t('contact.sub_title')}}</span>
 
     <form class="contact-form" @submit.prevent="sendEmail">
-      <input type="text" name="fromName" placeholder="שם*" required>
-      <input type="email" name="fromEmail" placeholder="מייל*" required>
-      <input type="text" name="subject" placeholder="נושא הפנייה*" required>
-      <textarea name="message" placeholder="תוכן ההודעה"></textarea>
-      <input type="submit" value="שלח">
+      <input type="text" name="fromName" :placeholder="$t('contact.form.name')" required>
+      <input type="email" name="fromEmail" :placeholder="$t('contact.form.email')" required>
+      <input type="text" name="subject" :placeholder="$t('contact.form.subject')" required>
+      <textarea name="message" :placeholder="$t('contact.form.content')"></textarea>
+      <input type="submit" :value="$t('contact.form.send_btn')">
     </form>
   </div>
 </div>
-
 </template>
 
 <script>

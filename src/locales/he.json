@@ -1,10 +1,21 @@
 {
-  "message": "היי i18n !!",
 "nav_bar":{
 "contact":"צור קשר",
 "about": "אודות",
 "spnoserd_by": "אנו נתמכים על ידי",
 "changeLang": "Eng"
+},
+
+"contact":{
+  "main_title": "צרו קשר",
+  "sub_title":"או כתבו לנו -",
+  "form":{
+    "name":"שם",
+    "email": "מייל",
+    "subject": "נושא הפנייה",
+    "content":"תוכן ההודעה",
+    "send_btn": "שלח"
+  }    
 },
 
 "welcome-container": {
