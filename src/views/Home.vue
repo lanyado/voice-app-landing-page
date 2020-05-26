@@ -71,7 +71,7 @@
       </li>
     </ul>
     </section>
-
+    <!--
     <section class="sponsors-container">
       <h4>{{$t('sponsors-container.title')}} </h4>
       <ul>
@@ -91,7 +91,7 @@
         </li>
       </ul>
     </section>
-
+    -->
     <section class="members-container">
       <h5>{{$t('members-container.title')}} </h5>
       <ul class="special-members">
