@@ -1,0 +1,53 @@
+@import "../base/_fonts";
+@import "../base/_variables";
+@import "../base/_base";
+
+h1 {
+  float: right;
+  right: 20%;
+  font-size: 72px;
+  color: $secondColor;
+}
+.contact-container {
+  margin: 0 auto;
+  width: 50%;
+
+  span {
+    display: block;
+    margin: 1em;
+    font-size: 24px;
+    float: right;
+  }
+  form {
+    display: block;
+    margin: 1em;
+    float: right;
+    
+    input {
+      display: block;
+      width: 90%;
+      margin: 1em;
+      background: $secondColor;
+      box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+      border-radius: 4px;
+    }
+
+    ::placeholder ,  :-ms-input-placeholder  , ::-ms-input-placeholder{
+      font-size: 18px;
+      text-align: right;
+      color: rgba(90, 136, 255, 0.6);
+    }
+    input[type=submit] {
+      color: $secondColor;
+      float: right;
+      padding: 0px 12px;
+      width: 83px;
+      height: 45px;
+      /* dark blue */  
+      background: #12218D;
+      /* elevation blue */  
+      box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+      border-radius: 3px;
+    }
+  }
+}

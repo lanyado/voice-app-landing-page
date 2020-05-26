@@ -1,23 +1,25 @@
 <template>
   <div>
      <meta http-equiv="refresh" content="500">
-
+<!--
 <p>{{ $t('message')}}</p>
-
+-->
     <nav-bar />
 
-    <div class="welcome-container">
+    <section class="welcome-container">
       <div class="title-container">
         <h1>{{ $t('welcome-container.title.main')}}</h1>
         <h2>{{ $t('welcome-container.title.sub')}}</h2>        
       </div>
       <img class="logo" src="../assets/svg/logo_big.svg" alt="Logo" />   
-      <button>{{ $t('welcome-container.btn')}}</button>
-    </div>
+      <button>
+        <img src="../assets/svg/white-circle.svg" alt="white circle"/>
+        {{ $t('welcome-container.btn')}}
+      </button>
+    </section>
 
-    <div class="illustration-container"></div>
 
-    <div class="explanation-container">
+    <section class="explanation-container">
       <h3>{{ $t('explanation-container.title')}}</h3>
       <ul>
         <li>
@@ -43,33 +45,34 @@
       </ul>
 
       <button class="read-more">{{ $t('explanation-container.read_btn')}}</button>
-    </div>
+    </section>
 
-    <div class="actions-container">
+    <section class="actions-container">
       <h2>{{ $t('actions-container.title')}}</h2>
-
-      <div class="card">
+    <ul>
+      <li class="card">
         <img src="../assets/svg/calendar.svg" class="icon"/>
         <span>{{ $t('actions-container.card2.sub1')}}</span>
         <span>{{ $t('actions-container.card2.sub2')}}</span>
         <button>
+           <img src="../assets/svg/clock.svg" alt="clock icon"/>
          {{$t('actions-container.card2.appointment_btn')}} 
-          <img src="../assets/svg/clock.svg" alt="clock icon"/>
         </button>
-      </div>
-    </div>
+      </li>
 
-    <div class="card">
+    <li class="card">
         <img src="../assets/svg/hearts.svg" class="icon"/>
         <span>{{ $t('actions-container.card1.sub1')}}</span>
         <span>{{ $t('actions-container.card1.sub2')}}</span>
         <button>
-          {{ $t('actions-container.card1.share_btn')}}
-          <img src="../assets/svg/share.svg" alt="share icon"/>
+           <img src="../assets/svg/share.svg" alt="share icon"/>
+          {{ $t('actions-container.card1.share_btn')}}      
         </button>
-      </div>
+      </li>
+    </ul>
+    </section>
 
-    <div class="sponsors-container">
+    <section class="sponsors-container">
       <h4>{{$t('sponsors-container.title')}} </h4>
       <ul>
         <li>
@@ -87,9 +90,9 @@
           <img src="../assets/svg/sponsor.svg" alt="Silver sponsor" />
         </li>
       </ul>
-    </div>
+    </section>
 
-    <div class="members-container">
+    <section class="members-container">
       <h5>{{$t('members-container.title')}} </h5>
       <ul class="special-members">
         <li>
@@ -110,8 +113,7 @@
         </li>
       </ul>
 
-      <ul class="members">
-        <li>עמית גבסו</li>
+      <ul class="members">        
         <li>עמית גבסו</li>
         <li>עמית גבסו</li>
         <li>עמית גבסו</li>
@@ -142,7 +144,7 @@
         <li>עמית גבסו</li>
         <li>עמית גבסו</li>
       </ul>
-    </div>
+    </section>
   <button class="read-more">{{$t('more_details_btn')}}</button>
 
     <main-footer />
@@ -153,7 +155,6 @@
 
 import navBar from "../components/nav-bar";
 import mainFooter from "../components/main-footer";
-import globalStyles from '../design/global.css';
 import homeStyles from '../design/components/home.css';
 
 export default {
