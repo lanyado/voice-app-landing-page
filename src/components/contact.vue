@@ -4,14 +4,16 @@
   <h1>{{ $t('contact.main_title')}}</h1>
   <div class="contact-container">
 
+
+<!-- <div class="test">TESTTTTTTTTT</div> -->
     <span>mail@mail.com</span>
     <span>03.555.5555</span>
     <span>{{ $t('contact.sub_title')}}</span>
 
     <form class="contact-form" @submit.prevent="sendEmail">
-      <input type="text" name="fromName" :placeholder="$t('contact.form.name')" required>
-      <input type="email" name="fromEmail" :placeholder="$t('contact.form.email')" required>
-      <input type="text" name="subject" :placeholder="$t('contact.form.subject')" required>
+      <input  type="text" name="fromName" :placeholder="$t('contact.form.name')" required>
+      <input  type="email" name="fromEmail" :placeholder="$t('contact.form.email')" required>
+      <input  type="text" name="formSubject" :placeholder="$t('contact.form.subject')" required>
       <textarea name="message" :placeholder="$t('contact.form.content')"></textarea>
       <input type="submit" :value="$t('contact.form.send_btn')">
     </form>

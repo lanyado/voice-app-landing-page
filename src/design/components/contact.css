@@ -148,3 +148,18 @@ h1 {
   border-radius: 3px;
 }
 /*# sourceMappingURL=contact.css.map */
+
+
+form > input:nth-child(-n+3) {
+  width: 441;
+  height: 40px;
+}
+
+form > textarea {
+   resize: none; 
+   overflow: auto; 
+
+  width: 441px;
+  height: 135px;
+}
+

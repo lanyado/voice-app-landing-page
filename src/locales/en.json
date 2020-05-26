@@ -10,9 +10,9 @@
     "main_title": "Contact Us",
     "sub_title": "ENאו כתבו לנו -",
     "form": {
-      "name": "name",
-      "email": "email",
-      "subject": "subject",
+      "name": "*name",
+      "email": "*email",
+      "subject": "*subject",
       "content": "message content",
       "send_btn": "Send"
     }

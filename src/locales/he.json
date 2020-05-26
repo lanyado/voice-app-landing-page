@@ -10,9 +10,9 @@
   "main_title": "צרו קשר",
   "sub_title":"או כתבו לנו -",
   "form":{
-    "name":"שם",
-    "email": "מייל",
-    "subject": "נושא הפנייה",
+    "name":"שם*",
+    "email": "מייל*",
+    "subject": "נושא הפנייה*",
     "content":"תוכן ההודעה",
     "send_btn": "שלח"
   }    
