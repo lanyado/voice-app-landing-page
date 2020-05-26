@@ -11,9 +11,15 @@ body {
     text-align: center;
     color: $mainColor;
     direction: rtl;
+    
     background: url('../../assets/jpeg/background.jpg') repeat 0 0;
     background-image: url('../../assets/jpeg/background.jpg') repeat 0 0;
-    background-size: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     
     .ltr{
         direction: ltr;
