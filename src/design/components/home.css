@@ -185,7 +185,7 @@ section {
 }
 
 .explanation-container ul li {
-  margin: 0 2em;
+  margin: 1em 2em;
 }
 
 .explanation-container ul li img {
@@ -230,6 +230,7 @@ section {
 .actions-container ul .card {
   display: inline-block;
   width: 40%;
+  margin-top: 2em;
   background: #FFFFFF;
   -webkit-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
           box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
@@ -254,7 +255,7 @@ section {
   width: auto;
   min-width: 20%;
   height: 45px;
-  margin: 3em auto;
+  margin: 2.5em auto;
   padding: 0px 20px 0px 20px;
   background: #12218D;
   -webkit-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
@@ -359,5 +360,26 @@ section {
   margin: 2em auto;
   width: 70%;
   font-weight: normal;
+}
+
+@media only screen and (max-width: 980px) {
+  .explanation-container ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .actions-container ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .actions-container ul .card {
+    width: 80%;
+  }
+  .actions-container ul .card button {
+    margin: 1em auto;
+  }
 }
 /*# sourceMappingURL=home.css.map */
