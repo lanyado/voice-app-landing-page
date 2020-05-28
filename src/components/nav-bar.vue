@@ -22,13 +22,13 @@
         </div>-->
         </router-link>
         </li>
-                <li>
+        <li v-if="homePage">
           <router-link :to="`/${$i18n.locale}/contact`">
             <span>{{$t('nav_bar.contact')}}</span>
           </router-link>
         </li>
-        <li>
-          <router-link to>
+        <li v-else>
+          <router-link :to="`/${$i18n.locale}/`" >
             <span>{{$t('nav_bar.about')}}</span>
           </router-link>
         </li>
@@ -58,6 +58,7 @@ export default {
         scrolled: false,
     };
   },
+ props: ['homePage'],
  created() {
    window.addEventListener('scroll', this.handleScroll);
     //  if(this.$route.params.lang==='en'){

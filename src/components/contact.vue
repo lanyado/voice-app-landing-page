@@ -28,6 +28,11 @@ import cintactStyles from '../design/components/contact.css';
 
 
 export default {
+  data(){
+    return{
+      homePage: false
+    }
+  },
   methods: {
     sendEmail: (e) => {
       emailjs.sendForm('gmail', 'template_5kzNEUem', e.target, 'user_3KurY4mLcaxvpG1rPLi7h')
