@@ -128,7 +128,7 @@ nav ul li:last-child {
 nav ul li a {
   color: #002e5b;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: normal;
   padding: 5px 20px;
   display: inline-block;
   -webkit-transition: all 0.2s ease 0s;
@@ -136,7 +136,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #12218D;
+  font-weight: bold;
   -webkit-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
 }

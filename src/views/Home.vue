@@ -4,7 +4,7 @@
 <!--
 <p>{{ $t('message')}}</p>
 -->
-    <nav-bar />
+    <nav-bar :homePage="homePage" />
 
     <section class="welcome-container">
       <div class="title-container">
@@ -158,7 +158,11 @@ import mainFooter from "../components/main-footer";
 import homeStyles from '../design/components/home.css';
 
 export default {
-  name: "Home",
+  data(){
+    return{
+      homePage: true
+    }
+  },
   components: {
     navBar,
     mainFooter
