@@ -79,6 +79,7 @@ ul {
 
 button {
   cursor: pointer;
+  border: 0px;
 }
 
 button:hover {
@@ -103,8 +104,13 @@ header {
 }
 
 #logo {
-  width: 150px;
-  margin: 0 auto;
+  width: 130px;
+  top: 10px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  left: 52%;
 }
 
 nav {

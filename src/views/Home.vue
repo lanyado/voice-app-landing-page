@@ -7,15 +7,17 @@
     <nav-bar :homePage="homePage" />
 
     <section class="welcome-container">
+      <img id="logo-text" src="../assets/svg/logo_with_name_white.svg" alt="Logo" />
       <div class="title-container">
         <h1>{{ $t('welcome-container.title.main')}}</h1>
         <h2>{{ $t('welcome-container.title.sub')}}</h2>        
       </div>
-      <img class="logo" src="../assets/svg/logo_big.svg" alt="Logo" />   
+      <img id="logo-icon" src="../assets/svg/logo_big.svg" alt="Logo" />   
       <button>
         <img src="../assets/svg/white-circle.svg" alt="white circle"/>
         {{ $t('welcome-container.btn')}}
       </button>
+      <img id="illustration" src="../assets/png/illustration.png" alt="illustration" />
     </section>
 
 
@@ -43,8 +45,9 @@
           <span>{{ $t('explanation-container.action3.sub2')}}</span>
         </li>
       </ul>
-
+      <!--
       <button class="read-more">{{ $t('explanation-container.read_btn')}}</button>
+      -->
     </section>
 
     <section class="actions-container">
@@ -145,9 +148,10 @@
         <li>עמית גבסו</li>
       </ul>
     </section>
+  <!--
   <button class="read-more">{{$t('more_details_btn')}}</button>
-
-    <main-footer />
+  <main-footer />
+  -->
   </div>
 </template>
 
@@ -155,13 +159,15 @@
 
 import navBar from "../components/nav-bar";
 import mainFooter from "../components/main-footer";
-import homeStyles from '../design/components/home.css';
+import homeStyles from '../design/components/home.scss';
 
 export default {
   data(){
     return{
-      homePage: true
+      homePage: true,
     }
+  },
+  methods: {
   },
   components: {
     navBar,
