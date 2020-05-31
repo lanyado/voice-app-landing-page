@@ -5,7 +5,7 @@
 //* ========= reusable classes ============ */
 section{
   width: 100%;
-  min-height: 500px;
+  min-height: 600px;
   margin-bottom: 100px;
 }
 .read-more {
@@ -31,6 +31,9 @@ section{
   padding: 10% 15% 0 0;
   color: $secondColor;
 
+  #logo-text{
+    display: none;
+  }
   .title-container {
     display: block;
     text-align: right;
@@ -63,11 +66,37 @@ section{
       width: 12px;
     }
   }
-  .logo {
+  #illustration{
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+  #logo-icon{
     position: absolute;
     width: 15%;
     top: 30%;
     left: 10%;
+  }
+  @media only screen and (max-width: 980px) {
+    padding-top: 30%;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-bottom: 0;
+
+    #logo-text{
+      display: block;
+      position: absolute;
+      top: 20px;
+      width: 200px;
+      @include center(true, false);
+    }
+    .title-container {
+      margin-bottom: 30%;
+    }
+    #logo-icon{
+      display: none;
+    }
   }
 }
 

@@ -54,8 +54,8 @@ import navBarStyles from '../design/components/nav-bar.css';
 export default {
   data() {
     return {
-        logoUrl: '../assets/svg/logo_with_name_white.svg',
-        scrolled: false,
+        logoUrl: require('../assets/svg/logo_with_name_white.svg'),
+        scrolled: false,  
     };
   },
  props: ['homePage'],
@@ -85,11 +85,11 @@ export default {
     handleScroll (event) {
       if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0 ) >= 100 ) {
           this.scrolled = true;
-          this.logoUrl = '../assets/svg/logo_with_name_blue.svg';
+          this.logoUrl = require('../assets/svg/logo_with_name_blue.svg');
       } 
       else {
           this.scrolled = false;
-          this.logoUrl = '../assets/svg/logo_with_name_white.svg';
+          this.logoUrl = require('../assets/svg/logo_with_name_white.svg');
       }
     }, 
   }

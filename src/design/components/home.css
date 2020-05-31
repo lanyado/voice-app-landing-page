@@ -87,7 +87,7 @@ button:hover {
 
 section {
   width: 100%;
-  min-height: 500px;
+  min-height: 600px;
   margin-bottom: 100px;
 }
 
@@ -116,6 +116,10 @@ section {
   max-width: 100%;
   padding: 10% 15% 0 0;
   color: #FFFFFF;
+}
+
+.welcome-container #logo-text {
+  display: none;
 }
 
 .welcome-container .title-container {
@@ -156,11 +160,43 @@ section {
   width: 12px;
 }
 
-.welcome-container .logo {
+.welcome-container #illustration {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+}
+
+.welcome-container #logo-icon {
   position: absolute;
   width: 15%;
   top: 30%;
   left: 10%;
+}
+
+@media only screen and (max-width: 980px) {
+  .welcome-container {
+    padding-top: 30%;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-bottom: 0;
+  }
+  .welcome-container #logo-text {
+    display: block;
+    position: absolute;
+    top: 20px;
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  .welcome-container .title-container {
+    margin-bottom: 30%;
+  }
+  .welcome-container #logo-icon {
+    display: none;
+  }
 }
 
 /* ========= explanation-container ============ */
