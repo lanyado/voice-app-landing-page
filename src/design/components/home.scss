@@ -52,7 +52,7 @@ section{
     display: block;
     right: 0;
     width: auto;
-    height: 50px;
+    height: 45px;
     background-color: $mainColor;
     color: $secondColor;
     box-sizing: border-box;
@@ -79,7 +79,7 @@ section{
     left: 10%;
   }
   @media only screen and (max-width: 980px) {
-    padding-top: 30%;
+    padding-top: 25%;
     padding-right: 15%;
     padding-left: 15%;
     padding-bottom: 0;
@@ -249,6 +249,30 @@ section{
   margin: 2em auto;
   width: 70%;
   font-weight: normal;
+}
+
+.ltr{
+  .explanation-container ul, .actions-container ul, .special-members{
+    flex-direction: row-reverse;
+  }
+
+/* ========= welcome-container ============ */
+  .welcome-container {
+    padding: 10% 0 15% 15%;
+
+    .title-container {
+      text-align: left;
+    }
+    button {
+      float: left;
+    }
+    #illustration{
+      left: 0;
+    }
+    #logo-icon{
+      right: 10%;
+    }
+  }
 }
 
 @media only screen and (max-width: 980px) {

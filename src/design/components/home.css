@@ -79,6 +79,7 @@ ul {
 
 button {
   cursor: pointer;
+  border: 0px;
 }
 
 button:hover {
@@ -143,7 +144,7 @@ section {
   display: block;
   right: 0;
   width: auto;
-  height: 50px;
+  height: 45px;
   background-color: #12218D;
   color: #FFFFFF;
   -webkit-box-sizing: border-box;
@@ -176,7 +177,7 @@ section {
 
 @media only screen and (max-width: 980px) {
   .welcome-container {
-    padding-top: 30%;
+    padding-top: 25%;
     padding-right: 15%;
     padding-left: 15%;
     padding-bottom: 0;

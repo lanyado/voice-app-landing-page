@@ -37,9 +37,9 @@
 
       <div class="spnoserd-container">
         <span>{{$t('nav_bar.spnoserd_by')}}</span>
-        <img src="../assets/svg/mobileye-logo.svg" alt="mobileye" />
-        <img src="../assets/svg/intel-logo.svg" alt="Intel" />
-        <img src="../assets/svg/weizmann-logo.svg" alt="Weizmann Institute of Science" />
+        <img src="../assets/png/mobileye-logo.png" alt="mobileye" />
+        <img src="../assets/png/intel-logo.png" alt="Intel" />
+        <img src="../assets/png/weizman-logo.png" alt="Weizmann Institute of Science" />
       </div>
     </nav>
     </header>
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import navBarStyles from '../design/components/nav-bar.css';
+import navBarStyles from '../design/components/nav-bar.scss';
 
 // import { langService } from "../services/language.service.js";
 
@@ -55,7 +55,7 @@ export default {
   data() {
     return {
         logoUrl: require('../assets/svg/logo_with_name_white.svg'),
-        scrolled: false,  
+        scrolled: false,
     };
   },
  props: ['homePage'],
@@ -67,16 +67,19 @@ export default {
   },
   methods: {
     setLang() {
+      const body = document.body;
       switch (this.$route.params.lang) {
         case "he":
           this.$router.push({
             params: { lang: "en" }
           });
+          body.classList.add("ltr");
           break;
         case "en":
           this.$router.push({
             params: { lang: "he" }
           });
+          body.classList.remove("ltr");
           break;
         default:
         // code block

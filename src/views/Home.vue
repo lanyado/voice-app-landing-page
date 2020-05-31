@@ -164,8 +164,10 @@ import homeStyles from '../design/components/home.scss';
 export default {
   data(){
     return{
-      homePage: true
+      homePage: true,
     }
+  },
+  methods: {
   },
   components: {
     navBar,
