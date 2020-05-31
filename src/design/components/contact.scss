@@ -32,33 +32,43 @@ h1 {
       border-radius: 4px;
     }
 
+    //form placeholder
     ::placeholder ,  :-ms-input-placeholder  , ::-ms-input-placeholder{
       font-size: 18px;
       text-align: right;
       color: rgba(90, 136, 255, 0.6);
     }
+
+    //submit button
     input[type=submit] {
       color: $secondColor;
       float: right;
       padding: 0px 12px;
       width: 83px;
       height: 45px;
-      /* dark blue */  
-      background: #12218D;
-      /* elevation blue */  
-      box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+      background: #12218D;  /* dark blue */        
+      box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);  /* elevation blue */ 
       border-radius: 3px;
     }
   }
 
-      // textarea {
-      //   resize: none;
-      //   overflow: auto;
-    
-      //   width: 441px;
-      //   height: 135px;
-      // }
-
+  //
+  form > input:nth-child(-n+3) {
+    width: 441;
+    height: 40px;
+  }
+  
+  form > textarea {
+     resize: none; 
+     overflow: auto; 
+    width: 441px;
+    height: 135px;
+  }
+  
+  form >*{
+    box-shadow: 2px 2px 15px;
+    border-radius: 4px;
+  }
 
 
 
