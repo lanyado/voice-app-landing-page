@@ -96,19 +96,18 @@
     </section>
     -->
     <section class="members-container">
-      <h5>{{$t('members-container.title')}} </h5>
+      <h2>{{$t('members-container.title')}} </h2>
       <ul class="special-members">
-        <li v-for="(item, key, index) in specialMembers" v-bind:key="index">
-          <img src = "`../assets/jpeg/${key}.jpeg`" alt="`${item}`" />
-          {{$t(`members-container.special-members.${key}`)}}
+        <li v-for="index in specialMembersCount" :key="index">
+          <img :src="memberImage(index)" :alt="'member number '+index" />
+          {{$t(`members-container.special-members.member${index}`)}}
         </li>
       </ul>
 
       <ul class="members">        
-        <li v-for="(item, key, index) in members" v-bind:key="index">
-          {{$t(`members-container.members.${key}`)}}
+        <li v-for="index in membersCount" :key="index">
+          {{$t(`members-container.members.member${index}`)}}
         </li>
-    
       </ul>
     </section>
   <!--
@@ -123,18 +122,20 @@
 import navBar from "../components/nav-bar";
 import mainFooter from "../components/main-footer";
 import homeStyles from '../design/components/home.scss';
-//let en = require("../locals/en.json");
 
 export default {
   data(){
     return{
       homePage: true,
-      myJson: json,
-      specialMembers: en['enmembers-container']['special-members'],
-      members: en['enmembers-container']['members'],
+      specialMembersCount: 14,
+      membersCount: 7,
     }
   },
   methods: {
+    memberImage(memberNumber) {
+      return require(`../assets/members/member${memberNumber}.jpeg`);
+    }
+
   },
   components: {
     navBar,
