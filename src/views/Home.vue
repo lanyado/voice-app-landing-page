@@ -4,10 +4,10 @@
 <!--
 <p>{{ $t('message')}}</p>
 -->
-    <nav-bar :homePage="homePage" />
+    <nav-bar :homePage="homePage" @changeLogo="logoUrl = $event"/>
 
     <section class="welcome-container">
-      <img id="logo-text" src="../assets/svg/logo_text_white_he.svg" alt="Logo" />
+      <img id="logo-text" :src="logoUrl" alt="Logo" />
       <div class="title-container">
         <h1>{{ $t('welcome-container.title.main')}}</h1>
         <h2>{{ $t('welcome-container.title.sub')}}</h2>        
@@ -127,6 +127,7 @@ export default {
   data(){
     return{
       homePage: true,
+      logoUrl: require("../assets/svg/logo_text_white_he.svg"),
       specialMembersCount: 14,
       membersCount: 7,
     }
@@ -135,12 +136,10 @@ export default {
     memberImage(memberNumber) {
       return require(`../assets/members/member${memberNumber}.jpeg`);
     }
-
   },
   components: {
     navBar,
     mainFooter
   },
-  
 };
 </script>
