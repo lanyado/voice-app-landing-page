@@ -5,7 +5,7 @@
 //* ========= reusable classes ============ */
 section{
   width: 100%;
-  min-height: 500px;
+  min-height: 600px;
   margin-bottom: 100px;
 }
 .read-more {
@@ -31,6 +31,9 @@ section{
   padding: 10% 15% 0 0;
   color: $secondColor;
 
+  #logo-text{
+    display: none;
+  }
   .title-container {
     display: block;
     text-align: right;
@@ -49,7 +52,7 @@ section{
     display: block;
     right: 0;
     width: auto;
-    height: 50px;
+    height: 45px;
     background-color: $mainColor;
     color: $secondColor;
     box-sizing: border-box;
@@ -63,11 +66,37 @@ section{
       width: 12px;
     }
   }
-  .logo {
+  #illustration{
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+  #logo-icon{
     position: absolute;
     width: 15%;
     top: 30%;
     left: 10%;
+  }
+  @media only screen and (max-width: 980px) {
+    padding-top: 25%;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-bottom: 0;
+
+    #logo-text{
+      display: block;
+      position: absolute;
+      top: 20px;
+      width: 200px;
+      @include center(true, false);
+    }
+    .title-container {
+      margin-bottom: 30%;
+    }
+    #logo-icon{
+      display: none;
+    }
   }
 }
 
@@ -93,7 +122,7 @@ section{
         -moz-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
         -webkit-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35); 
         -o-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
-        border-radius:100px;
+        border-radius:100%;
       }
       span{
         font-size: 15px;
@@ -220,6 +249,30 @@ section{
   margin: 2em auto;
   width: 70%;
   font-weight: normal;
+}
+
+.ltr{
+  .explanation-container ul, .actions-container ul, .special-members{
+    flex-direction: row-reverse;
+  }
+
+/* ========= welcome-container ============ */
+  .welcome-container {
+    padding: 10% 0 15% 15%;
+
+    .title-container {
+      text-align: left;
+    }
+    button {
+      float: left;
+    }
+    #illustration{
+      left: 0;
+    }
+    #logo-icon{
+      right: 10%;
+    }
+  }
 }
 
 @media only screen and (max-width: 980px) {

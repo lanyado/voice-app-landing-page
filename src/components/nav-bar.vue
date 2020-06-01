@@ -37,9 +37,9 @@
 
       <div class="spnoserd-container">
         <span>{{$t('nav_bar.spnoserd_by')}}</span>
-        <img src="../assets/svg/mobileye-logo.svg" alt="mobileye" />
-        <img src="../assets/svg/intel-logo.svg" alt="Intel" />
-        <img src="../assets/svg/weizmann-logo.svg" alt="Weizmann Institute of Science" />
+        <img src="../assets/png/mobileye-logo.png" alt="mobileye" />
+        <img src="../assets/png/intel-logo.png" alt="Intel" />
+        <img src="../assets/png/weizman-logo.png" alt="Weizmann Institute of Science" />
       </div>
     </nav>
     </header>
@@ -47,16 +47,31 @@
 </template>
 
 <script>
-import navBarStyles from '../design/components/nav-bar.css';
+import navBarStyles from '../design/components/nav-bar.scss';
 
 // import { langService } from "../services/language.service.js";
 
 export default {
   data() {
     return {
-        logoUrl: '../assets/svg/logo_with_name_white.svg',
+        logos: {
+          defalut:{
+            'he': require('../assets/svg/logo_text_white_he.svg'),
+            'en': require('../assets/png/logo_text_white_en.png')
+          },
+          scrolled:{
+            'he': require('../assets/svg/logo_text_blue_he.svg'),
+            'en': require('../assets/png/logo_text_white_en.png')
+          }
+        },
         scrolled: false,
+        languge: 'he',
     };
+  },
+  computed: {
+      logoUrl: function () {
+        return this.scrolled ? this.logos['scrolled'][this.languge] : this.logos['defalut'][this.languge]
+    }
   },
  props: ['homePage'],
  created() {
@@ -69,27 +84,39 @@ export default {
     setLang() {
       switch (this.$route.params.lang) {
         case "he":
-          this.$router.push({
-            params: { lang: "en" }
-          });
+          this.switchLanguage('en');          
           break;
         case "en":
-          this.$router.push({
-            params: { lang: "he" }
-          });
+          this.switchLanguage('he');
           break;
         default:
         // code block
       }
-    },  
+    },
+    switchLanguage(languge) {
+      this.languge = languge;
+
+      const LTR_LANGUAGES = ['en'];
+      const body = document.body;
+      if (LTR_LANGUAGES.includes(languge))
+      {
+          body.classList.add("ltr");
+      }
+      else
+          body.classList.remove("ltr");
+          
+      this.$router.push({
+          params: { lang: this.languge }
+      });
+    },
     handleScroll (event) {
       if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0 ) >= 100 ) {
           this.scrolled = true;
-          this.logoUrl = '../assets/svg/logo_with_name_blue.svg';
+          //this.logoUrl = require('../assets/svg/logo_name_blue_hebrew.svg');
       } 
       else {
           this.scrolled = false;
-          this.logoUrl = '../assets/svg/logo_with_name_white.svg';
+          //this.logoUrl = require('../assets/svg/logo_with_name_white.svg');
       }
     }, 
   }
