@@ -1,5 +1,4 @@
 {
-  "message": "hello i18n !!",
   "nav_bar": {
     "contact": "Contact",
     "about": "About",
@@ -26,17 +25,17 @@
   },
   "explanation-container": {
     "title": "How It Works?",
-    "action1": {
+    "step1": {
       "title": "!!!Back to Normal",
       "sub1": "ENמפתחים אבחון לקורונה",
       "sub2": "And back to normal"
     },
-    "action2": {
+    "step2": {
       "title": "Records",
       "sub1": "records your voice and fill",
       "sub2": "some more detils"
     },
-    "action3": {
+    "step3": {
       "title": "Entering",
       "sub1": "entering the website once a day",
       "sub2": "and maybe some emails"
@@ -59,80 +58,33 @@
   "sponsors-container": {
     "title": "ENהמיזם שלנו מתקיים בזכותם"
   },
-  "members-container": {
+  "members-container":{
     "title": "Who We are",
     "special-members": {
-      "member_1": "Roi Ilan",
-      "member_2": "Roi Ilan",
-      "member_3": "Roi Ilan",
-      "member_4": "Roi Ilan"
+      "member1": "Itamar Kaufman",
+      "member2": "עומר לרינמן",
+      "member3": "ניב ספרוב",
+      "member4": "איתי סטופל",
+      "member5": "יבגני טיסיאצ׳ני",
+      "member6": "בן פישמן",
+      "member7": "אלון ירון",
+      "member8": "דניאל הוניגשטיין",
+      "member9": "אבידור רבינוביץ'",
+      "member10": "גיא מור",
+      "member11": "אלפרדו לימין",
+      "member12": "יוני סבצ'ינסקי",
+      "member13": "רותם לניאדו",
+      "member14": "רועי אילן"
     },
     "members": {
-      "member_1": "Rotem Lanyado",
-      "member_2": "Rotem Lanyado",
-      "member_3": "Rotem Lanyado",
-      "member_4": "Rotem Lanyado",
-      "member_5": "Rotem Lanyado",
-      "member_6": "Rotem Lanyado",
-      "member_7": "Rotem Lanyado",
-      "member_8": "Rotem Lanyado",
-      "member_9": "Rotem Lanyado",
-      "member_10": "Rotem Lanyado",
-      "member_11": "Rotem Lanyado",
-      "member_12": "Rotem Lanyado",
-      "member_13": "Rotem Lanyado",
-      "member_14": "Rotem Lanyado",
-      "member_15": "Rotem Lanyado",
-      "member_16": "Rotem Lanyado",
-      "member_17": "Rotem Lanyado"
+      "member1": "ערן קרסו",
+      "member2": "בר סגל",
+      "member3": "עילי מנחם",
+      "member4": "בצלאל שטאובר",
+      "member5": "איתי רוזנפלד כהן",
+      "member6": "ליהוא ברמן",
+      "member7": "אמרי פארן"
     }
   },
-"read_btn": "Read More"
-},
-"actions-container": {
-"title": "Take part in the Coronavirus fight!",
-"card1": {
- "sub1": "ENגם כן- יחד אנחנו חזקים יותר",
- "sub2": "ENעודדו את המשפחה והחברים להקליט",
- "share_btn": "Share"
-},
-"card2": {
-"sub1": "ENתקדם את היוזמה אפילו יותר",
-"sub2": "ENהקלטה יומית למשך כשבוע",
-"appointment_btn": "ENקבעו תזכורת ביומן"   
-}
-},
-"sponsors-container": {
-"title": "ENהמיזם שלנו מתקיים בזכותם"
-},
-"members-container":{
-"title": "Who We are",
-"special-members": {
-  "member1": "Itamar Kaufman",
-  "member2": "עומר לרינמן",
-  "member3": "ניב ספרוב",
-  "member4": "איתי סטופל",
-  "member5": "יבגני טיסיאצ׳ני",
-  "member6": "בן פישמן",
-  "member7": "אלון ירון",
-  "member8": "דניאל הוניגשטיין",
-  "member9": "אבידור רבינוביץ'",
-  "member10": "גיא מור",
-  "member11": "אלפרדו לימין",
-  "member12": "יוני סבצ'ינסקי",
-  "member13": "רותם לניאדו",
-  "member14": "רועי אילן"
-},
-"members": {
-"member1": "ערן קרסו",
-"member2": "בר סגל",
-"member3": "עילי מנחם",
-"member4": "בצלאל שטאובר",
-"member5": "איתי רוזנפלד כהן",
-"member6": "ליהוא ברמן",
-"member7": "אמרי פארן"
-}
-
-},
-"more_details_btn":"More Deatails"
+  "more_details_btn":"More Deatails"
 }

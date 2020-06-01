@@ -7,7 +7,7 @@
     <nav-bar :homePage="homePage" />
 
     <section class="welcome-container">
-      <img id="logo-text" src="../assets/svg/logo_with_name_white.svg" alt="Logo" />
+      <img id="logo-text" src="../assets/svg/logo_text_white_he.svg" alt="Logo" />
       <div class="title-container">
         <h1>{{ $t('welcome-container.title.main')}}</h1>
         <h2>{{ $t('welcome-container.title.sub')}}</h2>        
@@ -26,23 +26,23 @@
       <ul>
         <li>
           <img src="../assets/png/how_it_works_3.png" />
-          <h4>{{ $t('explanation-container.action1.title')}}</h4>
-          <span>{{ $t('explanation-container.action1.sub1')}}</span>
-          <span>{{ $t('explanation-container.action1.sub2')}}</span>
+          <h4>{{ $t('explanation-container.step1.title')}}</h4>
+          <span>{{ $t('explanation-container.step1.sub1')}}</span>
+          <span>{{ $t('explanation-container.step1.sub2')}}</span>
         </li>
 
         <li>
           <img src="../assets/png/how_it_works_2.png" />
-          <h4>{{ $t('explanation-container.action2.title')}}</h4>
-          <span>{{ $t('explanation-container.action2.sub1')}}</span>
-          <span>{{ $t('explanation-container.action2.sub2')}}</span>
+          <h4>{{ $t('explanation-container.step2.title')}}</h4>
+          <span>{{ $t('explanation-container.step2.sub1')}}</span>
+          <span>{{ $t('explanation-container.step2.sub2')}}</span>
         </li>
 
         <li>
           <img src="../assets/png/how_it_works_1.png" />
-          <h4>{{ $t('explanation-container.action3.title')}}</h4>
-          <span>{{ $t('explanation-container.action3.sub1')}}</span>
-          <span>{{ $t('explanation-container.action3.sub2')}}</span>
+          <h4>{{ $t('explanation-container.step3.title')}}</h4>
+          <span>{{ $t('explanation-container.step3.sub1')}}</span>
+          <span>{{ $t('explanation-container.step3.sub2')}}</span>
         </li>
       </ul>
       <!--

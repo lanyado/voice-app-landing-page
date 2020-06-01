@@ -54,9 +54,24 @@ import navBarStyles from '../design/components/nav-bar.scss';
 export default {
   data() {
     return {
-        logoUrl: require('../assets/svg/logo_with_name_white.svg'),
+        logos: {
+          defalut:{
+            'he': require('../assets/svg/logo_text_white_he.svg'),
+            'en': require('../assets/png/logo_text_white_en.png')
+          },
+          scrolled:{
+            'he': require('../assets/svg/logo_text_blue_he.svg'),
+            'en': require('../assets/png/logo_text_white_en.png')
+          }
+        },
         scrolled: false,
+        languge: 'he',
     };
+  },
+  computed: {
+      logoUrl: function () {
+        return this.scrolled ? this.logos['scrolled'][this.languge] : this.logos['defalut'][this.languge]
+    }
   },
  props: ['homePage'],
  created() {
@@ -67,32 +82,39 @@ export default {
   },
   methods: {
     setLang() {
-      const body = document.body;
       switch (this.$route.params.lang) {
         case "he":
-          this.$router.push({
-            params: { lang: "en" }
-          });
-          body.classList.add("ltr");
+          this.switchLanguage('en');          
           break;
         case "en":
-          this.$router.push({
-            params: { lang: "he" }
-          });
-          body.classList.remove("ltr");
+          this.switchLanguage('he');
           break;
         default:
         // code block
       }
-    },  
+    },
+    switchLanguage(languge) {
+      this.languge = languge;
+
+      const LTR_LANGUAGES = ['en'];
+      const body = document.body;
+      if (languge in LTR_LANGUAGES)
+          body.classList.add("ltr");
+      else
+          body.classList.remove("ltr");
+          
+      this.$router.push({
+          params: { lang: this.languge }
+      });
+    },
     handleScroll (event) {
       if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0 ) >= 100 ) {
           this.scrolled = true;
-          this.logoUrl = require('../assets/svg/logo_with_name_blue.svg');
+          //this.logoUrl = require('../assets/svg/logo_name_blue_hebrew.svg');
       } 
       else {
           this.scrolled = false;
-          this.logoUrl = require('../assets/svg/logo_with_name_white.svg');
+          //this.logoUrl = require('../assets/svg/logo_with_name_white.svg');
       }
     }, 
   }
