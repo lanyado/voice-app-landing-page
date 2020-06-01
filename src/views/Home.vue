@@ -98,54 +98,17 @@
     <section class="members-container">
       <h5>{{$t('members-container.title')}} </h5>
       <ul class="special-members">
-        <li>
-          <img src="../assets/jpeg/member_1.jpeg" alt />
-          רועי אילן
-        </li>
-        <li>
-          <img src="../assets/jpeg/member_1.jpeg" alt />
-          רועי אילן
-        </li>
-        <li>
-          <img src="../assets/jpeg/member_1.jpeg" alt />
-          רועי אילן
-        </li>
-        <li>
-          <img src="../assets/jpeg/member_1.jpeg" alt />
-          רועי אילן
+        <li v-for="(item, key, index) in specialMembers" v-bind:key="index">
+          <img src = "`../assets/jpeg/${key}.jpeg`" alt="`${item}`" />
+          {{$t(`members-container.special-members.${key}`)}}
         </li>
       </ul>
 
       <ul class="members">        
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
-        <li>עמית גבסו</li>
+        <li v-for="(item, key, index) in members" v-bind:key="index">
+          {{$t(`members-container.members.${key}`)}}
+        </li>
+    
       </ul>
     </section>
   <!--
@@ -160,11 +123,15 @@
 import navBar from "../components/nav-bar";
 import mainFooter from "../components/main-footer";
 import homeStyles from '../design/components/home.scss';
+//let en = require("../locals/en.json");
 
 export default {
   data(){
     return{
       homePage: true,
+      myJson: json,
+      specialMembers: en['enmembers-container']['special-members'],
+      members: en['enmembers-container']['members'],
     }
   },
   methods: {
