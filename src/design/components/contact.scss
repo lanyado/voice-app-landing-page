@@ -25,7 +25,7 @@ h1 {
     
     input {
       display: block;
-      width: 90%;
+      // width: 90%;
       margin: 1em;
       background: $secondColor;
       box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
@@ -50,4 +50,16 @@ h1 {
       border-radius: 3px;
     }
   }
+
+      // textarea {
+      //   resize: none;
+      //   overflow: auto;
+    
+      //   width: 441px;
+      //   height: 135px;
+      // }
+
+
+
+
 }
