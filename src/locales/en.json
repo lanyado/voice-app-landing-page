@@ -51,29 +51,29 @@
 "members-container":{
 "title": "Who We are",
 "special-members": {
-"member_1": "Roi Ilan",
-"member_2": "Roi Ilan",
-"member_3": "Roi Ilan",
-"member_4": "Roi Ilan"
+  "member1": "Itamar Kaufman",
+  "member2": "עומר לרינמן",
+  "member3": "ניב ספרוב",
+  "member4": "איתי סטופל",
+  "member5": "יבגני טיסיאצ׳ני",
+  "member6": "בן פישמן",
+  "member7": "אלון ירון",
+  "member8": "דניאל הוניגשטיין",
+  "member9": "אבידור רבינוביץ'",
+  "member10": "גיא מור",
+  "member11": "אלפרדו לימין",
+  "member12": "יוני סבצ'ינסקי",
+  "member13": "רותם לניאדו",
+  "member14": "רועי אילן"
 },
 "members": {
-"member_1": "Rotem Lanyado",
-"member_2": "Rotem Lanyado",
-"member_3": "Rotem Lanyado",
-"member_4": "Rotem Lanyado",
-"member_5": "Rotem Lanyado",
-"member_6": "Rotem Lanyado",
-"member_7": "Rotem Lanyado",
-"member_8": "Rotem Lanyado",
-"member_9": "Rotem Lanyado",
-"member_10": "Rotem Lanyado",
-"member_11": "Rotem Lanyado",
-"member_12": "Rotem Lanyado",
-"member_13": "Rotem Lanyado",
-"member_14": "Rotem Lanyado",
-"member_15": "Rotem Lanyado",
-"member_16": "Rotem Lanyado",
-"member_17": "Rotem Lanyado"
+"member1": "ערן קרסו",
+"member2": "בר סגל",
+"member3": "עילי מנחם",
+"member4": "בצלאל שטאובר",
+"member5": "איתי רוזנפלד כהן",
+"member6": "ליהוא ברמן",
+"member7": "אמרי פארן"
 }
 
 },
