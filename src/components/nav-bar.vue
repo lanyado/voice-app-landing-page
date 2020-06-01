@@ -98,8 +98,10 @@ export default {
 
       const LTR_LANGUAGES = ['en'];
       const body = document.body;
-      if (languge in LTR_LANGUAGES)
+      if (LTR_LANGUAGES.includes(languge))
+      {
           body.classList.add("ltr");
+      }
       else
           body.classList.remove("ltr");
           
