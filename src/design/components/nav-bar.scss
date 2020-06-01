@@ -6,13 +6,12 @@ header{
   position: fixed;
   width: 100%;
   z-index: 9;
-  padding-top:10px;
-  padding-bottom:10px;
-
+  padding: 15px 20px 5px ;
   @media only screen and (min-width: 980px) {
     &.scrolled {
       background-color: #fff !important;
       transition: background-color 200ms linear;
+      box-shadow: 0px 4px 20px rgba(90, 136, 255, 0.31);
     }
   }
 }
@@ -26,6 +25,7 @@ nav {
   width: 100%;
   
 	ul {
+    padding-left: 20px;
 		li {
 			float: left;
 			&:last-child {
@@ -33,14 +33,14 @@ nav {
 			}
 			a {
 				color: #002e5b;
-				font-size: 18px;
-				padding: 25px 20px;
+        		font-size: 15px;
+        		font-weight: normal;
+				padding: 5px 20px;
 				display: inline-block;
-				transition: all 0.2s ease 0s;
+        		transition: all 0.2s ease 0s;
 				&:hover {
-					color: #ffff;
+					font-weight: bold;
 					transition: all 0.2s ease 0s;
-					
 				}
 			
 			}
@@ -51,8 +51,11 @@ nav {
 
     span{
       display: inline;
+      vertical-align: super;
+      font-size: 15px;
     }
     img{
+      margin-right: 10px;
       margin-left: 10px;
     }
   }
@@ -143,6 +146,6 @@ label {
 		top: 47px;
   }
 	label {
-		padding: 5px 0px;
+		padding: 5px 10px;
 	}
 }

@@ -4,7 +4,7 @@
 <!--
 <p>{{ $t('message')}}</p>
 -->
-    <nav-bar />
+    <nav-bar :homePage="homePage" />
 
     <section class="welcome-container">
       <div class="title-container">
@@ -71,7 +71,7 @@
       </li>
     </ul>
     </section>
-
+    <!--
     <section class="sponsors-container">
       <h4>{{$t('sponsors-container.title')}} </h4>
       <ul>
@@ -91,7 +91,7 @@
         </li>
       </ul>
     </section>
-
+    -->
     <section class="members-container">
       <h5>{{$t('members-container.title')}} </h5>
       <ul class="special-members">
@@ -158,7 +158,11 @@ import mainFooter from "../components/main-footer";
 import homeStyles from '../design/components/home.css';
 
 export default {
-  name: "Home",
+  data(){
+    return{
+      homePage: true
+    }
+  },
   components: {
     navBar,
     mainFooter

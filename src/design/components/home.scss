@@ -10,7 +10,8 @@ section{
 }
 .read-more {
   display: block;
-  width: 116px;
+  width: auto;
+  min-width: 116px;
   height: 45px;
   margin: 0 auto;   
   padding: 0px 10px;   
@@ -54,11 +55,12 @@ section{
     box-sizing: border-box;
     box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
     border-radius: 32px;
-    font-size: 20px;
+    font-size: 17px;
     padding: 0px 20px 0px 20px;
+    font-weight: normal;
 
     img{
-      width: 15px;
+      width: 12px;
     }
   }
   .logo {
@@ -78,14 +80,20 @@ section{
     align-items: center;
     align-content: center;
     margin: 3em auto;
-    width: 60%;
+    width: 70%;
   
     li {
-      margin: 0 2em;
+      margin: 1em 2em;
       img {
         display: block;
-        width: 100%;
-       /* box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);*/
+        width: 80%;
+        margin: 0 auto;
+        background-color: #eed;
+        box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+        -moz-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+        -webkit-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35); 
+        -o-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+        border-radius:100px;
       }
       span{
         font-size: 15px;
@@ -109,6 +117,7 @@ section{
   .card {
     display: inline-block;
     width: 40%;
+    margin-top: 2em;
     background: $secondColor;
     box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
     border-radius: 4px;
@@ -129,13 +138,13 @@ section{
       width: auto;
       min-width: 20%;
       height: 45px;
-      margin: 3em auto;
-      padding: 5px 20px 0px 20px;
+      margin: 2.5em auto;
+      padding: 0px 20px 0px 20px;
       background: $mainColor;  
       box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
-      border-radius: 3px;
+      border-radius: 5px;
       color: $secondColor;
-      font-size: 15px;
+      font-size: 17px;
     
       img {
         display: inline-block;
@@ -148,6 +157,7 @@ section{
 }
 
 /* ========= sponsors-container ============ */
+/*
 .sponsors-container{
   ul {
     width: 10%;
@@ -172,7 +182,7 @@ section{
     }
   }
 }
-
+*/
 /* ========= members-container ============ */
 .special-members{
   /*padding: 1em 5em 1em 5em;*/
@@ -210,4 +220,23 @@ section{
   margin: 2em auto;
   width: 70%;
   font-weight: normal;
+}
+
+@media only screen and (max-width: 980px) {
+  .explanation-container {
+    ul {
+      flex-direction: column;
+    }
+  }
+
+  .actions-container ul {
+    flex-direction: column;
+    .card {
+      width: 80%;
+
+      button {
+        margin: 1em auto;
+      }
+    }
+  }
 }
