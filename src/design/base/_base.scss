@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
+
+@mixin center($horizontal: true, $vertical: true) {
+    position: absolute;
+    @if ($horizontal and $vertical) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    } @else if ($horizontal) {
+      left: 50%;
+      transform: translate(-50%, 0);
+    } @else if ($vertical) {
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+
 * {
 	text-decoration: none;
 	list-style: none;
@@ -5,15 +22,22 @@
 	padding: 0px;
 	outline: none;
 }
+
 body {
     font-family: $fontFamily !important;
     font-style: normal;
     text-align: center;
     color: $mainColor;
     direction: rtl;
+    
     background: url('../../assets/jpeg/background.jpg') repeat 0 0;
     background-image: url('../../assets/jpeg/background.jpg') repeat 0 0;
-    background-size: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     
     .ltr{
         direction: ltr;
@@ -48,6 +72,7 @@ ul {
 }
 button{
     cursor: pointer;
+    border: 0px;
     &:hover{
         opacity: 0.8;
     }

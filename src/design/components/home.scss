@@ -5,12 +5,13 @@
 //* ========= reusable classes ============ */
 section{
   width: 100%;
-  min-height: 500px;
-  margin-bottom: 100px;
+  min-height: 600px;
+  margin-bottom: 50px;
 }
 .read-more {
   display: block;
-  width: 116px;
+  width: auto;
+  min-width: 116px;
   height: 45px;
   margin: 0 auto;   
   padding: 0px 10px;   
@@ -30,10 +31,13 @@ section{
   padding: 10% 15% 0 0;
   color: $secondColor;
 
+  #logo-text{
+    display: none;
+  }
   .title-container {
     display: block;
     text-align: right;
-    width: 100%;
+    width: 65%;
     margin-bottom: 5%;
   }
   h1{
@@ -48,24 +52,52 @@ section{
     display: block;
     right: 0;
     width: auto;
-    height: 50px;
+    height: 45px;
     background-color: $mainColor;
     color: $secondColor;
     box-sizing: border-box;
     box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
     border-radius: 32px;
-    font-size: 20px;
+    font-size: 17px;
     padding: 0px 20px 0px 20px;
+    font-weight: normal;
 
     img{
-      width: 15px;
+      width: 12px;
     }
   }
-  .logo {
+  #illustration{
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+  #logo-icon{
     position: absolute;
     width: 15%;
     top: 30%;
     left: 10%;
+  }
+  @media only screen and (max-width: 980px) {
+    padding-top: 25%;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-bottom: 0;
+
+    #logo-text{
+      display: block;
+      position: absolute;
+      top: 20px;
+      width: 200px;
+      @include center(true, false);
+    }
+    .title-container {
+      width:100%;
+      margin-bottom: 30%;
+    }
+    #logo-icon{
+      display: none;
+    }
   }
 }
 
@@ -75,17 +107,23 @@ section{
     display: flex; 
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: baseline;
     align-content: center;
     margin: 3em auto;
-    width: 60%;
+    width: 70%;
   
     li {
-      margin: 0 2em;
+      margin: 1em 2em;
       img {
         display: block;
-        width: 100%;
-       /* box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);*/
+        width: 80%;
+        margin: 0 auto;
+        background-color: #eed;
+        box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+        -moz-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+        -webkit-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35); 
+        -o-box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+        border-radius:100%;
       }
       span{
         font-size: 15px;
@@ -100,8 +138,7 @@ section{
   display: flex; 
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
+  align-items: unset;
   margin: 0 auto;
   width:100%;
   padding:0;
@@ -109,6 +146,7 @@ section{
   .card {
     display: inline-block;
     width: 40%;
+    margin-top: 2em;
     background: $secondColor;
     box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
     border-radius: 4px;
@@ -120,22 +158,23 @@ section{
     }
     span {
       display: block;
+      width:70%;
       margin: 0.1em auto;
       font-size: 20px;
-      font-weight: bold;
+      font-weight: 600;
     }
     button {
       position: relative;
       width: auto;
       min-width: 20%;
       height: 45px;
-      margin: 3em auto;
-      padding: 5px 20px 0px 20px;
+      margin: 2.5em auto;
+      padding: 0px 20px 0px 20px;
       background: $mainColor;  
       box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
-      border-radius: 3px;
+      border-radius: 5px;
       color: $secondColor;
-      font-size: 15px;
+      font-size: 17px;
     
       img {
         display: inline-block;
@@ -148,6 +187,7 @@ section{
 }
 
 /* ========= sponsors-container ============ */
+/*
 .sponsors-container{
   ul {
     width: 10%;
@@ -172,42 +212,97 @@ section{
     }
   }
 }
-
+*/
 /* ========= members-container ============ */
 .special-members{
-  /*padding: 1em 5em 1em 5em;*/
+  width: 70%;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  align-content: center;
   margin: 0 auto;
 
   li {
-    margin: 0 2em;
+    width: 100px;
+    margin: 1em 2em;
     img {
+      width: 100px;
+      height: 100px;
       display: block;
-      width: 3em;
-      height: 3em;
       border-radius: 50%;
+      margin-bottom: 0.3em;
     }
     span {
       display: block;
       width: 100%;
-      margin-top: 0.1em;
       font-size: 24px;
-      font-weight: bold;
+      font-weight: 500;
     }
   }
 }
 .members {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: space-evenly;
   align-content: center;
   margin: 2em auto;
   width: 70%;
   font-weight: normal;
+
+  li{
+    margin:0.1em;
+  }
+}
+
+.ltr{
+  direction: ltr;
+  .explanation-container ul, .actions-container ul, .special-members{
+   // flex-direction: row-reverse;
+  }
+
+/* ========= welcome-container ============ */
+  .welcome-container {
+    padding: 10% 0 15% 15%;
+
+    .title-container {
+      text-align: left;
+    }
+    button {
+      float: left;
+    }
+    #illustration{
+      left: 0;
+    }
+    #logo-icon{
+      left: auto;
+      right: 10%;
+    }
+  }
+  .actions-container ul .card button img {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .explanation-container {
+    ul {
+      flex-direction: column;
+    }
+  }
+
+  .actions-container ul {
+    flex-direction: column;
+    align-items: center;
+    .card {
+      width: 80%;
+
+      button {
+        margin: 1em auto;
+      }
+    }
+  }
+  .special-members{
+    width: 100%;
+  }
 }

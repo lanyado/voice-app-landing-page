@@ -24,10 +24,15 @@
 <script>
 import emailjs from 'emailjs-com';
 import navBar from "../components/nav-bar";
-import cintactStyles from '../design/components/contact.css';
+import cintactStyles from '../design/components/contact.scss';
 
 
 export default {
+  data(){
+    return{
+      homePage: false
+    }
+  },
   methods: {
     sendEmail: (e) => {
       emailjs.sendForm('gmail', 'template_5kzNEUem', e.target, 'user_3KurY4mLcaxvpG1rPLi7h')
