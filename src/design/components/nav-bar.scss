@@ -2,6 +2,7 @@
 @import "../base/_variables";
 @import "../base/_base";
 
+
 header{
   position: fixed;
   width: 100%;
@@ -29,7 +30,7 @@ nav {
 	ul {
     padding-left: 20px;
 		li {
-			float: left;
+			// float: left;
 			&:last-child {
 				padding-right: 0px;
 			}
@@ -49,7 +50,7 @@ nav {
 		}
   }
   .spnoserd-container{
-    float:right;
+    // float:right;
 
     span{
       display: inline;

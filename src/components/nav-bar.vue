@@ -1,8 +1,8 @@
 <template>
   <div class="nav-bar-container">
-    <header :class="{ scrolled: scrolled }">
+    <!-- <header :class="{ scrolled: scrolled }">
     <label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
-    <input type="checkbox" id="toggle-1">
+    <input type="checkbox" id="toggle-1"> -->
 
     <nav class="nav-bar width-container flex">
       <ul class="links">

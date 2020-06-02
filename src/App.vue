@@ -14,7 +14,6 @@ export default {
     };
   },
  created() {
-   console.log(this.$route.params.lang)
      if(this.$route.params.lang!=='en'&&'he'){
         this.$router.push({
             params: { lang: "he" }

@@ -2,74 +2,142 @@
 @import "../base/_variables";
 @import "../base/_base";
 
-h1 {
-  float: right;
-  right: 20%;
-  font-size: 72px;
-  color: $secondColor;
-}
+  .ltr {
+  direction: ltr ;
+  }
+      
+
 .contact-container {
-  margin: 0 auto;
-  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 441px 1fr;
+  grid-column-gap: 20px;
+
 
   span {
     display: block;
     margin: 1em;
     font-size: 24px;
     float: right;
-  }
+  }  
+
   form {
     display: block;
-    margin: 1em;
-    float: right;
-    
+
     input {
-      display: block;
-      // width: 90%;
-      margin: 1em;
+      display: block;    
+      margin-bottom: 1rem;
       background: $secondColor;
       box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
       border-radius: 4px;
-    }
+    }  
 
     //form placeholder
     ::placeholder ,  :-ms-input-placeholder  , ::-ms-input-placeholder{
       font-size: 18px;
       text-align: right;
       color: rgba(90, 136, 255, 0.6);
-    }
+    }  
 
     //submit button
     input[type=submit] {
+     display: block; 
       color: $secondColor;
-      float: right;
+      // float: right;
       padding: 0px 12px;
       width: 83px;
       height: 45px;
       background: #12218D;  /* dark blue */        
       box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);  /* elevation blue */ 
       border-radius: 3px;
-    }
-  }
+    }  
+  }  
 
-  //
+  
   form > input:nth-child(-n+3) {
-    width: 441;
     height: 40px;
-  }
+    width: 100%;
+
+  }  
   
   form > textarea {
+    margin-bottom: 1rem;
      resize: none; 
      overflow: auto; 
-    width: 441px;
+    width: 100%; 
     height: 135px;
-  }
+
+  }  
   
   form >*{
     box-shadow: 2px 2px 15px;
     border-radius: 4px;
-  }
+  }  
+}  
+
+.header-container {
+// background-color: rosybrown;  
+display: flex;
+justify-content: center;
+width: 100%;
 
 
+h1 {
+  // background-color:yellow;
+  font-size: 72px;
+  color: $secondColor;
+  height: fit-content;
+  width: fit-content;
+  margin: 0;
+  margin-inline-start: 2ch;
+}  
 
+img{
+  // background-color:white;
+  height: fit-content;
+  width: fit-content;
+  // margin-inline-start: 2ch;
+  
+
+}
+
+}
+
+.main-container{
+//  background-color: seagreen; 
+} 
+
+.sub-container{
+  // background-color:peru ;
+
+}  
+
+
+@media only screen and (max-width: 980px) {
+
+  .contact-container {
+    display: block;
+    @include center(true, false);
+
+
+    .header-container { 
+      width: 441px;
+    }      
+    
+    form > input:nth-child(-n+3) {
+      width:441px;  
+    }  
+    
+    form > textarea {     
+      width: 441px; 
+      }  
+
+  
+
+  .header-container {
+        h1 {
+      font-size: 62px;  
+}
+
+}
+}
 }

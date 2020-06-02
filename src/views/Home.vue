@@ -57,7 +57,7 @@
         <img src="../assets/svg/calendar.svg" class="icon"/>
         <span>{{ $t('actions-container.card1.sub1')}}</span>
         <span>{{ $t('actions-container.card1.sub2')}}</span>
-        <button>
+        <button @click="calendarClick()">
            <img src="../assets/svg/clock.svg" alt="clock icon"/>
             {{ $t('actions-container.card1.appointment_btn') }} 
         </button>
@@ -133,6 +133,17 @@ export default {
     }
   },
   methods: {
+    calendarClick(){      
+      let language = this.$route.params.lang;     
+      switch (language) {
+        case "he":
+          window.open("https://calendar.google.com/calendar/r/eventedit?text=%D7%96%D7%9E%D7%9F+%D7%9C%D7%94%D7%A7%D7%9C%D7%99%D7%98+-+%D7%94%D7%A7%D7%95%D7%9C+%D7%9C%D7%98%D7%95%D7%91%D7%94&location=https://corona.voca.ai/he/login&pli=1&sf=true");
+          break;
+        case "en":
+          window.open("https://calendar.google.com/calendar/r/eventedit?text=VoiceUp+Reminder&location=https://corona.voca.ai/login&sf=true");
+          break;
+        default:
+    },
     memberImage(memberNumber) {
       return require(`../assets/members/member${memberNumber}.jpeg`);
     }
