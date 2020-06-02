@@ -4,7 +4,7 @@
 <!--
 <p>{{ $t('message')}}</p>
 -->
-    <nav-bar :homePage="homePage" @changeLogo="logoUrl = $event"/>
+    <nav-bar :homePage="homePage" :language="language" @changeLogo="logoUrl = $event"/>
 
     <section class="welcome-container">
       <img id="logo-text" :src="logoUrl" alt="Logo" />
@@ -57,7 +57,7 @@
         <img src="../assets/svg/calendar.svg" class="icon"/>
         <span>{{ $t('actions-container.card1.sub1')}}</span>
         <span>{{ $t('actions-container.card1.sub2')}}</span>
-        <button @click="calendarClick()">
+        <button v-on:click="open(calendarLink)">
            <img src="../assets/svg/clock.svg" alt="clock icon"/>
             {{ $t('actions-container.card1.appointment_btn') }} 
         </button>
@@ -67,11 +67,24 @@
         <img src="../assets/svg/hearts.svg" class="icon"/>
         <span>{{ $t('actions-container.card2.sub1')}}</span>
         <span>{{ $t('actions-container.card2.sub2')}}</span>
-        <button>
-           <img src="../assets/svg/share.svg" alt="share icon"/>
-            {{ $t('actions-container.card2.share_btn') }}      
-        </button>
-      </li>
+        <details class="share-popup">
+		      <summary>
+		        <button>
+              <img src="../assets/svg/share.svg" alt="share icon"/>
+              {{ $t('actions-container.card2.share_btn') }}      
+            </button>
+          </summary>
+          <div class="share-dialog">
+            <a :href="whatsappLink" data-action="share/whatsapp/share">
+              <img src="../assets/svg/whatsapp.svg"/>
+            </a>
+            <a :href="telegramLink">
+              <img src="../assets/svg/telegram.svg"/>
+            </a>
+          </div>
+      </details>   
+    </li>
+
     </ul>
     </section>
     <!--
@@ -98,10 +111,11 @@
     <section class="members-container">
       <h2> {{$t('members-container.title')}} </h2>
       <ul class="special-members">
+        <!--
         <li v-for="index in specialMembersCount" :key="index">
           <img :src="memberImage(index)" :alt="'member number '+index" />
           {{$t(`members-container.special-members.member${index}`)}}
-        </li>
+        </li>-->
       </ul>
 
       <ul class="members">        
@@ -132,20 +146,48 @@ export default {
       membersCount: 7,
     }
   },
-  methods: {
-    calendarClick(){      
-      let language = this.$route.params.lang;     
-      switch (language) {
+  computed: {
+    language: function () {
+      return this.$route.params.lang
+    },
+    calendarLink: function () {
+        switch (this.language) {
         case "he":
-          window.open("https://calendar.google.com/calendar/r/eventedit?text=%D7%96%D7%9E%D7%9F+%D7%9C%D7%94%D7%A7%D7%9C%D7%99%D7%98+-+%D7%94%D7%A7%D7%95%D7%9C+%D7%9C%D7%98%D7%95%D7%91%D7%94&location=https://corona.voca.ai/he/login&pli=1&sf=true");
+          return "https://calendar.google.com/calendar/r/eventedit?text=%D7%96%D7%9E%D7%9F+%D7%9C%D7%94%D7%A7%D7%9C%D7%99%D7%98+-+%D7%94%D7%A7%D7%95%D7%9C+%D7%9C%D7%98%D7%95%D7%91%D7%94&location=https://corona.voca.ai/he/login&pli=1&sf=true";
           break;
         case "en":
-          window.open("https://calendar.google.com/calendar/r/eventedit?text=VoiceUp+Reminder&location=https://corona.voca.ai/login&sf=true");
+          return "https://calendar.google.com/calendar/r/eventedit?text=VoiceUp+Reminder&location=https://corona.voca.ai/login&sf=true";
           break;
-        default:
+      }
     },
-    memberImage(memberNumber) {
+    whatsappLink: function () {
+      switch (this.language) {
+        case "he":
+          return "whatsapp://send?text=גם אני תרמתי את הקול שלי לטובת המאבק בקורונה ואחזור לתרום גם מחר - זה לוקח רק דקה. https://corona.voca.ai/he/login";
+          break;
+        case "en":
+          return "whatsapp://send?text=I donated my voice to fight COVID-19 and I will donate again tomorrow - It only takes a minute. Sign in and record - It is our responsibility https://corona.voca.ai/login";
+          break;
+      }
+    },
+    telegramLink: function () {
+      switch (this.language) {
+        case "he":
+          return "https://telegram.me/share/url?url=https://corona.voca.ai/he/login&text=גם אני תרמתי את הקול שלי לטובת המאבק בקורונה ואחזור לתרום גם מחר - זה לוקח רק דקה.";
+          break;
+        case "en":
+          return "https://telegram.me/share/url?url=https://corona.voca.ai/he/login&text=I donated my voice to fight COVID-19 and I will donate again tomorrow - It only takes a minute. Sign in and record - It is our responsibility.";
+          break;
+    }
+  },
+  memberImage(memberNumber) {
+      console.log(memberNumber)
       return require(`../assets/members/member${memberNumber}.jpeg`);
+    }
+  },
+  methods: {
+    open: link => {
+      window.open(link)
     }
   },
   components: {

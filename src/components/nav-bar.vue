@@ -1,8 +1,8 @@
 <template>
   <div class="nav-bar-container">
-    <!-- <header :class="{ scrolled: scrolled }">
+    <header :class="{ scrolled: scrolled }">
     <label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
-    <input type="checkbox" id="toggle-1"> -->
+    <input type="checkbox" id="toggle-1">
 
     <nav class="nav-bar width-container flex">
       <ul class="links">
@@ -65,7 +65,6 @@ export default {
           }
         },
         scrolled: false,
-        language: 'he',
     };
   },
   computed: {
@@ -73,15 +72,23 @@ export default {
         return this.scrolled ? this.logos['scrolled'][this.language] : this.logos['default'][this.language]
     }
   },
- props: ['homePage'],
+  props: {
+    homePage: {
+      type: Boolean,
+      default: true
+    },
+    language: {
+      type: String,
+      default: "he"
+    }
+  },
  created() {
-    this.language = this.$route.params.lang;
     this.switchLanguage(this.language)
     window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     setLang() {
-      switch (this.$route.params.lang) {
+      switch (this.language) {
         case "he":
           this.switchLanguage('en');          
           break;

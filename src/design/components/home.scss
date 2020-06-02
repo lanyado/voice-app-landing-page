@@ -31,9 +31,6 @@ section{
   padding: 10% 15% 0 0;
   color: $secondColor;
 
-  #logo-text{
-    display: none;
-  }
   .title-container {
     display: block;
     text-align: right;
@@ -79,25 +76,7 @@ section{
     left: 10%;
   }
   @media only screen and (max-width: 980px) {
-    padding-top: 25%;
-    padding-right: 15%;
-    padding-left: 15%;
-    padding-bottom: 0;
 
-    #logo-text{
-      display: block;
-      position: absolute;
-      top: 20px;
-      width: 200px;
-      @include center(true, false);
-    }
-    .title-container {
-      width:100%;
-      margin-bottom: 30%;
-    }
-    #logo-icon{
-      display: none;
-    }
   }
 }
 
@@ -163,6 +142,7 @@ section{
       font-size: 20px;
       font-weight: 600;
     }
+    
     button {
       position: relative;
       width: auto;
@@ -262,8 +242,9 @@ section{
 
 /* ========= welcome-container ============ */
   .welcome-container {
-    padding: 10% 0 15% 15%;
-
+    @media only screen and (min-width: 981px){
+      padding: 10% 0 15% 15%;
+    }
     .title-container {
       text-align: left;
     }
@@ -284,7 +265,21 @@ section{
   }
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 980px){
+  .welcome-container{
+    padding-top: 25%;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-bottom: 0;
+
+    .title-container {
+      width:100%;
+      margin-bottom: 30%;
+    }
+    #logo-icon{
+      display: none;
+    }
+  }
   .explanation-container {
     ul {
       flex-direction: column;
@@ -304,5 +299,36 @@ section{
   }
   .special-members{
     width: 100%;
+  }
+}
+
+.share-dialog{
+  @include center(true, false);
+  position: fixed;
+  top: 30%;
+  right: 0;
+  left: 50%;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: unset;
+  margin: 0 auto;
+  transform: translateX(-50%);
+  z-index: 999;
+  animation-name: fadein;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+  background-color: #fff;
+  border: 1px solid #173B64;
+  border-radius: 3px;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 0em;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+
+  a{
+    width:100px;
+
   }
 }

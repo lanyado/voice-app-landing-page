@@ -77,3 +77,18 @@ button{
         opacity: 0.8;
     }
 }
+details summary::-webkit-details-marker {
+    display:none;
+}
+#logo-text{
+    display: none;
+}
+@media only screen and (max-width: 980px) {
+    #logo-text{
+        display: block;
+        position: absolute;
+        top: 20px;
+        width: 200px;
+        @include center(true, false);
+    }
+}
