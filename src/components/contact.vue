@@ -1,11 +1,11 @@
 <template>
   <div>
-    <nav-bar />
+    <!-- <nav-bar /> -->
 
     <div class="contact-container"   v-bind:class="{ltr: isLtr}">
 
       <div class="header-container">
-        <h1>{{ $t('contact.main_title')}}</h1>
+        <h1 v-bind:class="{enFont: isLtr}">{{ $t('contact.main_title')}}</h1>
         <img src="../assets/svg/hurt.svg" alt="hurt icon"/>
       </div>
 
@@ -26,8 +26,6 @@
       <div class="sub-container">
 
       </div>
-
-
     </div>    
   </div>
 </template>

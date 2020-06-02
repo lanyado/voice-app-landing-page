@@ -8,26 +8,32 @@
       
 
 .contact-container {
+  margin-top: 30px;
   display: grid;
-  grid-template-columns: 1fr 441px 1fr;
+  // grid-template-columns: 1fr 441px 1fr;
+  grid-template-columns: minmax(0.6rem, auto) 502px 441px 441px minmax(0.6rem, auto)
+  ;
   grid-column-gap: 20px;
 
 
   span {
-    display: block;
-    margin: 1em;
+    display: flex;
+    margin-bottom: 1em;
     font-size: 24px;
-    float: right;
+    &:first-child {
+      margin-top:  1rem;
+    }
   }  
 
   form {
     display: block;
+    grid-column: 3/4;
 
     input {
       display: block;    
       margin-bottom: 1rem;
       background: $secondColor;
-      box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+      // box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
       border-radius: 4px;
     }  
 
@@ -42,12 +48,11 @@
     input[type=submit] {
      display: block; 
       color: $secondColor;
-      // float: right;
       padding: 0px 12px;
       width: 83px;
       height: 45px;
       background: #12218D;  /* dark blue */        
-      box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);  /* elevation blue */ 
+      // box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);  /* elevation blue */ 
       border-radius: 3px;
     }  
   }  
@@ -69,7 +74,7 @@
   }  
   
   form >*{
-    box-shadow: 2px 2px 15px;
+    // box-shadow: 2px 2px 15px;
     border-radius: 4px;
   }  
 }  
@@ -79,40 +84,30 @@
 display: flex;
 justify-content: center;
 width: 100%;
-
+height: fit-content;
+width: fit-content;
+align-items: center;
+grid-column: 2/3;
 
 h1 {
-  // background-color:yellow;
   font-size: 72px;
-  color: $secondColor;
-  height: fit-content;
-  width: fit-content;
+  color: $secondColor;  
   margin: 0;
-  margin-inline-start: 2ch;
 }  
+
+.enFont{
+  font-size: 62px;
+}
 
 img{
-  // background-color:white;
-  height: fit-content;
-  width: fit-content;
-  // margin-inline-start: 2ch;
-  
-
+  margin-inline-start: 2ch;  
 }
 
 }
 
-.main-container{
-//  background-color: seagreen; 
-} 
-
-.sub-container{
-  // background-color:peru ;
-
-}  
 
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1080px) {
 
   .contact-container {
     display: block;
@@ -121,6 +116,12 @@ img{
 
     .header-container { 
       width: 441px;
+
+      h1{
+        margin: 0.4rem 0px;
+        width: fit-content;
+   
+      }
     }      
     
     form > input:nth-child(-n+3) {
@@ -136,6 +137,34 @@ img{
   .header-container {
         h1 {
       font-size: 62px;  
+}
+
+}
+}
+}
+
+
+
+
+@media only screen and (max-width: 551px) {
+
+  .contact-container {
+    
+    .header-container { 
+      width: 350px;      
+    }      
+    
+    form > input:nth-child(-n+3) {
+      width: 350px;      
+    }  
+    
+    form > textarea {     
+      width: 350px;      
+      }  
+ 
+  .header-container {
+        h1 {
+      font-size: 42px;  
 }
 
 }

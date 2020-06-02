@@ -142,7 +142,7 @@ export default {
         case "en":
           window.open("https://calendar.google.com/calendar/r/eventedit?text=VoiceUp+Reminder&location=https://corona.voca.ai/login&sf=true");
           break;
-        default:
+      }
     },
     memberImage(memberNumber) {
       return require(`../assets/members/member${memberNumber}.jpeg`);
