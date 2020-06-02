@@ -2,7 +2,7 @@
   <div>
     <nav-bar />
 
-    <div class="contact-container">
+    <div class="contact-container"   v-bind:class="{ltr: isLtr}">
 
       <div class="header-container">
         <h1>{{ $t('contact.main_title')}}</h1>
@@ -40,8 +40,16 @@ import cintactStyles from "../design/components/contact.scss";
 export default {
   data() {
     return {
-      homePage: false
+      homePage: false,
+      language: this.$route.params.lang,
+      isLtr: false
     };
+  },
+  created(){
+    if (this.language!=="he"){
+      // console.log('english mode')
+      this.isLtr=true
+    }
   },
   methods: {
     sendEmail: e => {

@@ -123,7 +123,6 @@
 import navBar from "../components/nav-bar";
 import mainFooter from "../components/main-footer";
 import homeStyles from '../design/components/home.scss';
-//let en = require("../locals/en.json");
 
 export default {
   data(){
