@@ -22,10 +22,10 @@
 
 
     <section class="explanation-container">
-      <h3>{{ $t('explanation-container.title')}}</h3>
+      <h2>{{ $t('explanation-container.title')}}</h2>
       <ul>
         <li>
-          <img src="../assets/png/how_it_works_3.png" />
+          <img src="../assets/png/how_it_works_1.png" />
           <h4>{{ $t('explanation-container.step1.title')}}</h4>
           <span>{{ $t('explanation-container.step1.sub1')}}</span>
           <span>{{ $t('explanation-container.step1.sub2')}}</span>
@@ -39,7 +39,7 @@
         </li>
 
         <li>
-          <img src="../assets/png/how_it_works_1.png" />
+          <img src="../assets/png/how_it_works_3.png" />
           <h4>{{ $t('explanation-container.step3.title')}}</h4>
           <span>{{ $t('explanation-container.step3.sub1')}}</span>
           <span>{{ $t('explanation-container.step3.sub2')}}</span>
@@ -55,21 +55,21 @@
     <ul>
       <li class="card">
         <img src="../assets/svg/calendar.svg" class="icon"/>
-        <span>{{ $t('actions-container.card2.sub1')}}</span>
-        <span>{{ $t('actions-container.card2.sub2')}}</span>
+        <span>{{ $t('actions-container.card1.sub1')}}</span>
+        <span>{{ $t('actions-container.card1.sub2')}}</span>
         <button>
            <img src="../assets/svg/clock.svg" alt="clock icon"/>
-         {{$t('actions-container.card2.appointment_btn')}} 
+            {{ $t('actions-container.card1.appointment_btn') }} 
         </button>
       </li>
 
     <li class="card">
         <img src="../assets/svg/hearts.svg" class="icon"/>
-        <span>{{ $t('actions-container.card1.sub1')}}</span>
-        <span>{{ $t('actions-container.card1.sub2')}}</span>
+        <span>{{ $t('actions-container.card2.sub1')}}</span>
+        <span>{{ $t('actions-container.card2.sub2')}}</span>
         <button>
            <img src="../assets/svg/share.svg" alt="share icon"/>
-          {{ $t('actions-container.card1.share_btn')}}      
+            {{ $t('actions-container.card2.share_btn') }}      
         </button>
       </li>
     </ul>
@@ -96,7 +96,7 @@
     </section>
     -->
     <section class="members-container">
-      <h2>{{$t('members-container.title')}} </h2>
+      <h2> {{$t('members-container.title')}} </h2>
       <ul class="special-members">
         <li v-for="index in specialMembersCount" :key="index">
           <img :src="memberImage(index)" :alt="'member number '+index" />

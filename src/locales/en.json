@@ -1,90 +1,90 @@
 {
-  "nav_bar": {
-    "contact": "Contact",
-    "about": "About",
-    "spnoserd_by": "we are spnoserd by",
-    "changeLang": "Hebrew"
-  },
-  "contact": {
-    "main_title": "Contact Us",
-    "sub_title": "ENאו כתבו לנו -",
-    "form": {
-      "name": "*name",
-      "email": "*email",
-      "subject": "*subject",
-      "content": "message content",
-      "send_btn": "Send"
-    }
-  },
-  "welcome-container": {
-    "title": {
-      "main": " Your voice can victory the coronavirus",
-      "sub": "eng תרומת קול של דקה תוכל לעזור לקדם כלי איתור חינמי, מהיר וזמין לכולם"
+    "nav_bar": {
+        "contact": "Contact",
+        "about": "About",
+        "spnoserd_by": "We are supported by",
+        "changeLang": "He"
     },
-    "btn": "Record Now"
-  },
-  "explanation-container": {
-    "title": "How It Works?",
-    "step1": {
-      "title": "!!!Back to Normal",
-      "sub1": "ENמפתחים אבחון לקורונה",
-      "sub2": "And back to normal"
+    "contact": {
+        "main_title": "Contact Us",
+        "sub_title": "",
+        "form": {
+            "name": "*Name",
+            "email": "*Email",
+            "subject": "*Subject",
+            "content": "Content",
+            "send_btn": "Send"
+        }
     },
-    "step2": {
-      "title": "Records",
-      "sub1": "records your voice and fill",
-      "sub2": "some more detils"
+    "welcome-container": {
+        "title": {
+            "main": "Your voice is needed!",
+            "sub": "Help us beat COVID-19 by simply logging in and recording your voice for about 1 minute"
+        },
+        "btn": "Record now!"
     },
-    "step3": {
-      "title": "Entering",
-      "sub1": "entering the website once a day",
-      "sub2": "and maybe some emails"
+    "explanation-container": {
+        "title": "How does it work?",
+        "step1": {
+            "title": "Logging In",
+            "sub1": "Recording a daily voice sample",
+            "sub2": ""
+        },
+        "step2": {
+            "title": "Recording",
+            "sub1": "Recording a voice sample",
+            "sub2": "and filling in some more details"
+        },
+        "step3": {
+            "title": "Returning to normal",
+            "sub1": "Developing a new assessment tool for Coronavirus (COVID-19)",
+            "sub2": "And going back to normal life"
+        },
+        "read_btn": "For more information"
     },
-    "read_btn": "Read More"
-  },
-  "actions-container": {
-    "title": "Take part in the Coronavirus fight!",
-    "card1": {
-      "sub1": "ENגם כן- יחד אנחנו חזקים יותר",
-      "sub2": "ENעודדו את המשפחה והחברים להקליט",
-      "share_btn": "Share"
+    "actions-container": {
+        "title": "Take part in preventing the spread of the coronavirus!",
+        "card1": {
+            "sub1": "Every short recording will brings us closer to achieving our goal together",
+            "sub2": "A daily recording for only a week",
+            "appointment_btn": "Set Reminder"
+        },
+        "card2": {
+            "sub1": "We are stronger together",
+            "sub2": "Feel free to share this link with friends and family",
+            "share_btn": "Share now"
+        }
     },
-    "card2": {
-      "sub1": "ENתקדם את היוזמה אפילו יותר",
-      "sub2": "ENהקלטה יומית למשך כשבוע",
-      "appointment_btn": "ENקבעו תזכורת ביומן"
-    }
-  },
-  "sponsors-container": {
-    "title": "ENהמיזם שלנו מתקיים בזכותם"
-  },
-  "members-container":{
-    "title": "Who We are",
-    "special-members": {
-      "member1": "Itamar Kaufman",
-      "member2": "Omer Lerinman",
-      "member3": "Niv Saparov",
-      "member4": "Itai Stopel",
-      "member5": "Yevhenii Tysiachnyi",
-      "member6": "Ben Fishman",
-      "member7": "Alon Yaron",
-      "member8": "Danielle Honigstein",
-      "member9": "Avidor Rabinovich",
-      "member10": "Guy Mor",
-      "member11": "Alfredo Limin",
-      "member12": "Yoni Svechinsky",
-      "member13": "Rotem Lanyado",
-      "member14": "Roee Ilan"
+    "sponsors-container": {
+        "title": "Your support will help us make it happen "
     },
-    "members": {
-      "member1": "Eran Karaso",
-      "member2": "Bar Segal",
-      "member3": "Ilay Menachem",
-      "member4": "Betzalel Stauber",
-      "member5": "Itai Rosenfeld Cohen",
-      "member6": "Lihu Berman",
-      "member7": "Imri Paran"
-    }
-  },
-  "more_details_btn":"More Deatails"
+    "members-container": {
+        "title": "Who We Are",
+        "special-members": {
+            "member1": "Itamar Kaufman",
+            "member2": "Omer Lerinman",
+            "member3": "Niv Saparov",
+            "member4": "Itai Stopel",
+            "member5": "Yevhenii Tysiachnyi",
+            "member6": "Ben Fishman",
+            "member7": "Alon Yaron",
+            "member8": "Danielle Honigstein",
+            "member9": "Avidor Rabinovich",
+            "member10": "Guy Mor",
+            "member11": "Alfredo Limin",
+            "member12": "Yoni Svechinsky",
+            "member13": "Rotem Lanyado",
+            "member14": "Roee Ilan"
+        },
+        "members": {
+            "member1": "Eran Karaso",
+            "member2": "Bar Segal",
+            "member3": "Ilay Menachem",
+            "member4": "Betzalel Stauber",
+            "member5": "Itai Rosenfeld Cohen",
+            "member6": "Lihu Berman",
+            "member7": "Imri Paran"
+        }
+    },
+    "more_details_btn": "Lean More"
 }
