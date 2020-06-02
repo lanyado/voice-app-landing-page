@@ -27,8 +27,6 @@
       <div class="sub-container">
 
       </div>
-
-
     </div>    
   </div>
 </template>
