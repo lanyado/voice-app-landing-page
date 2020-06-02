@@ -15,9 +15,9 @@ export default {
   },
  created() {
      if(this.$route.params.lang!=='en'&&'he'){
-    this.$router.push({
+        this.$router.push({
             params: { lang: "he" }
-          });
+      });
     }  
   },
 }

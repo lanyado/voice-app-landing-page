@@ -4,10 +4,10 @@
 <!--
 <p>{{ $t('message')}}</p>
 -->
-    <nav-bar :homePage="homePage" />
+    <nav-bar :homePage="homePage" @changeLogo="logoUrl = $event"/>
 
     <section class="welcome-container">
-      <img id="logo-text" src="../assets/svg/logo_text_white_he.svg" alt="Logo" />
+      <img id="logo-text" :src="logoUrl" alt="Logo" />
       <div class="title-container">
         <h1>{{ $t('welcome-container.title.main')}}</h1>
         <h2>{{ $t('welcome-container.title.sub')}}</h2>        
@@ -22,10 +22,10 @@
 
 
     <section class="explanation-container">
-      <h3>{{ $t('explanation-container.title')}}</h3>
+      <h2>{{ $t('explanation-container.title')}}</h2>
       <ul>
         <li>
-          <img src="../assets/png/how_it_works_3.png" />
+          <img src="../assets/png/how_it_works_1.png" />
           <h4>{{ $t('explanation-container.step1.title')}}</h4>
           <span>{{ $t('explanation-container.step1.sub1')}}</span>
           <span>{{ $t('explanation-container.step1.sub2')}}</span>
@@ -39,7 +39,7 @@
         </li>
 
         <li>
-          <img src="../assets/png/how_it_works_1.png" />
+          <img src="../assets/png/how_it_works_3.png" />
           <h4>{{ $t('explanation-container.step3.title')}}</h4>
           <span>{{ $t('explanation-container.step3.sub1')}}</span>
           <span>{{ $t('explanation-container.step3.sub2')}}</span>
@@ -55,21 +55,21 @@
     <ul>
       <li class="card">
         <img src="../assets/svg/calendar.svg" class="icon"/>
-        <span>{{ $t('actions-container.card2.sub1')}}</span>
-        <span>{{ $t('actions-container.card2.sub2')}}</span>        
-        <button @click="calendarClick()">          
-         <img src="../assets/svg/clock.svg" alt="clock icon"/>
-         {{$t('actions-container.card2.appointment_btn')}} 
+        <span>{{ $t('actions-container.card1.sub1')}}</span>
+        <span>{{ $t('actions-container.card1.sub2')}}</span>
+        <button @click="calendarClick()">
+           <img src="../assets/svg/clock.svg" alt="clock icon"/>
+            {{ $t('actions-container.card1.appointment_btn') }} 
         </button>
       </li>
 
     <li class="card">
         <img src="../assets/svg/hearts.svg" class="icon"/>
-        <span>{{ $t('actions-container.card1.sub1')}}</span>
-        <span>{{ $t('actions-container.card1.sub2')}}</span>
+        <span>{{ $t('actions-container.card2.sub1')}}</span>
+        <span>{{ $t('actions-container.card2.sub2')}}</span>
         <button>
            <img src="../assets/svg/share.svg" alt="share icon"/>
-          {{ $t('actions-container.card1.share_btn')}}      
+            {{ $t('actions-container.card2.share_btn') }}      
         </button>
       </li>
     </ul>
@@ -96,19 +96,18 @@
     </section>
     -->
     <section class="members-container">
-      <h5>{{$t('members-container.title')}} </h5>
+      <h2> {{$t('members-container.title')}} </h2>
       <ul class="special-members">
-        <li v-for="(item, key, index) in specialMembers" v-bind:key="index">
-          <img src = "`../assets/jpeg/${key}.jpeg`" alt="`${item}`" />
-          {{$t(`members-container.special-members.${key}`)}}
+        <li v-for="index in specialMembersCount" :key="index">
+          <img :src="memberImage(index)" :alt="'member number '+index" />
+          {{$t(`members-container.special-members.member${index}`)}}
         </li>
       </ul>
 
       <ul class="members">        
-        <li v-for="(item, key, index) in members" v-bind:key="index">
-          {{$t(`members-container.members.${key}`)}}
+        <li v-for="index in membersCount" :key="index">
+          {{$t(`members-container.members.member${index}`)}}
         </li>
-    
       </ul>
     </section>
   <!--
@@ -128,14 +127,14 @@ export default {
   data(){
     return{
       homePage: true,
-      myJson: json,
-      specialMembers: en['enmembers-container']['special-members'],
-      members: en['enmembers-container']['members'],
+      logoUrl: require("../assets/svg/logo_text_white_he.svg"),
+      specialMembersCount: 14,
+      membersCount: 7,
     }
   },
   methods: {
     calendarClick(){      
-       let language = this.$route.params.lang;     
+      let language = this.$route.params.lang;     
       switch (language) {
         case "he":
           window.open("https://calendar.google.com/calendar/r/eventedit?text=%D7%96%D7%9E%D7%9F+%D7%9C%D7%94%D7%A7%D7%9C%D7%99%D7%98+-+%D7%94%D7%A7%D7%95%D7%9C+%D7%9C%D7%98%D7%95%D7%91%D7%94&location=https://corona.voca.ai/he/login&pli=1&sf=true");
@@ -144,13 +143,14 @@ export default {
           window.open("https://calendar.google.com/calendar/r/eventedit?text=VoiceUp+Reminder&location=https://corona.voca.ai/login&sf=true");
           break;
         default:
-    }
+    },
+    memberImage(memberNumber) {
+      return require(`../assets/members/member${memberNumber}.jpeg`);
     }
   },
   components: {
     navBar,
     mainFooter
   },
-  
 };
 </script>

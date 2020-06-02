@@ -55,30 +55,29 @@ export default {
   data() {
     return {
         logos: {
-          defalut:{
+          default:{
             'he': require('../assets/svg/logo_text_white_he.svg'),
             'en': require('../assets/png/logo_text_white_en.png')
           },
           scrolled:{
             'he': require('../assets/svg/logo_text_blue_he.svg'),
-            'en': require('../assets/png/logo_text_white_en.png')
+            'en': require('../assets/png/logo_text_blue_en.png')
           }
         },
         scrolled: false,
-        languge: 'he',
+        language: 'he',
     };
   },
   computed: {
       logoUrl: function () {
-        return this.scrolled ? this.logos['scrolled'][this.languge] : this.logos['defalut'][this.languge]
+        return this.scrolled ? this.logos['scrolled'][this.language] : this.logos['default'][this.language]
     }
   },
  props: ['homePage'],
  created() {
-   window.addEventListener('scroll', this.handleScroll);
-    //  if(this.$route.params.lang==='en'){
-    // console.log('en')
-    // }
+    this.language = this.$route.params.lang;
+    this.switchLanguage(this.language)
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     setLang() {
@@ -93,12 +92,12 @@ export default {
         // code block
       }
     },
-    switchLanguage(languge) {
-      this.languge = languge;
+    switchLanguage(language) {
+      this.language = language;
 
       const LTR_LANGUAGES = ['en'];
       const body = document.body;
-      if (LTR_LANGUAGES.includes(languge))
+      if (LTR_LANGUAGES.includes(language))
       {
           body.classList.add("ltr");
       }
@@ -106,17 +105,17 @@ export default {
           body.classList.remove("ltr");
           
       this.$router.push({
-          params: { lang: this.languge }
+          params: { lang: this.language }
       });
+
+      this.$emit('changeLogo', this.logos['default'][this.language]);
     },
     handleScroll (event) {
       if ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0 ) >= 100 ) {
           this.scrolled = true;
-          //this.logoUrl = require('../assets/svg/logo_name_blue_hebrew.svg');
       } 
       else {
           this.scrolled = false;
-          //this.logoUrl = require('../assets/svg/logo_with_name_white.svg');
       }
     }, 
   }

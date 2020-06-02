@@ -7,7 +7,7 @@ header{
   position: fixed;
   width: 100%;
   z-index: 9;
-  padding: 15px 20px 5px ;
+  padding: 15px 5px 5px 0px;
   @media only screen and (min-width: 980px) {
     &.scrolled {
       background-color: #fff !important;
@@ -23,9 +23,9 @@ header{
   left:52%;
 }
 nav {
-// 	width: auto;
-//   float: right;
-  width: 100%;
+	width: auto;
+	float: right;
+	width: 100%;
   
 	ul {
     padding-left: 20px;
@@ -54,13 +54,14 @@ nav {
 
     span{
       display: inline;
-      vertical-align: super;
+      vertical-align: middle;
       font-size: 15px;
     }
     img{
 	  width: 50px;
+	  vertical-align: middle;
       margin-right: 10px;
-      margin-left: 10px;
+	  margin-left: 10px;
     }
   }
 }
@@ -151,5 +152,11 @@ label {
   }
 	label {
 		padding: 5px 10px;
+	}
+}
+
+.ltr{
+	#logo {
+		width:110px;
 	}
 }
