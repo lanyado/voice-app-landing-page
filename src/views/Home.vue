@@ -155,7 +155,7 @@ export default {
     return{
       homePage: true,
       logoUrl: require("../assets/svg/logo_text_white_he.svg"),
-      specialMembersCount: 14,
+      specialMembersCount: 15,
       membersCount: 7
     }
   },
