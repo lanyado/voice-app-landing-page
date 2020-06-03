@@ -116,7 +116,9 @@
       <ul class="special-members">
         
         <li v-for="index in specialMembersCount" :key="index">
-          <img :src="memberImage(index)" :alt="'member number '+index" />
+          <div class="memberImageDiv" :style="{ backgroundImage: 'url('+ memberImage(index)+')' }">
+              <!--<img :src="memberImage(index)" :alt="'member number '+index" />-->
+          </div>
           {{$t(`members-container.special-members.member${index}`)}}
         </li>
       </ul>
