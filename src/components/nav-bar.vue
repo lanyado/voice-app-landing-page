@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar-container">
-    <header :class="{ scrolled: scrolled }">
+    <header :class="this.scrolled||this.static ? 'scrolled': ''">
     <label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
     <input type="checkbox" id="toggle-1">
 
@@ -69,7 +69,7 @@ export default {
   },
   computed: {
       logoUrl: function () {
-        return this.scrolled ? this.logos['scrolled'][this.language] : this.logos['default'][this.language]
+        return this.scrolled||this.static ? this.logos['scrolled'][this.language] : this.logos['default'][this.language]
     }
   },
   props: {
@@ -80,11 +80,15 @@ export default {
     language: {
       type: String,
       default: "he"
+    },
+    static: {
+      type: Boolean,
+      default: true
     }
   },
  created() {
     this.switchLanguage(this.language)
-    window.addEventListener('scroll', this.handleScroll);
+    if (!this.static) window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     setLang() {

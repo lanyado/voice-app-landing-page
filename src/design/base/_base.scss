@@ -71,10 +71,12 @@ ul {
     list-style-type: none;
 }
 button{
+    background-color: $mainColor;
+    color: $secondColor;
     cursor: pointer;
     border: 0px;
     &:hover{
-        opacity: 0.8;
+        background: #06136b radial-gradient(circle, transparent 1%, #06136b 1%) center/15000% !important;
     }
 }
 details summary::-webkit-details-marker {

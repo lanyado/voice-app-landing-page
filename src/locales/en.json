@@ -52,7 +52,8 @@
         "card2": {
             "sub1": "We are stronger together",
             "sub2": "Feel free to share this link with friends and family",
-            "share_btn": "Share now"
+            "share_btn": "Share",
+            "share_dialog": "Share now"
         }
     },
     "sponsors-container": {

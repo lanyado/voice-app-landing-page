@@ -4,7 +4,7 @@
 <!--
 <p>{{ $t('message')}}</p>
 -->
-    <nav-bar :homePage="homePage" :language="language" @changeLogo="logoUrl = $event"/>
+    <nav-bar :homePage="homePage" :language="language" :static="false" @changeLogo="logoUrl = $event"/>
 
     <section class="welcome-container">
       <img id="logo-text" :src="logoUrl" alt="Logo" />
@@ -63,28 +63,31 @@
         </button>
       </li>
 
-    <li class="card">
+      <li class="card">
         <img src="../assets/svg/hearts.svg" class="icon"/>
         <span>{{ $t('actions-container.card2.sub1')}}</span>
         <span>{{ $t('actions-container.card2.sub2')}}</span>
-        <details class="share-popup">
-		      <summary>
-		        <button>
-              <img src="../assets/svg/share.svg" alt="share icon"/>
-              {{ $t('actions-container.card2.share_btn') }}      
-            </button>
-          </summary>
-          <div class="share-dialog">
+        <button @click="openShareDialog()">
+          <img src="../assets/svg/share.svg" alt="share icon"/>
+          {{ $t('actions-container.card2.share_btn') }}      
+        </button>
+        <div id="share-dialog" class="share-dialog">
+          <span> {{ $t('actions-container.card2.share_dialog') }}       </span>
+          <ul>
+            <li>
             <a :href="whatsappLink" data-action="share/whatsapp/share">
               <img src="../assets/svg/whatsapp.svg"/>
             </a>
+            </li>
+            <li>
             <a :href="telegramLink">
               <img src="../assets/svg/telegram.svg"/>
             </a>
-          </div>
-      </details>   
-    </li>
-
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="close-popup"></a>
+      </li>
     </ul>
     </section>
     <!--
@@ -111,11 +114,11 @@
     <section class="members-container">
       <h2> {{$t('members-container.title')}} </h2>
       <ul class="special-members">
-        <!--
+        
         <li v-for="index in specialMembersCount" :key="index">
           <img :src="memberImage(index)" :alt="'member number '+index" />
           {{$t(`members-container.special-members.member${index}`)}}
-        </li>-->
+        </li>
       </ul>
 
       <ul class="members">        
@@ -138,6 +141,12 @@ import mainFooter from "../components/main-footer";
 import homeStyles from '../design/components/home.scss';
 
 export default {
+  created(){
+      window.addEventListener('keyup', function(event) {
+      if(event.keyCode === 27)
+          document.getElementsByTagName('details')[0].removeAttribute('open');
+    })
+  },
   data(){
     return{
       homePage: true,
@@ -148,7 +157,7 @@ export default {
   },
   computed: {
     language: function () {
-      return this.$route.params.lang
+      return this.$route.params.lang;
     },
     calendarLink: function () {
         switch (this.language) {
@@ -178,16 +187,21 @@ export default {
         case "en":
           return "https://telegram.me/share/url?url=https://corona.voca.ai/he/login&text=I donated my voice to fight COVID-19 and I will donate again tomorrow - It only takes a minute. Sign in and record - It is our responsibility.";
           break;
-    }
-  },
-  memberImage(memberNumber) {
-      console.log(memberNumber)
-      return require(`../assets/members/member${memberNumber}.jpeg`);
+      }
     }
   },
   methods: {
     open: link => {
-      window.open(link)
+      window.open(link);
+    },
+    openShareDialog: () => {
+      location.href ="#share-dialog";
+      //document.getElementById('share-button').click();
+    },
+    memberImage(memberNumber) {
+      if (typeof memberNumber === 'number'){
+        return require(`../assets/members/member${memberNumber}.jpeg`);
+      } 
     }
   },
   components: {

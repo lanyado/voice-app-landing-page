@@ -1,6 +1,6 @@
 <template>
   <div>
-      <nav-bar :homePage="homePage" :language="language" @changeLogo="logoUrl = $event"/>
+    <nav-bar :homePage="homePage" :language="language" :static="true" @changeLogo="logoUrl = $event"/>
 
 
     <div class="contact-container" >
@@ -20,7 +20,9 @@
         <input type="email" name="fromEmail" :placeholder="$t('contact.form.email')" required />
         <input type="text" name="formSubject" :placeholder="$t('contact.form.subject')" required />
         <textarea name="message" :placeholder="$t('contact.form.content')"></textarea>
-        <input type="submit" :value="$t('contact.form.send_btn')" />
+        <button type="submit">
+          {{ $t('contact.form.send_btn') }}
+        </button>
       </form>
       </div>
 
