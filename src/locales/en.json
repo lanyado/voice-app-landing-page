@@ -62,30 +62,30 @@
     "members-container": {
         "title": "Who We Are",
         "special-members": {
-            "member1": "Itamar Kaufman",
-            "member2": "Omer Lerinman",
-            "member3": "Omer Elimelech",
-            "member4": "Niv Saparov",
-            "member5": "Itai Stopel",
-            "member6": "Yevhenii Tysiachnyi",
-            "member7": "Ben Fishman",
-            "member8": "Alon Yaron",
-            "member9": "Danielle Honigstein",
-            "member10": "Avidor Rabinovich",
-            "member11": "Guy Mor",
-            "member12": "Alfredo Limin",
-            "member13": "Yoni Svechinsky",
-            "member14": "Rotem Lanyado",
-            "member15": "Roi Ilan"
+            "1": "Itamar Kaufman",
+            "2": "Omer Lerinman",
+            "3": "Omer Elimelech",
+            "4": "Niv Saparov",
+            "5": "Itai Stopel",
+            "6": "Yevhenii Tysiachnyi",
+            "7": "Ben Fishman",
+            "8": "Alon Yaron",
+            "9": "Danielle Honigstein",
+            "10": "Avidor Rabinovich",
+            "11": "Guy Mor",
+            "12": "Alfredo Limin",
+            "13": "Yoni Svechinsky",
+            "14": "Rotem Lanyado",
+            "15": "Roi Ilan"
         },
         "members": {
-            "member1": "Eran Karaso",
-            "member2": "Bar Segal",
-            "member3": "Ilay Menachem",
-            "member4": "Betzalel Stauber",
-            "member5": "Itai Rosenfeld Cohen",
-            "member6": "Lihu Berman",
-            "member7": "Imri Paran"
+            "1": "Eran Karaso",
+            "2": "Bar Segal",
+            "3": "Ilay Menachem",
+            "4": "Betzalel Stauber",
+            "5": "Itai Rosenfeld Cohen",
+            "6": "Lihu Berman",
+            "7": "Imri Paran"
         }
     },
     "more_details_btn": "Lean More"

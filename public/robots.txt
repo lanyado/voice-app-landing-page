@@ -1,2 +1,10 @@
-User-agent: *
-Disallow:
+# Notice: Collection of data on VoiceUp through automated means is
+# prohibited unless you have express written permission from Soulwings
+# and may only be conducted for the limited purpose contained in said
+# permission.
+
+ser-agent: *
+Allow: //
+Allow: /contact/
+
+Sitemap: https://master.d1uhnfncitfxl5.amplifyapp.com/sitemap.xml

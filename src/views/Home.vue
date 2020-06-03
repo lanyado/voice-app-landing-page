@@ -1,6 +1,5 @@
 <template>
   <div>
-    <meta http-equiv="refresh" content="500">
     <nav-bar :homePage="homePage" :language="language" :static="false" @changeLogo="logoUrl = $event"/>
 
     <section class="welcome-container">
@@ -22,21 +21,21 @@
       <h2>{{ $t('explanation-container.title')}}</h2>
       <ul>
         <li>
-          <img src="../assets/png/how_it_works_1.png" />
+          <img src="../assets/png/how_it_works_1.png" alt="Explanation - step 1"/>
           <h4>{{ $t('explanation-container.step1.title')}}</h4>
           <span>{{ $t('explanation-container.step1.sub1')}}</span>
           <span>{{ $t('explanation-container.step1.sub2')}}</span>
         </li>
 
         <li>
-          <img src="../assets/png/how_it_works_2.png" />
+          <img src="../assets/png/how_it_works_2.png"  alt="Explanation - step 2"/>
           <h4>{{ $t('explanation-container.step2.title')}}</h4>
           <span>{{ $t('explanation-container.step2.sub1')}}</span>
           <span>{{ $t('explanation-container.step2.sub2')}}</span>
         </li>
 
         <li>
-          <img src="../assets/png/how_it_works_3.png" />
+          <img src="../assets/png/how_it_works_3.png"  alt="Explanation - step 3"/>
           <h4>{{ $t('explanation-container.step3.title')}}</h4>
           <span>{{ $t('explanation-container.step3.sub1')}}</span>
           <span>{{ $t('explanation-container.step3.sub2')}}</span>
@@ -51,7 +50,7 @@
       <h2>{{ $t('actions-container.title')}}</h2>
     <ul>
       <li class="card">
-        <img src="../assets/svg/calendar.svg" class="icon"/>
+        <img src="../assets/svg/calendar.svg" class="icon" alt="calendar icon"/>
         <span>{{ $t('actions-container.card1.sub1')}}</span>
         <span>{{ $t('actions-container.card1.sub2')}}</span>
         <button @click="open(calendarLink)">
@@ -61,7 +60,7 @@
       </li>
 
       <li class="card">
-        <img src="../assets/svg/hearts.svg" class="icon"/>
+        <img src="../assets/svg/hearts.svg" class="icon" alt="hearts icon"/>
         <span>{{ $t('actions-container.card2.sub1')}}</span>
         <span>{{ $t('actions-container.card2.sub2')}}</span>
         <button @click="openShareDialog()">
@@ -73,17 +72,17 @@
           <ul>
             <li>
             <a :href="whatsappLink" data-action="share/whatsapp/share" target="_blank">
-              <img src="../assets/svg/whatsapp.svg"/>
+              <img src="../assets/svg/whatsapp.svg" alt="whatsapp icon"/>
             </a>
             </li>
             <li>
             <a :href="telegramLink" target="_blank" >
-              <img src="../assets/svg/telegram.svg"/>
+              <img src="../assets/svg/telegram.svg" alt="telegram icon"/>
             </a>
             </li>
             <li>
             <a :href="facebookLink" target="_blank">
-              <img src="../assets/svg/facebook.svg"/>
+              <img src="../assets/svg/facebook.svg" alt="facebook icon"/>
             </a>
             </li>
           </ul>
@@ -121,13 +120,13 @@
           <div class="memberImageDiv" :style="{ backgroundImage: 'url('+ memberImage(index)+')' }">
               <!--<img :src="memberImage(index)" :alt="'member number '+index" />-->
           </div>
-          {{$t(`members-container.special-members.member${index}`)}}
+          {{$t(`members-container.special-members.${index}`)}}
         </li>
       </ul>
 
       <ul class="members">        
         <li v-for="index in membersCount" :key="index">
-          {{$t(`members-container.members.member${index}`)}}
+          {{$t(`members-container.members.${index}`)}}
         </li>
       </ul>
     </section>
@@ -139,7 +138,6 @@
 </template>
 
 <script>
-
 import navBar from "../components/nav-bar";
 import mainFooter from "../components/main-footer";
 import homeStyles from '../design/components/home.scss';
@@ -224,7 +222,7 @@ export default {
     },
     memberImage(memberNumber) {
       if (typeof memberNumber === 'number'){
-        return require(`../assets/members/member${memberNumber}.jpeg`);
+        return require(`../assets/members/${memberNumber}.jpeg`);
       } 
     }
   },
