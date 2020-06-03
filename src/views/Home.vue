@@ -10,7 +10,7 @@
         <h2>{{ $t('welcome-container.title.sub')}}</h2>        
       </div>
       <img id="logo-icon" src="../assets/svg/logo_big.svg" alt="Logo" />   
-      <button>
+      <button @click="open(appLink)">
         <img src="../assets/svg/white-circle.svg" alt="white circle"/>
         {{ $t('welcome-container.btn')}}
       </button>
@@ -54,7 +54,7 @@
         <img src="../assets/svg/calendar.svg" class="icon"/>
         <span>{{ $t('actions-container.card1.sub1')}}</span>
         <span>{{ $t('actions-container.card1.sub2')}}</span>
-        <button v-on:click="open(calendarLink)">
+        <button @click="open(calendarLink)">
            <img src="../assets/svg/clock.svg" alt="clock icon"/>
             {{ $t('actions-container.card1.appointment_btn') }} 
         </button>
@@ -156,12 +156,22 @@ export default {
       homePage: true,
       logoUrl: require("../assets/svg/logo_text_white_he.svg"),
       specialMembersCount: 14,
-      membersCount: 7,
+      membersCount: 7
     }
   },
   computed: {
     language: function () {
       return this.$route.params.lang;
+    },
+    appLink: function () {
+      switch (this.language) {
+        case "he":
+          return "https://corona.voca.ai/he/login";
+          break;
+        case "en":
+          return "https://corona.voca.ai/en/login";
+          break;
+      }
     },
     calendarLink: function () {
         switch (this.language) {
