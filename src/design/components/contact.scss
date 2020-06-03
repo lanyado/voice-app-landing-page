@@ -27,18 +27,18 @@
 .contact-container {
   display: grid;
   // grid-template-columns: 1fr 441px 1fr;
-  grid-template-columns: minmax(0.6rem, auto) 502px 441px 441px minmax(0.6rem, auto);
-  grid-column-gap: 20px;
+  grid-template-columns: minmax(0, auto) 45% 35% 20% minmax(0, auto);
+  grid-column-gap: 0 !important;
   padding-top:7%;
 
   span {
     display: block;
+    margin-top: 0.7em;
     margin-bottom: 0.7em;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 24px;
     text-align: right;
-  }  
-
+  }
   form {
     display: block;
     grid-column: 3/4;
@@ -103,12 +103,13 @@
   margin: 0 auto;
 
   h1 {
-    font-size: 72px;
+    font-size: 60px;
     color: $secondColor;  
     margin: 0;
   }  
   img{
     margin-inline-start: 2ch;  
+    margin-top:0;
   }
 }
 

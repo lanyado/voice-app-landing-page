@@ -148,7 +148,7 @@ export default {
   created(){
       window.addEventListener('keyup', function(event) {
       if(event.keyCode === 27)
-          document.getElementsByTagName('details')[0].removeAttribute('open');
+          document.getElementsByClassName('close-popup')[0].click();
     })
   },
   data(){

@@ -11,8 +11,8 @@
       </div>
 
       <div class="main-container"> 
-        <span>mail@mail.com</span>
-        <span>03.555.5555</span>
+        <span>voiceup.hl@gmail.com</span>
+        <!--<span>03.555.5555</span>-->
         <span>{{ $t('contact.sub_title')}}</span>
 
       <form class="contact-form" @submit.prevent="sendEmail">
