@@ -1,4 +1,4 @@
-# voice
+# VoiceUp
 
 ## Project setup
 ```

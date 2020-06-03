@@ -5,7 +5,7 @@
 //* ========= reusable classes ============ */
 section{
   width: 100%;
-  min-height: 600px;
+  min-height: 550px;
   margin-bottom: 50px;
 }
 .read-more {
@@ -31,9 +31,6 @@ section{
   padding: 10% 15% 0 0;
   color: $secondColor;
 
-  #logo-text{
-    display: none;
-  }
   .title-container {
     display: block;
     text-align: right;
@@ -53,8 +50,6 @@ section{
     right: 0;
     width: auto;
     height: 45px;
-    background-color: $mainColor;
-    color: $secondColor;
     box-sizing: border-box;
     box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
     border-radius: 32px;
@@ -79,25 +74,7 @@ section{
     left: 10%;
   }
   @media only screen and (max-width: 980px) {
-    padding-top: 25%;
-    padding-right: 15%;
-    padding-left: 15%;
-    padding-bottom: 0;
 
-    #logo-text{
-      display: block;
-      position: absolute;
-      top: 20px;
-      width: 200px;
-      @include center(true, false);
-    }
-    .title-container {
-      width:100%;
-      margin-bottom: 30%;
-    }
-    #logo-icon{
-      display: none;
-    }
   }
 }
 
@@ -163,17 +140,73 @@ section{
       font-size: 20px;
       font-weight: 600;
     }
-    button {
+  
+    .share-dialog{
+      @include center(true, false);
+      position: fixed;
+      top: 30%;
+      
+      margin: 0 auto;
+      transform: translateX(-50%);
+      z-index: 999;
+      animation-name: fadein;
+      animation-duration: 100ms;
+      animation-timing-function: ease-in-out;
+      background-color: #fff;
+      border: 0;
+      padding: 1em;
+    
+        box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+        min-width: 300px;
+        max-width: 80%;
+        max-height: 80%;
+        margin: auto;
+        overflow: hidden;
+        border-radius: 2px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        pointer-events: auto;
+        opacity: 1;
+        transform-origin: center center;
+        transition: opacity .15s cubic-bezier(.25,.8,.25,1),transform .2s cubic-bezier(.25,.8,.25,1);
+        will-change: opacity,transform;
+      @keyframes fadein {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+      }
+      span{
+        width: 100%;
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+    
+      ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: unset;
+      }
+    
+      li{
+        width:60px;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+    }/*
+    summary{
+      display: inline-block;
+      height: 0;
+    }*/
+    button{
       position: relative;
       width: auto;
       min-width: 20%;
       height: 45px;
       margin: 2.5em auto;
       padding: 0px 20px 0px 20px;
-      background: $mainColor;  
       box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
       border-radius: 5px;
-      color: $secondColor;
       font-size: 17px;
     
       img {
@@ -182,6 +215,49 @@ section{
         vertical-align: middle;
         margin-left: 10px;
       }
+    }
+    .share-dialog {
+      position: fixed;
+      padding: 10px;
+      max-width: 500px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background: rgba(255,255,255,.9);
+      visibility: hidden;
+      opacity: 0;
+      /* "delay" the visibility transition */
+      -webkit-transition: opacity .5s, visibility 0s linear .5s;
+      transition: opacity .5s, visibility 0s linear .5s;
+      z-index: 1;
+    }
+    .share-dialog:target {
+      visibility: visible;
+      opacity: 1;
+      /* cancel visibility transition delay */
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+    }
+    .close-popup {
+      background: rgba(0,0,0,.7);
+      cursor: default;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      visibility: hidden;
+      /* "delay" the visibility transition */
+      -webkit-transition: opacity .5s, visibility 0s linear .5s;
+      transition: opacity .5s, visibility 0s linear .5s;
+    }
+    .share-dialog:target + .close-popup{  
+      opacity: 1;
+      visibility: visible;
+      /* cancel visibility transition delay */
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
     }
   }
 }
@@ -225,12 +301,20 @@ section{
   li {
     width: 100px;
     margin: 1em 2em;
-    img {
+  
+    .memberImageDiv{
       width: 100px;
       height: 100px;
-      display: block;
+      -webkit-border-radius: 60px;
+      -webkit-background-clip: padding-box;
+      -moz-border-radius: 60px;
+      -moz-background-clip: padding;
+      background-clip: padding-box;
       border-radius: 50%;
       margin-bottom: 0.3em;
+      float: left;
+      background-size: cover;
+      background-position: center center;
     }
     span {
       display: block;
@@ -262,16 +346,14 @@ section{
 
 /* ========= welcome-container ============ */
   .welcome-container {
-    padding: 10% 0 15% 15%;
-
+    @media only screen and (min-width: 981px){
+      padding: 10% 0 15% 15%;
+    }
     .title-container {
       text-align: left;
     }
     button {
       float: left;
-    }
-    #illustration{
-      left: 0;
     }
     #logo-icon{
       left: auto;
@@ -279,12 +361,26 @@ section{
     }
   }
   .actions-container ul .card button img {
-    margin-left: 0;
-    margin-right: 10px;
-  }
+      margin-left: 0;
+      margin-right: 10px;
+    }
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 980px){
+  .welcome-container{
+    padding-top: 25%;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-bottom: 0;
+
+    .title-container {
+      width:100%;
+      margin-bottom: 30%;
+    }
+    #logo-icon{
+      display: none;
+    }
+  }
   .explanation-container {
     ul {
       flex-direction: column;

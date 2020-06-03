@@ -1,12 +1,13 @@
 <template>
   <div>
-    <!-- <nav-bar /> -->
+    <nav-bar :homePage="homePage" :language="language" :static="true" @changeLogo="logoUrl = $event"/>
 
-    <div class="contact-container"   v-bind:class="{ltr: isLtr}">
 
+    <div class="contact-container" >
+      <img id="logo-text" :src="logoUrl" alt="Logo" />
       <div class="header-container">
-        <h1 v-bind:class="{enFont: isLtr}">{{ $t('contact.main_title')}}</h1>
-        <img src="../assets/svg/hurt.svg" alt="hurt icon"/>
+        <h1>{{ $t('contact.main_title')}}</h1>
+        <img src="../assets/svg/heart.svg" alt="heart icon"/>
       </div>
 
       <div class="main-container"> 
@@ -19,7 +20,9 @@
         <input type="email" name="fromEmail" :placeholder="$t('contact.form.email')" required />
         <input type="text" name="formSubject" :placeholder="$t('contact.form.subject')" required />
         <textarea name="message" :placeholder="$t('contact.form.content')"></textarea>
-        <input type="submit" :value="$t('contact.form.send_btn')" />
+        <button type="submit">
+          {{ $t('contact.form.send_btn') }}
+        </button>
       </form>
       </div>
 
@@ -30,6 +33,7 @@
   </div>
 </template>
 
+
 <script>
 import emailjs from "emailjs-com";
 import navBar from "../components/nav-bar";
@@ -39,14 +43,14 @@ export default {
   data() {
     return {
       homePage: false,
-      language: this.$route.params.lang,
-      isLtr: false
+      logoUrl: require("../assets/svg/logo_text_white_he.svg"),
     };
   },
   created(){
-    if (this.language!=="he"){
-      // console.log('english mode')
-      this.isLtr=true
+  },
+  computed: {
+    language: function () {
+      return this.$route.params.lang
     }
   },
   methods: {

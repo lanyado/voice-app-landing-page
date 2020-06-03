@@ -1,8 +1,8 @@
 <template>
   <div class="nav-bar-container">
-    <!-- <header :class="{ scrolled: scrolled }">
+    <header :class="this.scrolled||this.static ? 'scrolled': ''">
     <label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
-    <input type="checkbox" id="toggle-1"> -->
+    <input type="checkbox" id="toggle-1">
 
     <nav class="nav-bar width-container flex">
       <ul class="links">
@@ -10,16 +10,6 @@
         <li>
         <router-link to>
           <span title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
-
-        <!-- <div class="locale-changer">
-          <select v-model="$i18n.locale" @change="setLocale">
-            <option
-              v-for="(lang, i) in $i18n.availableLocales"
-              :key="`Lang${i}`"
-              :value="lang"
-            >{{ lang }}</option>
-          </select>
-        </div>-->
         </router-link>
         </li>
         <li v-if="homePage">
@@ -49,8 +39,6 @@
 <script>
 import navBarStyles from '../design/components/nav-bar.scss';
 
-// import { langService } from "../services/language.service.js";
-
 export default {
   data() {
     return {
@@ -65,31 +53,43 @@ export default {
           }
         },
         scrolled: false,
-        language: 'he',
     };
   },
   computed: {
       logoUrl: function () {
-        return this.scrolled ? this.logos['scrolled'][this.language] : this.logos['default'][this.language]
+        return this.scrolled||this.static ? this.logos['scrolled'][this.language] : this.logos['default'][this.language]
     }
   },
- props: ['homePage'],
+  props: {
+    homePage: {
+      type: Boolean,
+      default: true,
+      required: true
+    },
+    language: {
+      type: String,
+      default: "he",
+      default: true,
+    },
+    static: {
+      type: Boolean,
+      default: true,
+      default: true,
+    }
+  },
  created() {
-    this.language = this.$route.params.lang;
     this.switchLanguage(this.language)
-    window.addEventListener('scroll', this.handleScroll);
+    if (!this.static) window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     setLang() {
-      switch (this.$route.params.lang) {
+      switch (this.language) {
         case "he":
           this.switchLanguage('en');          
           break;
         case "en":
           this.switchLanguage('he');
           break;
-        default:
-        // code block
       }
     },
     switchLanguage(language) {

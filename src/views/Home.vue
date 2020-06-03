@@ -1,10 +1,7 @@
 <template>
   <div>
-     <meta http-equiv="refresh" content="500">
-<!--
-<p>{{ $t('message')}}</p>
--->
-    <nav-bar :homePage="homePage" @changeLogo="logoUrl = $event"/>
+    <meta http-equiv="refresh" content="500">
+    <nav-bar :homePage="homePage" :language="language" :static="false" @changeLogo="logoUrl = $event"/>
 
     <section class="welcome-container">
       <img id="logo-text" :src="logoUrl" alt="Logo" />
@@ -57,20 +54,41 @@
         <img src="../assets/svg/calendar.svg" class="icon"/>
         <span>{{ $t('actions-container.card1.sub1')}}</span>
         <span>{{ $t('actions-container.card1.sub2')}}</span>
-        <button @click="calendarClick()">
+        <button v-on:click="open(calendarLink)">
            <img src="../assets/svg/clock.svg" alt="clock icon"/>
             {{ $t('actions-container.card1.appointment_btn') }} 
         </button>
       </li>
 
-    <li class="card">
+      <li class="card">
         <img src="../assets/svg/hearts.svg" class="icon"/>
         <span>{{ $t('actions-container.card2.sub1')}}</span>
         <span>{{ $t('actions-container.card2.sub2')}}</span>
-        <button>
-           <img src="../assets/svg/share.svg" alt="share icon"/>
-            {{ $t('actions-container.card2.share_btn') }}      
+        <button @click="openShareDialog()">
+          <img src="../assets/svg/share.svg" alt="share icon"/>
+          {{ $t('actions-container.card2.share_btn') }}      
         </button>
+        <div id="share-dialog" class="share-dialog">
+          <span> {{ $t('actions-container.card2.share_dialog') }}       </span>
+          <ul>
+            <li>
+            <a :href="whatsappLink" data-action="share/whatsapp/share" target="_blank">
+              <img src="../assets/svg/whatsapp.svg"/>
+            </a>
+            </li>
+            <li>
+            <a :href="telegramLink" target="_blank" >
+              <img src="../assets/svg/telegram.svg"/>
+            </a>
+            </li>
+            <li>
+            <a :href="facebookLink" target="_blank">
+              <img src="../assets/svg/facebook.svg"/>
+            </a>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="close-popup"></a>
       </li>
     </ul>
     </section>
@@ -98,8 +116,11 @@
     <section class="members-container">
       <h2> {{$t('members-container.title')}} </h2>
       <ul class="special-members">
+        
         <li v-for="index in specialMembersCount" :key="index">
-          <img :src="memberImage(index)" :alt="'member number '+index" />
+          <div class="memberImageDiv" :style="{ backgroundImage: 'url('+ memberImage(index)+')' }">
+              <!--<img :src="memberImage(index)" :alt="'member number '+index" />-->
+          </div>
           {{$t(`members-container.special-members.member${index}`)}}
         </li>
       </ul>
@@ -124,6 +145,12 @@ import mainFooter from "../components/main-footer";
 import homeStyles from '../design/components/home.scss';
 
 export default {
+  created(){
+      window.addEventListener('keyup', function(event) {
+      if(event.keyCode === 27)
+          document.getElementsByTagName('details')[0].removeAttribute('open');
+    })
+  },
   data(){
     return{
       homePage: true,
@@ -132,20 +159,63 @@ export default {
       membersCount: 7,
     }
   },
-  methods: {
-    calendarClick(){      
-      let language = this.$route.params.lang;     
-      switch (language) {
+  computed: {
+    language: function () {
+      return this.$route.params.lang;
+    },
+    calendarLink: function () {
+        switch (this.language) {
         case "he":
-          window.open("https://calendar.google.com/calendar/r/eventedit?text=%D7%96%D7%9E%D7%9F+%D7%9C%D7%94%D7%A7%D7%9C%D7%99%D7%98+-+%D7%94%D7%A7%D7%95%D7%9C+%D7%9C%D7%98%D7%95%D7%91%D7%94&location=https://corona.voca.ai/he/login&pli=1&sf=true");
+          return "https://calendar.google.com/calendar/r/eventedit?text=%D7%96%D7%9E%D7%9F+%D7%9C%D7%94%D7%A7%D7%9C%D7%99%D7%98+-+%D7%94%D7%A7%D7%95%D7%9C+%D7%9C%D7%98%D7%95%D7%91%D7%94&location=https://corona.voca.ai/he/login&pli=1&sf=true";
           break;
         case "en":
-          window.open("https://calendar.google.com/calendar/r/eventedit?text=VoiceUp+Reminder&location=https://corona.voca.ai/login&sf=true");
+          return "https://calendar.google.com/calendar/r/eventedit?text=VoiceUp+Reminder&location=https://corona.voca.ai/login&sf=true";
           break;
       }
     },
+    whatsappLink: function () {
+      switch (this.language) {
+        case "he":
+          return "whatsapp://send?text=גם אני תרמתי את הקול שלי לטובת המאבק בקורונה ואחזור לתרום גם מחר - זה לוקח רק דקה. https://corona.voca.ai/he/login";
+          break;
+        case "en":
+          return "whatsapp://send?text=I donated my voice to fight COVID-19 and I will donate again tomorrow - It only takes a minute. Sign in and record - It is our responsibility https://corona.voca.ai/login";
+          break;
+      }
+    },
+    telegramLink: function () {
+      switch (this.language) {
+        case "he":
+          return "https://telegram.me/share/url?url=https://corona.voca.ai/he/login&text=גם אני תרמתי את הקול שלי לטובת המאבק בקורונה ואחזור לתרום גם מחר - זה לוקח רק דקה.";
+          break;
+        case "en":
+          return "https://telegram.me/share/url?url=https://corona.voca.ai/he/login&text=I donated my voice to fight COVID-19 and I will donate again tomorrow - It only takes a minute. Sign in and record - It is our responsibility.";
+          break;
+      }
+    },
+    facebookLink: function () {
+      switch (this.language) {
+        case "he":
+          return "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcorona.voca.ai%2Fhe%2Flogin&amp;src=sdkpreparse";
+          break;
+        case "en":
+          return "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcorona.voca.ai%2Fhe%2Flogin&amp;src=sdkpreparse";
+          break;
+      }
+    }
+  },
+  methods: {
+    open: link => {
+      window.open(link);
+    },
+    openShareDialog: () => {
+      location.href ="#share-dialog";
+      //document.getElementById('share-button').click();
+    },
     memberImage(memberNumber) {
-      return require(`../assets/members/member${memberNumber}.jpeg`);
+      if (typeof memberNumber === 'number'){
+        return require(`../assets/members/member${memberNumber}.jpeg`);
+      } 
     }
   },
   components: {

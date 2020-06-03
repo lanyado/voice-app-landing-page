@@ -2,27 +2,41 @@
 @import "../base/_variables";
 @import "../base/_base";
 
-  .ltr {
-  direction: ltr ;
+.header-container {
+  // background-color: rosybrown;  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  h1 {
+    // background-color:yellow;
+    font-size: 72px;
+    color: $secondColor;
+    height: fit-content;
+    width: fit-content;
+    margin: 0;
+    margin-inline-start: 1ch;
+  }  
+  img{
+    height: fit-content;
+    width: fit-content;
+    margin: 10px 20px 0 0;
   }
-      
+}
 
 .contact-container {
-  margin-top: 30px;
   display: grid;
   // grid-template-columns: 1fr 441px 1fr;
-  grid-template-columns: minmax(0.6rem, auto) 502px 441px 441px minmax(0.6rem, auto)
-  ;
+  grid-template-columns: minmax(0.6rem, auto) 502px 441px 441px minmax(0.6rem, auto);
   grid-column-gap: 20px;
-
+  padding-top:7%;
 
   span {
-    display: flex;
-    margin-bottom: 1em;
+    display: block;
+    margin-bottom: 0.7em;
+    font-weight: 500;
     font-size: 24px;
-    &:first-child {
-      margin-top:  1rem;
-    }
+    text-align: right;
   }  
 
   form {
@@ -36,41 +50,39 @@
       // box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
       border-radius: 4px;
     }  
-
-    //form placeholder
-    ::placeholder ,  :-ms-input-placeholder  , ::-ms-input-placeholder{
-      font-size: 18px;
+//, ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder
+    input:not([type=submit]), textarea{
       text-align: right;
-      color: rgba(90, 136, 255, 0.6);
+      font-weight: 300;
+      font-size: 18px;
+      padding: 5px 15px 5px 15px;
+      color: rgba(8, 12, 22, 0.6);
+      border:0;
     }  
 
-    //submit button
-    input[type=submit] {
-     display: block; 
-      color: $secondColor;
+    button[type=submit] {
+      display: block; 
       padding: 0px 12px;
+      font-size: 18px;
       width: 83px;
       height: 45px;
-      background: #12218D;  /* dark blue */        
       // box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);  /* elevation blue */ 
       border-radius: 3px;
+      border:0;
     }  
   }  
-
   
-  form > input:nth-child(-n+3) {
+  form > input:nth-child(-n+3) ,textarea {
+    display: block;
     height: 40px;
-    width: 100%;
-
+    width: 80%;
   }  
   
   form > textarea {
     margin-bottom: 1rem;
-     resize: none; 
-     overflow: auto; 
-    width: 100%; 
+    resize: none; 
+    overflow: auto; 
     height: 135px;
-
   }  
   
   form >*{
@@ -80,93 +92,68 @@
 }  
 
 .header-container {
-// background-color: rosybrown;  
-display: flex;
-justify-content: center;
-width: 100%;
-height: fit-content;
-width: fit-content;
-align-items: center;
-grid-column: 2/3;
+  // background-color: rosybrown;  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  width: fit-content;
+  align-items: center;
+  grid-column: 2/3;
+  margin: 0 auto;
 
-h1 {
-  font-size: 72px;
-  color: $secondColor;  
-  margin: 0;
-}  
-
-.enFont{
-  font-size: 62px;
-}
-
-img{
-  margin-inline-start: 2ch;  
-}
-
+  h1 {
+    font-size: 72px;
+    color: $secondColor;  
+    margin: 0;
+  }  
+  img{
+    margin-inline-start: 2ch;  
+  }
 }
 
 
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 980px){
 
   .contact-container {
     display: block;
-    @include center(true, false);
-
-
+    position: relative;
+    padding-top: 25%;
+    padding-right: 5%;
+    max-width: 100%;
     .header-container { 
-      width: 441px;
+      width: 100%;
 
       h1{
-        margin: 0.4rem 0px;
+        margin: 2rem 0px;
         width: fit-content;
-   
+        font-size: 42px;   
       }
     }      
     
-    form > input:nth-child(-n+3) {
-      width:441px;  
+    form > input:nth-child(-n+3) , textarea{
+      width: 80%!important;
+      margin-bottom: 1rem;
     }  
-    
-    form > textarea {     
-      width: 441px; 
-      }  
+  }
+}
 
-  
-
+.ltr{
   .header-container {
-        h1 {
-      font-size: 62px;  
-}
-
-}
-}
-}
-
-
-
-
-@media only screen and (max-width: 551px) {
-
+    img{
+      margin: 10px 0px 0 10px;
+    }
+  }
   .contact-container {
-    
-    .header-container { 
-      width: 350px;      
-    }      
-    
-    form > input:nth-child(-n+3) {
-      width: 350px;      
-    }  
-    
-    form > textarea {     
-      width: 350px;      
-      }  
- 
-  .header-container {
-        h1 {
-      font-size: 42px;  
-}
-
-}
-}
+    padding-right: 0;
+    padding-left: 5%;
+    span {
+      text-align: left;
+      font-size: 20px;
+    }
+    input:not([type=submit]), textarea{
+      text-align: left;
+    }
+  }
 }
