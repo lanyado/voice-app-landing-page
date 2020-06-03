@@ -1,9 +1,6 @@
 <template>
   <div>
-     <meta http-equiv="refresh" content="500">
-<!--
-<p>{{ $t('message')}}</p>
--->
+    <meta http-equiv="refresh" content="500">
     <nav-bar :homePage="homePage" :language="language" :static="false" @changeLogo="logoUrl = $event"/>
 
     <section class="welcome-container">
@@ -75,13 +72,18 @@
           <span> {{ $t('actions-container.card2.share_dialog') }}       </span>
           <ul>
             <li>
-            <a :href="whatsappLink" data-action="share/whatsapp/share">
+            <a :href="whatsappLink" data-action="share/whatsapp/share" target="_blank">
               <img src="../assets/svg/whatsapp.svg"/>
             </a>
             </li>
             <li>
-            <a :href="telegramLink">
+            <a :href="telegramLink" target="_blank" >
               <img src="../assets/svg/telegram.svg"/>
+            </a>
+            </li>
+            <li>
+            <a :href="facebookLink" target="_blank">
+              <img src="../assets/svg/facebook.svg"/>
             </a>
             </li>
           </ul>
@@ -188,6 +190,16 @@ export default {
           break;
         case "en":
           return "https://telegram.me/share/url?url=https://corona.voca.ai/he/login&text=I donated my voice to fight COVID-19 and I will donate again tomorrow - It only takes a minute. Sign in and record - It is our responsibility.";
+          break;
+      }
+    },
+    facebookLink: function () {
+      switch (this.language) {
+        case "he":
+          return "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcorona.voca.ai%2Fhe%2Flogin&amp;src=sdkpreparse";
+          break;
+        case "en":
+          return "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcorona.voca.ai%2Fhe%2Flogin&amp;src=sdkpreparse";
           break;
       }
     }

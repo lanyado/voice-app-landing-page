@@ -10,16 +10,6 @@
         <li>
         <router-link to>
           <span title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
-
-        <!-- <div class="locale-changer">
-          <select v-model="$i18n.locale" @change="setLocale">
-            <option
-              v-for="(lang, i) in $i18n.availableLocales"
-              :key="`Lang${i}`"
-              :value="lang"
-            >{{ lang }}</option>
-          </select>
-        </div>-->
         </router-link>
         </li>
         <li v-if="homePage">
@@ -49,8 +39,6 @@
 <script>
 import navBarStyles from '../design/components/nav-bar.scss';
 
-// import { langService } from "../services/language.service.js";
-
 export default {
   data() {
     return {
@@ -75,15 +63,18 @@ export default {
   props: {
     homePage: {
       type: Boolean,
-      default: true
+      default: true,
+      required: true
     },
     language: {
       type: String,
-      default: "he"
+      default: "he",
+      default: true,
     },
     static: {
       type: Boolean,
-      default: true
+      default: true,
+      default: true,
     }
   },
  created() {
@@ -99,8 +90,6 @@ export default {
         case "en":
           this.switchLanguage('he');
           break;
-        default:
-        // code block
       }
     },
     switchLanguage(language) {

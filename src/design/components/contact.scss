@@ -27,8 +27,7 @@
 .contact-container {
   display: grid;
   // grid-template-columns: 1fr 441px 1fr;
-  grid-template-columns: minmax(0.6rem, auto) 502px 441px 441px minmax(0.6rem, auto)
-  ;
+  grid-template-columns: minmax(0.6rem, auto) 502px 441px 441px minmax(0.6rem, auto);
   grid-column-gap: 20px;
   padding-top:7%;
 
@@ -57,7 +56,7 @@
       font-weight: 300;
       font-size: 18px;
       padding: 5px 15px 5px 15px;
-      color: rgba(90, 136, 255, 0.6);
+      color: rgba(8, 12, 22, 0.6);
       border:0;
     }  
 
@@ -73,16 +72,16 @@
     }  
   }  
   
-  form > input:nth-child(-n+3) {
+  form > input:nth-child(-n+3) ,textarea {
+    display: block;
     height: 40px;
-    width: 100%;
+    width: 80%;
   }  
   
   form > textarea {
     margin-bottom: 1rem;
     resize: none; 
     overflow: auto; 
-    width: 100%; 
     height: 135px;
   }  
   
@@ -101,6 +100,7 @@
   width: fit-content;
   align-items: center;
   grid-column: 2/3;
+  margin: 0 auto;
 
   h1 {
     font-size: 72px;
@@ -126,7 +126,7 @@
       width: 100%;
 
       h1{
-        margin: 0.4rem 0px;
+        margin: 2rem 0px;
         width: fit-content;
         font-size: 42px;   
       }
