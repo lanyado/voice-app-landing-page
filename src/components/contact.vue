@@ -7,7 +7,7 @@
       <img id="logo-text" :src="logoUrl" alt="Logo" />
       <div class="header-container">
         <h1>{{ $t('contact.main_title')}}</h1>
-        <img src="../assets/svg/heart.svg" @click="showErrorAlert()" alt="heart icon"/>
+        <img src="../assets/svg/heart.svg" alt="heart icon"/>
       </div>
 
       <div class="main-container"> 
