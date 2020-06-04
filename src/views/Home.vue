@@ -158,7 +158,7 @@ export default {
       homePage: true,
       logoUrl: require("../assets/svg/logo_text_white_he.svg"),
       specialMembersCount: 17,
-      membersCount: 7
+      membersCount: 6
     }
   },
   computed: {

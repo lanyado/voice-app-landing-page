@@ -7,11 +7,11 @@
       <img id="logo-text" :src="logoUrl" alt="Logo" />
       <div class="header-container">
         <h1>{{ $t('contact.main_title')}}</h1>
-        <img src="../assets/svg/heart.svg" alt="heart icon"/>
+        <img src="../assets/svg/heart.svg" @click="showErrorAlert()" alt="heart icon"/>
       </div>
 
       <div class="main-container"> 
-        <span>voiceup.hl@gmail.com</span>
+        <span> {{ emailAddress }}</span>
         <!--<span>03.555.5555</span>-->
         <span>{{ $t('contact.sub_title')}}</span>
 
@@ -37,13 +37,23 @@
 <script>
 import emailjs from "emailjs-com";
 import navBar from "../components/nav-bar";
-import cintactStyles from "../design/components/contact.scss";
+import contactStyle from "../design/components/contact.scss";
+import Swal from 'sweetalert2'
+
+import Vue from 'vue';
+import VueSweetalert2 from 'vue-sweetalert2';
+ 
+// If you don't need the styles, do not connect
+import 'sweetalert2/dist/sweetalert2.min.css';
+ 
+Vue.use(VueSweetalert2);
 
 export default {
   data() {
     return {
       homePage: false,
       logoUrl: require("../assets/svg/logo_text_white_he.svg"),
+      emailAddress: "voiceup.hl@gmail.com"
     };
   },
   created(){
@@ -54,7 +64,43 @@ export default {
     }
   },
   methods: {
-    sendEmail: e => {
+    showSuccessAlert() {
+      switch (this.language) {
+        case "he":
+          Swal.fire(
+            'מעולה!',
+            'ההודעה נשלחה בהצלחה',
+            'success'
+          )
+          break;
+        case "en":
+           Swal.fire(
+            'Great!',
+            'The message has been sent successfully',
+            'success'
+          )
+          break;
+      }
+    },
+    showErrorAlert() {
+      switch (this.language) {
+        case "he":
+          Swal.fire(
+            'מצטערים',
+            'קרתה תקלה בזמן שליחת ההודעה.<br/> אפשר לשלוח לנו מייל לכתובת '+this.emailAddress,
+            'error'
+          )
+          break;
+        case "en":
+           Swal.fire(
+            'Sorry',
+            'There was a problem with sending the message. <br/> You can send us a mail to the following address - '+this.emailAddress,
+            'error'
+          )
+          break;
+      }
+    },
+    sendEmail(e) {
       emailjs
         .sendForm(
           "gmail",
@@ -64,10 +110,12 @@ export default {
         )
         .then(
           result => {
-            console.log("SUCCESS!", result.status, result.text);
+            this.showSuccessAlert();
+            document.getElementsByClassName("contact-form")[0].reset();
           },
           error => {
-            console.log("FAILED...", error);
+            console.log("Failed to send the email", error);
+            this.showErrorAlert();
           }
         );
     }
