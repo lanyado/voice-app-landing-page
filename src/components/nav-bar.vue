@@ -40,7 +40,7 @@
 import navBarStyles from '../design/components/nav-bar.scss';
 
 export default {
-        mounted(){
+  mounted(){
     window.addEventListener('click', function(event) {
       console.log("hi")
       if (event.target.id !== "toggle-1" && document.getElementById('toggle-1').checked)
