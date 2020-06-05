@@ -28,7 +28,6 @@
         <img src="../assets/png/how_it_works_1.png" alt="Explanation - step 1"/>
         <h4>{{ $t('explanation-container.step1.title')}}</h4>
         <span>{{ $t('explanation-container.step1.sub1')}}</span>
-        <span>{{ $t('explanation-container.step1.sub2')}}</span>
       </li>
 
       <li>
