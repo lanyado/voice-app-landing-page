@@ -30,14 +30,24 @@ body {
     color: $mainColor;
     direction: rtl;
     
+    /*
     background: url('../../assets/jpeg/background.jpg') repeat 0 0;
     background-image: url('../../assets/jpeg/background.jpg') repeat 0 0;
 
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    */
+    background: linear-gradient(180deg, rgba(90,136,255,1) 0%, rgba(255,255,255,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    @media only screen and (max-width: 899px) {
+        background: linear-gradient(180deg, rgba(90,136,255,1) 0%, rgba(255,255,255,1) 100%);
+        background-repeat: no-repeat;
+    }
+
     
     .ltr{
         direction: ltr;
