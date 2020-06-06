@@ -3,11 +3,12 @@
 @import "../base/_base";
 
 header{
-  position: fixed;
+  position: absolute;
   width: 100%;
   z-index: 9;
-  padding: 15px 5px 5px 0px;
+  padding: 15px 15px 5px 0px;
   @media only screen and (min-width: 980px) {
+	position: fixed;
     &.scrolled {
       background-color: #fff !important;
       transition: background-color 200ms linear;
@@ -16,6 +17,7 @@ header{
   }
 }
 #logo {
+  cursor: pointer;
   width: 130px;
   top: 10px;
   @include center(true, false);

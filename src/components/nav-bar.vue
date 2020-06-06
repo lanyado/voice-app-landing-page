@@ -23,8 +23,9 @@
           </router-link>
         </li>
       </ul>
-      <img id="logo" :src="logoUrl" alt="Logo" />
-
+      <router-link :to="`/${$i18n.locale}/`" >
+        <img id="logo" :src="logoUrl" alt="Logo"/>
+      </router-link>
       <div class="spnoserd-container">
         <span>{{$t('nav_bar.spnoserd_by')}}</span>
         <img src="../assets/png/mobileye-logo.png" alt="mobileye" />

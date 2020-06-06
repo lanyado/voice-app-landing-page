@@ -123,7 +123,9 @@
         <div class="memberImageDiv" :style="{ backgroundImage: 'url('+ memberImage(index)+')' }">
             <!--<img :src="memberImage(index)" :alt="'member number '+index" />-->
         </div>
+        <p>
         {{$t(`members-container.special-members.${index}`)}}
+        </p>
       </li>
     </ul>
 
