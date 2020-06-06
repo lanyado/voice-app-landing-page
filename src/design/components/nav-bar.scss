@@ -65,6 +65,36 @@ nav {
 	  margin-left: 10px;
     }
   }
+
+  .funcs{
+
+    float:right;
+	
+	.record-btn {
+		display: inline-block;
+		// right: 0;
+		width: 122px;
+		height: 45px;
+		background-color: #5A88FF;
+		border-radius: 3px;
+		box-sizing: border-box;
+		box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+		font-size: 18px;
+		// padding: 0px 10px;
+		font-weight: normal;
+		// z-index: 2;
+	
+		img{
+		  width: 12px;	
+		//   margin: 0px 14px 14.5px 14.5px;
+		}
+	
+	  }
+  }
+
+
+
+
 }
 .toggle-menu {
 	ul {
