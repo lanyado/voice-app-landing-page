@@ -29,9 +29,9 @@
 
       <div v-if="$route.name==='contact'" class="funcs">
         
+        
         <button @click="openShareDialog()" id="share-dialog-button">
           <img src="../assets/svg/share.svg" alt="share icon"/>
-          {{ $t('actions-container.card2.share_btn') }}      
         </button>
         <div id="share-dialog" class="share-dialog">
           <span> {{ $t('actions-container.card2.share_dialog') }}       </span>
@@ -101,6 +101,36 @@ export default {
     };
   },
   computed: {
+     whatsappLink: function () {
+      switch (this.language) {
+        case "he":
+          return "whatsapp://send?text=גם אני תרמתי את הקול שלי לטובת המאבק בקורונה ואחזור לתרום גם מחר - זה לוקח רק דקה. https://corona.voca.ai/he/login";
+          break;
+        case "en":
+          return "whatsapp://send?text=I donated my voice to fight COVID-19 and I will donate again tomorrow - It only takes a minute. Sign in and record - It is our responsibility https://corona.voca.ai/login";
+          break;
+      }
+    },
+    telegramLink: function () {
+      switch (this.language) {
+        case "he":
+          return "https://telegram.me/share/url?url=https://corona.voca.ai/he/login&text=גם אני תרמתי את הקול שלי לטובת המאבק בקורונה ואחזור לתרום גם מחר - זה לוקח רק דקה.";
+          break;
+        case "en":
+          return "https://telegram.me/share/url?url=https://corona.voca.ai/he/login&text=I donated my voice to fight COVID-19 and I will donate again tomorrow - It only takes a minute. Sign in and record - It is our responsibility.";
+          break;
+      }
+    },
+    facebookLink: function () {
+      switch (this.language) {
+        case "he":
+          return "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcorona.voca.ai%2Fhe%2Flogin&amp;src=sdkpreparse";
+          break;
+        case "en":
+          return "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcorona.voca.ai%2Fhe%2Flogin&amp;src=sdkpreparse";
+          break;
+      }
+    },
         logoUrl: function () {
         return this.scrolled||this.static ? this.logos['scrolled'][this.language] : this.logos['default'][this.language]
     },
