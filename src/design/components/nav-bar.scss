@@ -104,23 +104,26 @@ nav {
 	margin-right: 40px;
 	display: flex;
 
-	  .record-btn {
-		 display: flex;
-		 width: 122px;
+	  .record-btn {	
+		display: flex;
+		// flex-direction: row;
+		padding: 0px 10px;
+		width: 122px;
 		height: 45px;
-		margin-left: 10px;
-		margin-right: 10px;
 		background-color: #5A88FF;
 		border-radius: 3px;
 		box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-		font-size: 18px;
-		
+		font-size: 18px;				
 		
 		img{
-			// margin-right: 0px;
-			width: 12px;	
-			//   margin: 0px 14px 14.5px 14.5px;
+			align-self: center;	
+			padding: 3px 4px 0px 0px;
 		}	
+		
+		span{
+			align-self: center;
+			padding: 0px 0px 0px 10px;			
+		}
 	}
 	
 	.share-btn{
@@ -372,6 +375,21 @@ label {
 	}
 	.spnoserd-container span{
 		order: 1;		
+	}
+
+	.funcs{		
+		.record-btn
+		{ 
+		    padding: 0px 0px;
+			img {
+				order: 1;
+				padding: 1px 0px 0px 0px;
+			}
+			span{
+				align-self: center;
+				padding: 0px 9px 0px 0px;			
+			}
+		}
 	}
 }
 

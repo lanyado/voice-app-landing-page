@@ -14,7 +14,7 @@
         <div v-if="$route.name==='contact'" class="funcs">
           <button class="record-btn" @click="open(appLink)">
             <img src="../assets/svg/blue-circle.svg" alt="white circle" />
-            {{ $t('nav_bar.record')}}
+            <span> {{ $t('nav_bar.record')}} </span>
           </button>
           <button @click="openShareDialog()" class="share-btn">
             <img src="../assets/svg/blue-share.svg" alt="share icon" />
