@@ -43,7 +43,7 @@
           <a href="##" class="close-popup"></a>
         </div>
 
-        <div v-else class="spnoserd-container" :class="{'ltr': isLtr === true}">
+        <div v-else class="spnoserd-container">
           <span>{{$t('nav_bar.spnoserd_by')}}</span>
           <img src="../assets/png/mobileye-logo.png" alt="mobileye" />
           <img src="../assets/png/intel-logo.png" alt="Intel" />
@@ -112,9 +112,9 @@ export default {
     };
   },
   computed: {
-    // isLtr: function() {
-    //   return this.ltrLangs.includes(this.$route.params.lang);      
-    // },
+    isLtr: function() {
+      return this.ltrLangs.includes(this.$route.params.lang);      
+    },
     appLink: function() {
       switch (this.language) {
         case "he":
@@ -181,7 +181,7 @@ export default {
   created() {
     if (!this.static) window.addEventListener("scroll", this.handleScroll);  
     
-      // if (this.ltrLangs.includes(this.$route.params.lang)) { //english mode 
+    //if (this.ltrLangs.includes(this.$route.params.lang)) { //english mode 
       // console.log('en mode')
       // this.isLtr=true
       // } else this.isLtr=false; //hebrow mode  
@@ -204,12 +204,21 @@ export default {
           break;
       }
     },
-    switchLanguage(language) {     
-
+    switchLanguage(language) {
+      this.language = language;
+      const LTR_LANGUAGES = ['en'];
+      const body = document.body;
+      if (LTR_LANGUAGES.includes(language))
+      {
+          body.classList.add("ltr");
+      }
+      else
+          body.classList.remove("ltr");
+          
       this.$router.push({
-        params: { lang: language }
+          params: { lang: this.language }
       });
-
+      this.$emit('changeLogo', this.logos['default'][this.language]);
     },
     handleScroll(event) {
       if (
