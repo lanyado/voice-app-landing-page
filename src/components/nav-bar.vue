@@ -43,7 +43,7 @@
           <a href="##" class="close-popup"></a>
         </div>
 
-        <div v-else class="spnoserd-container">
+        <div v-else class="spnoserd-container" :class="{'ltr': isLtr === true}">
           <span>{{$t('nav_bar.spnoserd_by')}}</span>
           <img src="../assets/png/mobileye-logo.png" alt="mobileye" />
           <img src="../assets/png/intel-logo.png" alt="Intel" />
@@ -107,12 +107,13 @@ export default {
       },
       scrolled: false,
       isContactPage: false,
-      LTR_LANGUAGES : ["en"]
+      ltrLangs : ["en"],
+      isLtr : false
     };
   },
   computed: {
-    // language: function() {
-    //   return this.$route.params.lang;
+    // isLtr: function() {
+    //   return this.ltrLangs.includes(this.$route.params.lang);      
     // },
     appLink: function() {
       switch (this.language) {
@@ -178,7 +179,12 @@ export default {
     }
   },
   created() {
-    if (!this.static) window.addEventListener("scroll", this.handleScroll);    
+    if (!this.static) window.addEventListener("scroll", this.handleScroll);  
+    
+      // if (this.ltrLangs.includes(this.$route.params.lang)) { //english mode 
+      // console.log('en mode')
+      // this.isLtr=true
+      // } else this.isLtr=false; //hebrow mode  
   },
   methods: {
     open: link => {
@@ -189,7 +195,6 @@ export default {
       //document.getElementById('share-button').click();
     },
     setLang() {
-      console.log("this.$route.params.lang ", this.$route.params.lang )
       switch (this.$route.params.lang) {
         case "he":
           this.switchLanguage("en");
@@ -199,11 +204,7 @@ export default {
           break;
       }
     },
-    switchLanguage(language) {
-     
-      if (this.LTR_LANGUAGES.includes(language)) { //english mode 
-      console.log('en mode')
-      } else console.log('he mode'); //hebrow mode
+    switchLanguage(language) {     
 
       this.$router.push({
         params: { lang: language }
