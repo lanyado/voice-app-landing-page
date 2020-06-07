@@ -76,53 +76,42 @@ nav {
 
   .spnoserd-container{
 	display: flex;
+	// align-self: center;
 
     span{
+	  align-self: center;
       display: inline;
       vertical-align: middle;
-	  font-size: 15px;
-	  margin-top: 11px;
+	  font-size: 16px;
+	//   margin-top: 11px;
+	//   order: 1;
+	  
     }
     img{
+	  align-self: center;
 	  width: 50px;
 	  vertical-align: middle;
       margin-right: 10px;
 	  margin-left: 10px;
-	}
-
-	.ltr {
-		span{
-			order:1
-		}
-		img{
-			order: 2;
-		}
-	}
-	
+	}	
   }
 
+  
+  
+
   .funcs{
-	// float:right;	
-	// grid-template-columns: 1fr 1fr;
-	// grid-column-gap: 5px;
-	
-	// justify-content:flex-end; 
 	margin-left: 40px;
 	margin-right: 40px;
 	display: flex;
 
-
 	  .record-btn {
-
 		 display: flex;
 		 width: 122px;
 		height: 45px;
 		margin-left: 10px;
 		margin-right: 10px;
-		// margin-top: 0px;	
 		background-color: #5A88FF;
 		border-radius: 3px;
-		// box-sizing: border-box; ////?
 		box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
 		font-size: 18px;
 		
@@ -284,10 +273,8 @@ nav {
 		/* cancel visibility transition delay */
 		-webkit-transition-delay: 0s;
 		transition-delay: 0s;
-	  }
-	  
+	  }	  
   }
-
 }
 .toggle-menu {
 	ul {
@@ -383,4 +370,11 @@ label {
 	#logo {
 		width:110px;
 	}
+	.spnoserd-container span{
+		order: 1;		
+	}
 }
+
+// .ltr .spnoserd-container span{
+// 	order: 1;		
+// }
