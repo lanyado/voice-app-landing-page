@@ -63,6 +63,7 @@
               <span title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
             </router-link>
           </li>
+          <!-- <li  v-if="$route.name==='Home'"> -->
           <li v-if="homePage">
             <router-link :to="`/${$i18n.locale}/contact`">
               <span>{{$t('nav_bar.contact')}}</span>
@@ -105,13 +106,14 @@ export default {
         }
       },
       scrolled: false,
-      isContactPage: false
+      isContactPage: false,
+      LTR_LANGUAGES : ["en"]
     };
   },
   computed: {
-    language: function() {
-      return this.$route.params.lang;
-    },
+    // language: function() {
+    //   return this.$route.params.lang;
+    // },
     appLink: function() {
       switch (this.language) {
         case "he":
@@ -176,22 +178,7 @@ export default {
     }
   },
   created() {
-    this.switchLanguage(this.language);
-    if (!this.static) window.addEventListener("scroll", this.handleScroll);
-
-    //   window.addEventListener('keyup', function(event) {
-    //   if(event.keyCode === 27)
-    //       document.getElementsByClassName('close-popup')[0].click();
-    // })
-
-    // if (this.$route.path === "/:lang/contact"){
-    //   this.isContactPage = true;
-    //   console.log('contatct page')
-    // }
-    // else{
-    //   console.log('NOOOOOO contatct page')
-    // }
-    // console.log(this.$route.path, " this.$route.path")
+    if (!this.static) window.addEventListener("scroll", this.handleScroll);    
   },
   methods: {
     open: link => {
@@ -202,7 +189,8 @@ export default {
       //document.getElementById('share-button').click();
     },
     setLang() {
-      switch (this.language) {
+      console.log("this.$route.params.lang ", this.$route.params.lang )
+      switch (this.$route.params.lang) {
         case "he":
           this.switchLanguage("en");
           break;
@@ -212,19 +200,15 @@ export default {
       }
     },
     switchLanguage(language) {
-      this.language = language;
-
-      const LTR_LANGUAGES = ["en"];
-      const body = document.body;
-      if (LTR_LANGUAGES.includes(language)) { //english mode 
-        body.classList.add("ltr");
-      } else body.classList.remove("ltr");
+     
+      if (this.LTR_LANGUAGES.includes(language)) { //english mode 
+      console.log('en mode')
+      } else console.log('he mode'); //hebrow mode
 
       this.$router.push({
-        params: { lang: this.language }
+        params: { lang: language }
       });
 
-      this.$emit("changeLogo", this.logos["default"][this.language]);
     },
     handleScroll(event) {
       if (
