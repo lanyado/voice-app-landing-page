@@ -2,6 +2,10 @@
 @import "../base/_variables";
 @import "../base/_base";
 
+// .links{
+
+// }
+
 header{
   position: absolute;
   width: 100%;
@@ -39,7 +43,8 @@ nav {
 				color: #002e5b;
         		font-size: 15px;
         		font-weight: normal;
-				padding: 5px 20px;
+				// padding: 5px 20px;
+				margin: 5px 20px;
 				display: inline-block;
         		transition: all 0.2s ease 0s;
 				&:hover {
@@ -50,6 +55,7 @@ nav {
 			}
 		}
   }
+
   .spnoserd-container{
     float:right;
 
@@ -67,10 +73,12 @@ nav {
   }
 
   .funcs{
-
-    float:right;
-	
-	.record-btn {
+	//   margin-top: 0px;
+	  float:right;
+	  
+	  .record-btn {
+		margin-top: 0px;
+		margin-bottom: 10px;
 		display: inline-block;
 		// right: 0;
 		width: 122px;
@@ -82,21 +90,31 @@ nav {
 		font-size: 18px;
 		// padding: 0px 10px;
 		font-weight: normal;
+		font-size: 16px;
 		// z-index: 2;
-	
+		
 		img{
-		  width: 12px;	
-		//   margin: 0px 14px 14.5px 14.5px;
+			width: 12px;	
+			//   margin: 0px 14px 14.5px 14.5px;
 		}	
-	  }
-
-
-	  
-
-
-
-
-
+	}
+	
+	.share-btn{
+		// margin-top: 0px;
+		// margin-bottom: 10px;
+		// margin-right:28px;
+		margin: 0px 28px 10px 0px;
+		padding:0px;
+		background-color: transparent;
+		display: inline;
+		box-shadow: none;
+		cursor: pointer;
+		border: 0px;
+		&:hover{
+			background: none!important;
+			// box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
+			}
+		}
 	  
 	  .icon {
 		display: block;
@@ -113,6 +131,24 @@ nav {
 	  }
 	
 	  .share-dialog{
+		position: fixed;
+		padding: 10px;
+		max-width: 500px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		background: rgba(255,255,255,.9);
+		visibility: hidden;
+		opacity: 0;
+		/* "delay" the visibility transition */
+		-webkit-transition: opacity .5s, visibility 0s linear .5s;
+		transition: opacity .5s, visibility 0s linear .5s;
+		z-index: 1;
+
+		a{
+			display: inline;
+		}
+
 		@include center(true, false);
 		position: fixed;
 		top: 30%;
@@ -187,21 +223,7 @@ nav {
 		  margin-left: 10px;
 		}
 	  }
-	  .share-dialog {
-		position: fixed;
-		padding: 10px;
-		max-width: 500px;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		background: rgba(255,255,255,.9);
-		visibility: hidden;
-		opacity: 0;
-		/* "delay" the visibility transition */
-		-webkit-transition: opacity .5s, visibility 0s linear .5s;
-		transition: opacity .5s, visibility 0s linear .5s;
-		z-index: 1;
-	  }
+	
 	  .share-dialog:target {
 		visibility: visible;
 		opacity: 1;

@@ -28,10 +28,16 @@
       </router-link>
 
       <div v-if="$route.name==='contact'" class="funcs">
+          
+        <button class="record-btn" @click="open(appLink)">
+          <img src="../assets/svg/blue-circle.svg" alt="white circle"/>
+          {{ $t('nav_bar.record')}}
+        </button>  
+
         
-        
-        <button @click="openShareDialog()" id="share-dialog-button">
-          <img src="../assets/svg/share.svg" alt="share icon"/>
+        <!-- <button @click="openShareDialog()" id="share-dialog-button"> -->
+        <button @click="openShareDialog()" class="share-btn" >
+          <img src="../assets/svg/blue-share.svg" alt="share icon"/>
         </button>
         <div id="share-dialog" class="share-dialog">
           <span> {{ $t('actions-container.card2.share_dialog') }}       </span>
@@ -53,12 +59,10 @@
           </li>
         </ul>
       </div>
+      <!-- <a class="close-popup"></a> -->
       <a href="##" class="close-popup"></a>
 
-        <button class="record-btn" @click="open(appLink)">
-        <img src="../assets/svg/blue-circle.svg" alt="white circle"/>
-        {{ $t('nav_bar.record')}}
-        </button>        
+           
       </div>
 
 
@@ -101,6 +105,19 @@ export default {
     };
   },
   computed: {
+    language: function () {
+      return this.$route.params.lang;
+    },
+    appLink: function () {
+      switch (this.language) {
+        case "he":
+          return "https://corona.voca.ai/he/login";
+          break;
+        case "en":
+          return "https://corona.voca.ai/en/login";
+          break;
+      }
+  },
      whatsappLink: function () {
       switch (this.language) {
         case "he":
@@ -133,17 +150,7 @@ export default {
     },
         logoUrl: function () {
         return this.scrolled||this.static ? this.logos['scrolled'][this.language] : this.logos['default'][this.language]
-    },
-    appLink: function () {
-      switch (this.language) {
-        case "he":
-          return "https://corona.voca.ai/he/login";
-          break;
-        case "en":
-          return "https://corona.voca.ai/en/login";
-          break;
-      }
-  },
+    },    
   },
   props: {
     homePage: {
@@ -165,6 +172,12 @@ export default {
  created() {
     this.switchLanguage(this.language)
     if (!this.static) window.addEventListener('scroll', this.handleScroll);
+
+
+    //   window.addEventListener('keyup', function(event) {
+    //   if(event.keyCode === 27)
+    //       document.getElementsByClassName('close-popup')[0].click();
+    // })
 
     // if (this.$route.path === "/:lang/contact"){
     //   this.isContactPage = true;
