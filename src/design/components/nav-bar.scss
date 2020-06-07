@@ -5,7 +5,6 @@
 
 
 header{
-//   position: absolute;
   width: 100%;
   z-index: 9;
   padding: 15px 15px 25px 0px;
@@ -18,22 +17,16 @@ header{
     }
   }
 }
+
 #logo {
   cursor: pointer;
   width: 130px;
-//   top: 10px;
-//   @include center(true, false);
-//   left:52%;
 }
-
 
 nav {
 	direction: rtl !important;
-
 	display: flex;
-	// justify-content:space-around ;
 	justify-content:space-between;
-
 	
 	.links{
 		margin-left: 40px;
@@ -41,51 +34,40 @@ nav {
 		margin-top: 12px;
 		display: flex;
 		justify-content:space-between;
-}
 
-
-	// width: auto;
-	// float: right;
-	// width: 100%;
+		// li{
+		// 	&:hover{
+		// 		// font-size: 18px;
+		// 	}
+		// }
+	}
+	
   
 	ul {
-    // padding-left: 20px;
 		li {
 			margin-left: 10px;
-			margin-right: 10px;
-			// float: left;
-			// &:last-child {
-			// 	padding-right: 0px;
-			// }
+			margin-right: 10px;	
 			a {
 				color: #002e5b;
         		font-size: 15px;
-        		font-weight: normal;
-				// padding: 5px 20px;
-				// margin: 5px 20px;
-				// display: inline-block;
+        		font-weight: normal;			
         		transition: all 0.2s ease 0s;
 				&:hover {
 					font-weight: bold;
 					transition: all 0.2s ease 0s;
-				}
-			
+				}			
 			}
 		}
-  }
+	}
 
   .spnoserd-container{
 	display: flex;
-	// align-self: center;
 
     span{
 	  align-self: center;
       display: inline;
       vertical-align: middle;
-	  font-size: 16px;
-	//   margin-top: 11px;
-	//   order: 1;
-	  
+	  font-size: 16px;	  
     }
     img{
 	  align-self: center;
@@ -95,8 +77,6 @@ nav {
 	  margin-left: 10px;
 	}	
   }
-
-  
   
 
   .funcs{
@@ -106,7 +86,6 @@ nav {
 
 	  .record-btn {	
 		display: flex;
-		// flex-direction: row;
 		padding: 0px 10px;
 		width: 122px;
 		height: 45px;
@@ -128,11 +107,7 @@ nav {
 	
 	.share-btn{
 		margin-left: 10px;
-		margin-right: 10px;
-		// margin-top: 0px;
-		// margin-bottom: 10px;
-		// margin-right:28px;
-		// margin: 0px 28px 10px 0px;
+		margin-right: 10px;		
 		padding:0px;
 		background-color: transparent;
 		box-shadow: none;
@@ -393,6 +368,3 @@ label {
 	}
 }
 
-// .ltr .spnoserd-container span{
-// 	order: 1;		
-// }
