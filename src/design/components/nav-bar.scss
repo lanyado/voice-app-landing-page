@@ -2,15 +2,13 @@
 @import "../base/_variables";
 @import "../base/_base";
 
-// .links{
 
-// }
 
 header{
-  position: absolute;
+//   position: absolute;
   width: 100%;
   z-index: 9;
-  padding: 15px 15px 5px 0px;
+  padding: 15px 15px 25px 0px;
   @media only screen and (min-width: 980px) {
 	position: fixed;
     &.scrolled {
@@ -23,29 +21,49 @@ header{
 #logo {
   cursor: pointer;
   width: 130px;
-  top: 10px;
-  @include center(true, false);
-  left:52%;
+//   top: 10px;
+//   @include center(true, false);
+//   left:52%;
 }
+
+
 nav {
-	width: auto;
-	float: right;
-	width: 100%;
+	direction: rtl !important;
+
+	display: flex;
+	// justify-content:space-around ;
+	justify-content:space-between;
+
+	
+	.links{
+		margin-left: 40px;
+		margin-right: 40px;
+		margin-top: 12px;
+		display: flex;
+		justify-content:space-between;
+}
+
+
+	// width: auto;
+	// float: right;
+	// width: 100%;
   
 	ul {
-    padding-left: 20px;
+    // padding-left: 20px;
 		li {
-			float: left;
-			&:last-child {
-				padding-right: 0px;
-			}
+			margin-left: 10px;
+			margin-right: 10px;
+			// float: left;
+			// &:last-child {
+			// 	padding-right: 0px;
+			// }
 			a {
 				color: #002e5b;
         		font-size: 15px;
         		font-weight: normal;
 				// padding: 5px 20px;
-				margin: 5px 20px;
-				display: inline-block;
+				// margin: 5px 20px;
+				// display: inline-block;
         		transition: all 0.2s ease 0s;
 				&:hover {
 					font-weight: bold;
@@ -57,7 +75,7 @@ nav {
   }
 
   .spnoserd-container{
-    float:right;
+    // float:right;
 
     span{
       display: inline;
@@ -73,46 +91,51 @@ nav {
   }
 
   .funcs{
-	//   margin-top: 0px;
-	  float:right;
-	  
+	// float:right;	
+	// grid-template-columns: 1fr 1fr;
+	// grid-column-gap: 5px;
+	
+	// justify-content:flex-end; 
+	margin-left: 40px;
+	margin-right: 40px;
+	display: flex;
+
+
 	  .record-btn {
-		margin-top: 0px;
-		margin-bottom: 10px;
-		display: inline-block;
-		// right: 0;
-		width: 122px;
+
+		 display: flex;
+		 width: 122px;
 		height: 45px;
+		margin-left: 10px;
+		margin-right: 10px;
+		// margin-top: 0px;	
 		background-color: #5A88FF;
 		border-radius: 3px;
-		box-sizing: border-box;
+		// box-sizing: border-box; ////?
 		box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
 		font-size: 18px;
-		// padding: 0px 10px;
-		font-weight: normal;
-		font-size: 16px;
-		// z-index: 2;
+		
 		
 		img{
+			// margin-right: 0px;
 			width: 12px;	
 			//   margin: 0px 14px 14.5px 14.5px;
 		}	
 	}
 	
 	.share-btn{
+		margin-left: 10px;
+		margin-right: 10px;
 		// margin-top: 0px;
 		// margin-bottom: 10px;
 		// margin-right:28px;
-		margin: 0px 28px 10px 0px;
+		// margin: 0px 28px 10px 0px;
 		padding:0px;
 		background-color: transparent;
-		display: inline;
 		box-shadow: none;
-		cursor: pointer;
-		border: 0px;
+	
 		&:hover{
 			background: none!important;
-			// box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
 			}
 		}
 	  
@@ -200,23 +223,22 @@ nav {
 			opacity: 0.8;
 		  }
 		}
-	  }/*
-	  summary{
-		display: inline-block;
-		height: 0;
-	  }*/
+	  }
 	  button{
-		position: relative;
-		width: auto;
+		// position: relative;
+		// width: auto;
 		min-width: 20%;
 		height: 45px;
-		margin: 2.5em auto;
-		padding: 0px 20px 0px 20px;
+		// margin: 2.5em auto;
+		// padding: 0px 20px 0px 20px;
+		padding: 13.25px 20px 20px 6px;
 		box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
 		border-radius: 5px;
 		font-size: 17px;
 	  
 		img {
+		  padding: 3px 9px 0px 0px;
+		  //   padding: 0px 10px 0px 5px;
 		  display: inline-block;
 		  color: $secondColor;
 		  vertical-align: middle;
