@@ -22,6 +22,11 @@
             <span>{{$t('nav_bar.about')}}</span>
           </router-link>
         </li>
+        <li>
+          <a href="#terms-dialog">
+              <span>{{$t('nav_bar.terms.link')}}</span>
+          </a>
+        </li>
       </ul>
       <router-link :to="`/${$i18n.locale}/`" >
         <img id="logo" :src="logoUrl" alt="Logo"/>
@@ -34,6 +39,31 @@
       </div>
     </nav>
     </header>
+    <div id="terms-dialog" class="terms-dialog">
+        <h4> {{$t('nav_bar.terms.title')}} </h4>
+
+        <span> {{$t('nav_bar.terms.body.title1')}} </span>
+        <p> {{$t('nav_bar.terms.body.text2')}} </p>
+
+        <span> {{$t('nav_bar.terms.body.title2')}} </span>
+        <p> {{$t('nav_bar.terms.body.text2')}} </p>
+
+        <span> {{$t('nav_bar.terms.body.title3')}} </span>
+        <p> {{$t('nav_bar.terms.body.text3')}} </p>
+
+        <span> {{$t('nav_bar.terms.body.title4')}} </span>
+        <p> {{$t('nav_bar.terms.body.text4')}} </p>
+
+        <span> {{$t('nav_bar.terms.body.title5')}} </span>
+        <p> {{$t('nav_bar.terms.body.text5')}} </p>
+
+        <span> {{$t('nav_bar.terms.body.title6')}} </span>
+        <p> {{$t('nav_bar.terms.body.text6')}} </p>
+
+        <span> {{$t('nav_bar.terms.body.title7')}} </span>
+        <p> {{$t('nav_bar.terms.body.text7')}} </p>
+    </div>
+    <a href="#" class="close-popup"></a>
   </div>
 </template>
 
@@ -125,6 +155,10 @@ export default {
           this.scrolled = false;
       }
     }, 
+    openTermsDialog: () => {
+      location.href ="#terms-dialog";
+      //document.getElementById('share-button').click();
+    }
   }
 };
 </script>

@@ -1,93 +1,113 @@
 {
-    "nav_bar": {
-        "contact": "Contact",
-        "about": "About",
-        "spnoserd_by": "We are supported by",
-        "changeLang": "He"
+"nav_bar": {
+    "contact": "Contact",
+    "about": "About",
+    "spnoserd_by": "We are supported by",
+    "changeLang": "He",
+    "terms": {
+        "link": "Terms",
+        "title": "Terms of service",
+            "body":{
+            "title1": "CONCISE SUMMARY",
+            "text1": "The purpose of this venture is to collect data that is useful for the diagnosis of COVID-19 patients based on voice analysis. If successful, we hope to use voice samples as a new screening method for early detection of COVID-19 infection. However, at this stage, we are simply collecting information to be made available for the research community and advance rapid new techniques for COVID-19 detection. You will be shown a short questionnaire to collect demographic information, as well as an indication of whether or not you have been tested positive for COVID-19. You will be asked to provide a voice sample. We may request that you log-on using your GOOGLE™ account, to enable provisioning of multiple samples over time. If you are interested in learning more about this study, please continue to read below.",
+            "title2": "INTRODUCTION",
+            "text2": "Thank you for deciding to volunteer in our research project. We aim to study the ability of Deep Learning techniques and voice analysis to assist in the diagnosis of COVID-19 and assist in stopping the pandemic. The research project will consist of you filling a short questionnaire and obtaining a recordation of your voice. All your data collected will be anonymized. Please note that you have no obligation to participate and you may decide to terminate your participation at any time. Below is a description of the research project, and your consent to participate. Please read this information carefully. By clicking the button, you are agreeing that you’ve had time to read and consider this consent waiver and are comfortable with what is being asked of you as a participant.",
+            "title3": "TITLE OF RESEARCH PROJECT",
+            "text3": "Corona Voice Detect",
+            "title4": "BENEFITS AND RISKS",
+            "text4": "We hope to be able to assist in early and remote diagnosis of COVID-19 patients, to target suspected cases for expensive laboratory tests. We have not identified any particular risk associated with your participation in this venture. ",
+            "title5": "CONFIDENTIALITY",
+            "text5": "We will keep your information confidential and will not divulge any non-anonymized data. Anonymized dataset may be transferred to third parties. In particular, anonymized data may be transferred to third parties for COVID-19 related research purposes. If you log-in using your GOOGLE™ identifier, we will not collect any information from your GOOGLE™ account other than your identifier. The identifier will be retained in a hashed manner, preventing us from being able to reconstruct your identifier, and being useful for the sole purpose of determining if a new identifier is identical to a previously retained one.",
+            "title6": "RESEARCH DATA & FEEDBACK",
+            "text6": "You give your permission to Voca.ai to collect information about your participation in the research project in the formats and medium (“Data”) described above. We shall own and control all Data in connection with the research project. You may also provide suggestions, comments, or other feedback (“Feedback”) to the investigators with respect to the research project. Feedback is entirely voluntary and the research team shall be free to use, disclose, license, or otherwise distribute, and exploit the Feedback and Data as authorized by the research participant.",
+            "title7": "YOUR AUTHORITY TO PARTICIPATE",
+            "text7": "You represent that you have the full right and authority to sign this form. By clicking the survey button, you confirm that you understand what the project is about and how and why it is being done. Should you have any questions concerning this project, please contact the supervising researchers: \n Voca.ai \n Shmuel Ur at shmuel.ur@gmail.com \n Please print this page for your records. \n Thank you for your participation."
+        } 
+    }
+},
+"contact": {
+    "main_title": "Contact Us",
+    "sub_title": "Or write us -",
+    "form": {
+        "name": "*Name",
+        "email": "*Email",
+        "subject": "*Subject",
+        "content": "Content",
+        "send_btn": "Send"
+    }
+},
+"welcome-container": {
+    "title": {
+        "main": "Your voice is needed!",
+        "sub": "Help us beat COVID-19 by simply logging in and recording your voice for about 1 minute"
     },
-    "contact": {
-        "main_title": "Contact Us",
-        "sub_title": "Or write us -",
-        "form": {
-            "name": "*Name",
-            "email": "*Email",
-            "subject": "*Subject",
-            "content": "Content",
-            "send_btn": "Send"
-        }
+    "btn": "Record now!"
+},
+"explanation-container": {
+    "title": "How does it work?",
+    "step1": {
+        "title": "Logging In",
+        "sub1": "Recording a daily voice sample",
+        "sub2": ""
     },
-    "welcome-container": {
-        "title": {
-            "main": "Your voice is needed!",
-            "sub": "Help us beat COVID-19 by simply logging in and recording your voice for about 1 minute"
-        },
-        "btn": "Record now!"
+    "step2": {
+        "title": "Recording",
+        "sub1": "Recording a voice sample",
+        "sub2": "and filling in some more details"
     },
-    "explanation-container": {
-        "title": "How does it work?",
-        "step1": {
-            "title": "Logging In",
-            "sub1": "Recording a daily voice sample",
-            "sub2": ""
-        },
-        "step2": {
-            "title": "Recording",
-            "sub1": "Recording a voice sample",
-            "sub2": "and filling in some more details"
-        },
-        "step3": {
-            "title": "Returning to normal",
-            "sub1": "Developing a new assessment tool for Coronavirus (COVID-19)",
-            "sub2": "And going back to normal life"
-        },
-        "read_btn": "For more information"
+    "step3": {
+        "title": "Returning to normal",
+        "sub1": "Developing a new assessment tool for Coronavirus (COVID-19)",
+        "sub2": "And going back to normal life"
     },
-    "actions-container": {
-        "title": "Take part in preventing the spread of the coronavirus!",
-        "card1": {
-            "sub1": "Every short recording will brings us closer to achieving our goal together",
-            "sub2": "A daily recording for only a week",
-            "appointment_btn": "Set Reminder"
-        },
-        "card2": {
-            "sub1": "We are stronger together",
-            "sub2": "Feel free to share this link with friends and family",
-            "share_btn": "Share",
-            "share_dialog": "Share now"
-        }
+    "read_btn": "For more information"
+},
+"actions-container": {
+    "title": "Take part in preventing the spread of the coronavirus!",
+    "card1": {
+        "sub1": "Every short recording will brings us closer to achieving our goal together",
+        "sub2": "A daily recording for only a week",
+        "appointment_btn": "Set Reminder"
     },
-    "sponsors-container": {
-        "title": "Your support will help us make it happen "
+    "card2": {
+        "sub1": "We are stronger together",
+        "sub2": "Feel free to share this link with friends and family",
+        "share_btn": "Share",
+        "share_dialog": "Share now"
+    }
+},
+"sponsors-container": {
+    "title": "Your support will help us make it happen "
+},
+"members-container": {
+    "title": "Who We Are",
+    "special-members": {
+        "1": "Dr. Amir Hadid",
+        "2": "Itamar Kaufman",
+        "3": "Omer Lerinman",
+        "4": "Omer Elimelech",
+        "5": "Niv Saparov",
+        "6": "Itai Stopel",
+        "7": "Yevhenii Tysiachnyi",
+        "8": "Ben Fishman",
+        "9": "Alon Yaron",
+        "10": "Danielle Honigstein",
+        "11": "Avidor Rabinovich",
+        "12": "Guy Mor",
+        "13": "Alfredo Limin",
+        "14": "Yoni Svechinsky",
+        "15": "Rotem Lanyado",
+        "16": "Roi Ilan",
+        "17": "Betzalel Stauber"
     },
-    "members-container": {
-        "title": "Who We Are",
-        "special-members": {
-            "1": "Dr. Amir Hadid",
-            "2": "Itamar Kaufman",
-            "3": "Omer Lerinman",
-            "4": "Omer Elimelech",
-            "5": "Niv Saparov",
-            "6": "Itai Stopel",
-            "7": "Yevhenii Tysiachnyi",
-            "8": "Ben Fishman",
-            "9": "Alon Yaron",
-            "10": "Danielle Honigstein",
-            "11": "Avidor Rabinovich",
-            "12": "Guy Mor",
-            "13": "Alfredo Limin",
-            "14": "Yoni Svechinsky",
-            "15": "Rotem Lanyado",
-            "16": "Roi Ilan",
-            "17": "Betzalel Stauber"
-        },
-        "members": {
-            "1": "Eran Karaso",
-            "2": "Bar Segal",
-            "3": "Ilay Menachem",
-            "4": "Itai Rosenfeld Cohen",
-            "5": "Lihu Berman",
-            "6": "Imri Paran"
-        }
-    },
-    "more_details_btn": "Lean More"
+    "members": {
+        "1": "Eran Karaso",
+        "2": "Bar Segal",
+        "3": "Ilay Menachem",
+        "4": "Itai Rosenfeld Cohen",
+        "5": "Lihu Berman",
+        "6": "Imri Paran"
+    }
+},
+"more_details_btn": "Lean More"
 }
