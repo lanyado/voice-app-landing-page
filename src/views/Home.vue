@@ -119,12 +119,12 @@
     <h2> {{$t('members-container.title')}} </h2>
     <ul class="special-members">
       
-      <li v-for="index in specialMembersCount" :key="index">
-        <div class="memberImageDiv" :style="{ backgroundImage: 'url('+ memberImage(index)+')' }">
-            <!--<img :src="memberImage(index)" :alt="'member number '+index" />-->
+      <li v-for="(n, i) in specialMembersCount" :key="i">
+        <div class="memberImageDiv" :style="{ backgroundImage: 'url('+ memberImage(i)+')' }">
+            <!--<img :src="memberImage(i)" :alt="'member number '+i" />-->
         </div>
         <p>
-        {{$t(`members-container.special-members.${index}`)}}
+        {{$t(`members-container.special-members.${i}`)}}
         </p>
       </li>
     </ul>
@@ -158,7 +158,7 @@ export default {
     return{
       homePage: true,
       logoUrl: require("../assets/svg/logo_text_white_he.svg"),
-      specialMembersCount: 17,
+      specialMembersCount: 18,
       membersCount: 6
     }
   },
