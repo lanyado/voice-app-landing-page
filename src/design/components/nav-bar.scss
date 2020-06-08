@@ -6,8 +6,8 @@
 
 header{
   width: 100%;
-  z-index: 9;
   padding: 15px 15px 25px 0px;
+  z-index: 8;
   @media only screen and (min-width: 980px) {
 	position: fixed;
     &.scrolled {
@@ -252,7 +252,8 @@ nav {
 		transition-delay: 0s;
 	  }	  
   }
-}
+  }
+
 .toggle-menu {
 	ul {
 		display: table;
@@ -274,7 +275,6 @@ input[type=checkbox] {
 label {
 	display: none;
 }
-
 
 .ltr{
 	#logo {
@@ -299,6 +299,75 @@ label {
 		}
 	}
 }
+.terms-dialog {
+      position: fixed;
+      padding: 10px;
+      max-width: 70%;
+	  max-height: 80%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background: rgba(255,255,255,1);
+      visibility: hidden;
+      opacity: 0;
+      /* "delay" the visibility transition */
+      -webkit-transition: opacity .5s, visibility 0s linear .5s;
+      transition: opacity .5s, visibility 0s linear .5s;
+      z-index: 9;
+	  text-align: right;
+	  overflow-y: scroll;
+
+	  h4{
+		font-size: 25px;
+		font-weight: bold;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	  }
+	  span{
+		font-size: 15px;
+		font-weight: bold;
+		margin: 15px 0 5px 0;
+	  }
+	  p{
+		font-size: 15px;
+		font-weight: normal;
+		white-space: pre-line
+	  }
+    }
+	.ltr{
+		 .terms-dialog {
+			text-align: left;
+		}
+	}
+    .terms-dialog:target {
+      visibility: visible;
+      opacity: 1;
+      /* cancel visibility transition delay */
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+    }
+    .close-popup {
+      background: rgba(0,0,0,.7);
+      cursor: default;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      visibility: hidden;
+      /* "delay" the visibility transition */
+      -webkit-transition: opacity .5s, visibility 0s linear .5s;
+      transition: opacity .5s, visibility 0s linear .5s;
+	  z-index: 8;
+    }
+    .terms-dialog:target + .close-popup{  
+      opacity: 1;
+      visibility: visible;
+      /* cancel visibility transition delay */
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+    }
 
 @media only screen and (max-width: 980px) {
   header {
@@ -361,4 +430,10 @@ label {
 			}
 		}
 	}
+  .terms-dialog {
+      max-width: 80%;
+	    height: 70%;
+      top: 45%;
+      left: 50%;
+  }
 }
