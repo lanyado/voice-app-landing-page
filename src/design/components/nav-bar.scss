@@ -61,38 +61,37 @@ nav {
 	}
 
   .spnoserd-container{
-	display: flex;
+	  display: flex;
 
     span{
-	  align-self: center;
+	    align-self: center;
       display: inline;
       vertical-align: middle;
-	  font-size: 16px;	  
+	    font-size: 16px;	  
     }
     img{
-	  align-self: center;
-	  width: 50px;
-	  vertical-align: middle;
+      align-self: center;
+      width: 50px;
+      vertical-align: middle;
       margin-right: 10px;
-	  margin-left: 10px;
-	}	
+	    margin-left: 10px;
+	  }	
   }
   
-
   .funcs{
-	margin-left: 40px;
-	margin-right: 40px;
-	display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
 
 	  .record-btn {	
-		display: flex;
-		padding: 0px 10px;
-		width: 122px;
-		height: 45px;
-		background-color: #5A88FF;
-		border-radius: 3px;
-		box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-		font-size: 18px;				
+      display: flex;
+      padding: 0px 10px;
+      width: 122px;
+      height: 45px;
+      background-color: #5A88FF;
+      border-radius: 3px;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+      font-size: 18px;				
 		
 		img{
 			align-self: center;	
@@ -276,16 +275,45 @@ label {
 	display: none;
 }
 
+
+.ltr{
+	#logo {
+		width:110px;
+	}
+	.spnoserd-container span{
+		order: 1;		
+	}
+
+	.funcs{		
+		.record-btn
+		{ 
+		    padding: 0px 0px;
+			img {
+				order: 1;
+				padding: 1px 0px 0px 0px;
+			}
+			span{
+				align-self: center;
+				padding: 0px 9px 0px 0px;			
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 980px) {
-	header {
+  header {
 		padding: 20px 0px;
   }
   nav{
     width: 30%;
   }
   #logo, .spnoserd-container{
-		display: none;
+		display: none !important;
 	}
+  .links{
+    flex-direction: column;
+    margin:0 !important;
+  }
 	input[type=checkbox] {
 		position: absolute;
 		top: -9999px;
@@ -334,37 +362,3 @@ label {
 		}
 	}
 }
-
-@media only screen and (max-width: 460px) {
-  nav {
-		top: 47px;
-  }
-	label {
-		padding: 5px 10px;
-	}
-}
-
-.ltr{
-	#logo {
-		width:110px;
-	}
-	.spnoserd-container span{
-		order: 1;		
-	}
-
-	.funcs{		
-		.record-btn
-		{ 
-		    padding: 0px 0px;
-			img {
-				order: 1;
-				padding: 1px 0px 0px 0px;
-			}
-			span{
-				align-self: center;
-				padding: 0px 9px 0px 0px;			
-			}
-		}
-	}
-}
-
