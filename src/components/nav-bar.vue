@@ -1,14 +1,51 @@
 <template>
   <div class="nav-bar-container">
     <header :class="this.scrolled||this.static ? 'scrolled': ''">
-      <label for="toggle-1" class="toggle-menu">
+      <!-- <label for="toggle-1" class="toggle-menu">
         <ul>
           <li></li>
           <li></li>
           <li></li>
         </ul>
       </label>
-      <input type="checkbox" id="toggle-1" />
+      <input type="checkbox" id="toggle-1" /> -->
+
+      <div class="toggle-menu" :class="{'open-menu':openMenu}">    
+      
+         <ul>
+          <li>
+            <router-link to>
+              <span title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
+            </router-link>
+          </li>
+          <li v-if="homePage">
+            <router-link :to="`/${$i18n.locale}/contact`">
+              <span>{{$t('nav_bar.contact')}}</span>
+            </router-link>
+          </li>
+          <li v-else>
+            <router-link :to="`/${$i18n.locale}/`">
+              <span>{{$t('nav_bar.about')}}</span>
+            </router-link>
+          </li>
+           <li>
+            <a href="#terms-dialog">
+                <span>{{$t('nav_bar.terms.link')}}</span>
+            </a>
+        </li>
+        </ul>  
+              </div>
+      
+      <div class="hamburger">
+          <img
+            @click.stop="toggleMemu"
+            class="hamburger"
+            :class="{'open-menu':openMenu}"
+            src="../assets/svg/menu.svg"
+            alt
+          />
+      </div>
+
 
       <nav class="nav-bar width-container flex">
         <div v-if="$route.name==='contact'" class="funcs">
@@ -134,7 +171,10 @@ export default {
       scrolled: false,
       isContactPage: false,
       ltrLangs : ["en"],
-      isLtr : false
+      isLtr : false,
+
+      // isActive: false,
+      openMenu: false,
     };
   },
   computed: {
@@ -213,6 +253,12 @@ export default {
       // } else this.isLtr=false; //hebrow mode  
   },
   methods: {
+    toggleMemu() {
+      console.log('toggle Menu');
+      this.isActive = false;
+      this.openMenu = !this.openMenu;
+      document.body.classList.toggle("menu-open");
+    },
     open: link => {
       window.open(link);
     },
