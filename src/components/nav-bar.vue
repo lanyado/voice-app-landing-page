@@ -15,22 +15,22 @@
          <ul>
           <li>
             <router-link to>
-              <span title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
+              <span @click.stop="toggleMemu" title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
             </router-link>
           </li>
           <li v-if="homePage">
             <router-link :to="`/${$i18n.locale}/contact`">
-              <span>{{$t('nav_bar.contact')}}</span>
+              <span @click.stop="toggleMemu">{{$t('nav_bar.contact')}}</span>
             </router-link>
           </li>
           <li v-else>
             <router-link :to="`/${$i18n.locale}/`">
-              <span>{{$t('nav_bar.about')}}</span>
+              <span @click.stop="toggleMemu">{{$t('nav_bar.about')}}</span>
             </router-link>
           </li>
            <li>
             <a href="#terms-dialog">
-                <span>{{$t('nav_bar.terms.link')}}</span>
+                <span @click.stop="toggleMemu">{{$t('nav_bar.terms.link')}}</span>
             </a>
         </li>
         </ul>  
