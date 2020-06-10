@@ -11,7 +11,7 @@
       <input type="checkbox" id="toggle-1" /> -->
 
       <div class="toggle-menu" :class="{'open-menu':openMenu}">    
-      <button  @click.stop="toggleMemu" class="x-btn">X</button>
+      <button @click.stop="toggleMemu" class="x-btn">X</button>
          <ul>
           <li>
             <router-link to>

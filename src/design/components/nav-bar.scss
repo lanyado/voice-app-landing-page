@@ -22,6 +22,7 @@ z-index: 8;
 #logo {
   cursor: pointer;
   width: 130px;
+
 }
 
 nav {
@@ -257,28 +258,15 @@ nav {
   }
   }
 
-// .toggle-menu {
-// 	ul {
-// 		display: table;
-// 		width: 25px;
-// 		li {
-// 			width: 100%;
-// 			height: 3px;
-// 			background-color: #002e5b;
-// 			margin-bottom: 4px;
-// 			&:last-child {
-// 				margin-bottom: 0px;
-// 			}
-// 		}
-// 	}
-// }
+
 input[type=checkbox] {
 	display: none;
 }
-// label {
-// 	display: none;
-// }
 
+
+
+
+/////////////// english mode
 .ltr{
 	#logo {
 		width:110px;
@@ -314,6 +302,10 @@ input[type=checkbox] {
 		right: auto;
 	}
 }
+///////////
+
+
+
 
 }
 .terms-dialog {
@@ -350,7 +342,8 @@ input[type=checkbox] {
 		font-weight: normal;
 		white-space: pre-line
 	  }
-    }
+	}
+	
 	.ltr{
 		 .terms-dialog {
 			text-align: left;
@@ -404,16 +397,19 @@ input[type=checkbox] {
 		visibility: hidden;
 
 		&.open-menu {
+		display: table;
 		visibility: visible;
 		position: fixed;
 		z-index: 100;
-		padding: 65px 60px;
+		// padding: 65px 60px;
 		margin-top: -16px;
 		// display: inline-block;
 		background-color: #002e5b;
 		box-shadow: 0px 0px 2px 0px grey;
 		top: 39px;
 		right: 15px;
+		width: 185px;
+		height: 170px !important;
 
 		.x-btn{
 		border: black;
@@ -457,6 +453,8 @@ input[type=checkbox] {
 
   .contact-container {
 //   margin: -72px 0px 0px 0px;
+padding-top: 14% !important;
+
 }
 
   #logo, .spnoserd-container{
@@ -515,11 +513,15 @@ input[type=checkbox] {
 	}
 	.terms-dialog {
 		max-width: 80%;
-			height: 70%;
+		height: 70%;
 		top: 45%;
 		left: 50%;
 	}
 
+	#logo-text {
+		// top: 15px ;
+		position: fixed !important;
+	}
 	
 }
 
