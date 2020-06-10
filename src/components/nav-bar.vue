@@ -10,7 +10,7 @@
       </label>
       <input type="checkbox" id="toggle-1" /> -->
 
-      <div class="toggle-menu" :class="{'open-menu':openMenu}">    
+      <div @click.stop="" class="toggle-menu" :class="{'open-menu':openMenu}">    
       <button @click.stop="toggleMemu" class="x-btn">X</button>
          <ul>
           <li>
@@ -147,14 +147,23 @@
 import navBarStyles from "../design/components/nav-bar.scss";
 
 export default {
+  
   mounted() {
-    window.addEventListener("click", function(event) {
-      if (
-        event.target.id !== "toggle-1" &&
-        document.getElementById("toggle-1").checked
-      )
-        document.getElementById("toggle-1").checked = false;
-    });
+
+document.body.addEventListener("click",this.handleClick)
+// document.body.addEventListener("click",this.handleClick())
+
+    // window.addEventListener("click", function(event) {
+    //   if (
+    //     event.target.id !== "toggle-1" &&
+    //     document.getElementById("toggle-1").checked
+    //   )
+    //     document.getElementById("toggle-1").checked = false;
+    // });
+  },
+  destroyed(){
+    document.body.removeEventListener("click",this.handleClick)
+
   },
   data() {
     return {
@@ -253,6 +262,12 @@ export default {
       // } else this.isLtr=false; //hebrow mode  
   },
   methods: {
+    handleClick(){
+      if (this.openMenu) {
+        this.toggleMemu();
+      }
+      
+    },
     toggleMemu() {
       console.log('toggle Menu');
       this.isActive = false;
