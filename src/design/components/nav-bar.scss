@@ -28,6 +28,8 @@ nav {
 	direction: rtl !important;
 	display: flex;
 	justify-content:space-between;
+	// margin: -57px 0px 0px 0px;
+
 	
 	.links{
 		margin-left: 40px;
@@ -390,6 +392,7 @@ input[type=checkbox] {
 		float: right ;
 		visibility: hidden;
 		margin-top: -20px;
+		cursor: pointer;
 
 		&.open-menu {
 			visibility: hidden;
@@ -451,6 +454,11 @@ input[type=checkbox] {
   nav{
     width: 30%;
   }
+
+  .contact-container {
+//   margin: -72px 0px 0px 0px;
+}
+
   #logo, .spnoserd-container{
 		display: none !important;
 	}
