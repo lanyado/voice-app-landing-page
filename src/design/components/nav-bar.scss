@@ -413,7 +413,7 @@ input[type=checkbox] {
 
 	}
 
-	.toggle-menu{
+	.toggle-menu{		
 		// visibility: hidden;
 		display: none;
 		&.open-menu {
@@ -451,10 +451,11 @@ input[type=checkbox] {
 		}
 
 		li{
-			cursor: pointer;	
+			cursor: pointer;				
 		}
 	}
 }
+
 
 
 @media only screen and (max-width: 980px) {
@@ -486,6 +487,9 @@ padding-top: 14% !important;
   .links{
     flex-direction: column;
     margin:0 !important;
+
+	
+	
   }
 	input[type=checkbox] {
 		position: absolute;

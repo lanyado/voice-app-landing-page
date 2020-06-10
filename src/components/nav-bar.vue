@@ -149,21 +149,10 @@ import navBarStyles from "../design/components/nav-bar.scss";
 export default {
   
   mounted() {
-
-document.body.addEventListener("click",this.handleClick)
-// document.body.addEventListener("click",this.handleClick())
-
-    // window.addEventListener("click", function(event) {
-    //   if (
-    //     event.target.id !== "toggle-1" &&
-    //     document.getElementById("toggle-1").checked
-    //   )
-    //     document.getElementById("toggle-1").checked = false;
-    // });
+    document.body.addEventListener("click",this.handleClick)
   },
   destroyed(){
     document.body.removeEventListener("click",this.handleClick)
-
   },
   data() {
     return {
@@ -181,7 +170,6 @@ document.body.addEventListener("click",this.handleClick)
       isContactPage: false,
       ltrLangs : ["en"],
       isLtr : false,
-
       // isActive: false,
       openMenu: false,
     };
@@ -256,10 +244,12 @@ document.body.addEventListener("click",this.handleClick)
   created() {
     if (!this.static) window.addEventListener("scroll", this.handleScroll);  
     
-    //if (this.ltrLangs.includes(this.$route.params.lang)) { //english mode 
-      // console.log('en mode')
-      // this.isLtr=true
-      // } else this.isLtr=false; //hebrow mode  
+    this.switchLanguage(this.$route.params.lang);
+    // if (this.ltrLangs.includes(this.$route.params.lang)) { //english mode 
+    //   console.log('en mode')
+    //   this.isLtr=true
+
+    //   } else this.isLtr=false; //hebrow mode  
   },
   methods: {
     handleClick(){
@@ -282,6 +272,7 @@ document.body.addEventListener("click",this.handleClick)
       //document.getElementById('share-button').click();
     },
     setLang() {
+      console.log("setLang()")
       switch (this.$route.params.lang) {
         case "he":
           this.switchLanguage("en");
