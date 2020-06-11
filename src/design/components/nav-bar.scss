@@ -303,12 +303,6 @@ input[type=checkbox] {
 		}
 	}
 
-
-	.hamburger{
-		// float: left ;
-		margin-left: 14px;
-	}
-
 	.toggle-menu{
 
 		&.open-menu {	
@@ -468,6 +462,7 @@ input[type=checkbox] {
   header {
     position: absolute;
 		padding: 20px 0px;
+    width: 90%;
   }
   nav{
     width: 30%;
