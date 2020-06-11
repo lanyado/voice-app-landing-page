@@ -27,7 +27,7 @@
           </li>
           <li v-if="homePage">
             <router-link :to="`/${$i18n.locale}/contact`">
-              <span @click.stop="toggleMemu">{{$t('nav_bar.contact')}}</span>
+              <span>{{$t('nav_bar.contact')}}</span>
             </router-link>
           </li>
           <li v-else>
