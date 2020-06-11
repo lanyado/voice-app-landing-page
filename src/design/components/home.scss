@@ -233,7 +233,7 @@ section{
       /* "delay" the visibility transition */
       -webkit-transition: opacity .5s, visibility 0s linear .5s;
       transition: opacity .5s, visibility 0s linear .5s;
-      z-index: 1;
+      z-index: 9;
     }
     .share-dialog:target {
       visibility: visible;

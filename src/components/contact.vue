@@ -1,36 +1,41 @@
 <template>
-  <div>
-    <nav-bar :homePage="homePage" :language="language" :static="true" @changeLogo="logoUrl = $event"/>
+<div>
+  <nav-bar
+    :home-page="homePage"
+    :language="language"
+    :static="true"
+    @changeLogo="logoUrl = $event"
+  />
 
 
-    <div class="contact-container" >
-      <img id="logo-text" :src="logoUrl" alt="Logo" />
-      <div class="header-container">
-        <h1>{{ $t('contact.main_title')}}</h1>
-        <img src="../assets/svg/heart.svg" alt="heart icon"/>
-      </div>
+  <div class="contact-container" >
+    <img id="logo-text" :src="logoUrl" alt="Logo" />
+    <div class="header-container">
+      <h1>{{ $t('contact.main_title')}}</h1>
+      <img src="../assets/svg/heart.svg" alt="heart icon"/>
+    </div>
 
-      <div class="main-container"> 
-        <span> {{ emailAddress }}</span>
-        <!--<span>03.555.5555</span>-->
-        <span>{{ $t('contact.sub_title')}}</span>
+    <div class="main-container"> 
+      <span> {{ emailAddress }}</span>
+      <!--<span>03.555.5555</span>-->
+      <span>{{ $t('contact.sub_title')}}</span>
 
-      <form class="contact-form" @submit.prevent="sendEmail">
-        <input type="text" name="fromName" :placeholder="$t('contact.form.name')" required />
-        <input type="email" name="fromEmail" :placeholder="$t('contact.form.email')" required />
-        <input type="text" name="formSubject" :placeholder="$t('contact.form.subject')" required />
-        <textarea name="message" :placeholder="$t('contact.form.content')"></textarea>
-        <button type="submit">
-          {{ $t('contact.form.send_btn') }}
-        </button>
-      </form>
-      </div>
+    <form class="contact-form" @submit.prevent="sendEmail">
+      <input type="text" name="fromName" :placeholder="$t('contact.form.name')" required />
+      <input type="email" name="fromEmail" :placeholder="$t('contact.form.email')" required />
+      <input type="text" name="formSubject" :placeholder="$t('contact.form.subject')" required />
+      <textarea name="message" :placeholder="$t('contact.form.content')"></textarea>
+      <button type="submit">
+        {{ $t('contact.form.send_btn') }}
+      </button>
+    </form>
+    </div>
 
-      <div class="sub-container">
+    <div class="sub-container">
 
-      </div>
-    </div>    
-  </div>
+    </div>
+  </div>    
+</div>
 </template>
 
 
