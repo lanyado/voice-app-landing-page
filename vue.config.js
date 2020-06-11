@@ -6,5 +6,10 @@ module.exports = {
       localeDir: 'locales',
       enableInSFC: false
     }
-  }
+  },
+  pwa: {
+    workboxOptions: {
+        skipWaiting: true
+    }
+}
 }
