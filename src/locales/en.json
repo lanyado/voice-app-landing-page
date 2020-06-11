@@ -78,38 +78,38 @@
     }
 },
 "sponsors-container": {
-    "title": "Your support will help us make it happen "
-},ֿ
- "members-container": {
-        "title": "Who We Are",
-        "special-members": {
-            "0": "Prof. Yonina Eldar",
-            "1": "Dr. Amir Hadid",
-            "2": "Itamar Kaufman",
-            "3": "Omer Lerinman",
-            "4": "Omer Elimelech",
-            "5": "Niv Saparov",
-            "6": "Itai Stopel",
-            "7": "Yevhenii Tysiachnyi",
-            "8": "Ben Fishman",
-            "9": "Alon Yaron",
-            "10": "Danielle Honigstein",
-            "11": "Avidor Rabinovich",
-            "12": "Guy Mor",
-            "13": "Alfredo Limin",
-            "14": "Yoni Svechinsky",
-            "15": "Rotem Lanyado",
-            "16": "Roi Ilan",
-            "17": "Betzalel Stauber"
-        },
-        "members": {
-            "1": "Eran Karaso",
-            "2": "Bar Segal",
-            "3": "Ilay Menachem",
-            "4": "Itai Rosenfeld Cohen",
-            "5": "Lihu Berman",
-            "6": "Imri Paran"
-        }
+    "title": "Your support will help us make it happen"
+},
+"members-container": {
+    "title": "Who We Are",
+    "special-members": {
+        "0": "Prof. Yonina Eldar",
+        "1": "Dr. Amir Hadid",
+        "2": "Itamar Kaufman",
+        "3": "Omer Lerinman",
+        "4": "Omer Elimelech",
+        "5": "Niv Saparov",
+        "6": "Itai Stopel",
+        "7": "Yevhenii Tysiachnyi",
+        "8": "Ben Fishman",
+        "9": "Alon Yaron",
+        "10": "Danielle Honigstein",
+        "11": "Avidor Rabinovich",
+        "12": "Guy Mor",
+        "13": "Alfredo Limin",
+        "14": "Yoni Svechinsky",
+        "15": "Rotem Lanyado",
+        "16": "Roi Ilan",
+        "17": "Betzalel Stauber"
     },
-    "more_details_btn": "Lean More"
+    "members": {
+        "1": "Eran Karaso",
+        "2": "Bar Segal",
+        "3": "Ilay Menachem",
+        "4": "Itai Rosenfeld Cohen",
+        "5": "Lihu Berman",
+        "6": "Imri Paran"
+    }
+},
+"more_details_btn": "Lean More"
 }
