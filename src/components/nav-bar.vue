@@ -10,27 +10,27 @@
       </label>
       <input type="checkbox" id="toggle-1" /> -->
 
-      <div class="toggle-menu" :class="{'open-menu':openMenu}">    
-      <button  @click.stop="toggleMemu" class="x-btn">X</button>
+      <div @click.stop="" class="toggle-menu" :class="{'open-menu':openMenu}">    
+      <button @click.stop="toggleMemu" class="x-btn">X</button>
          <ul>
           <li>
             <router-link to>
-              <span title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
+              <span @click.stop="toggleMemu" title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
             </router-link>
           </li>
           <li v-if="homePage">
             <router-link :to="`/${$i18n.locale}/contact`">
-              <span>{{$t('nav_bar.contact')}}</span>
+              <span @click.stop="toggleMemu">{{$t('nav_bar.contact')}}</span>
             </router-link>
           </li>
           <li v-else>
             <router-link :to="`/${$i18n.locale}/`">
-              <span>{{$t('nav_bar.about')}}</span>
+              <span @click.stop="toggleMemu">{{$t('nav_bar.about')}}</span>
             </router-link>
           </li>
            <li>
             <a href="#terms-dialog">
-                <span>{{$t('nav_bar.terms.link')}}</span>
+                <span @click.stop="toggleMemu">{{$t('nav_bar.terms.link')}}</span>
             </a>
         </li>
         </ul>  
@@ -83,7 +83,6 @@
           <span>{{$t('nav_bar.spnoserd_by')}}</span>
           <img src="../assets/png/mobileye-logo.png" alt="mobileye" />
           <img src="../assets/png/intel-logo.png" alt="Intel" />
-          <img src="../assets/png/weizman-logo.png" alt="Weizmann Institute of Science" />
         </div>       
       </ul>
       <router-link :to="`/${$i18n.locale}/`" >
@@ -147,6 +146,7 @@
 import navBarStyles from "../design/components/nav-bar.scss";
 
 export default {
+  
   mounted() {
     window.addEventListener("click", function(event) {
         if (this.openMenu){
@@ -157,6 +157,10 @@ export default {
         //document.getElementById("toggle-1").checked
         //document.getElementById("toggle-1").checked = false;
     });
+    document.body.addEventListener("click",this.handleClick)
+  },
+  destroyed(){
+    document.body.removeEventListener("click",this.handleClick)
   },
   data() {
     return {
@@ -174,7 +178,6 @@ export default {
       isContactPage: false,
       ltrLangs : ["en"],
       isLtr : false,
-
       // isActive: false,
       openMenu: false,
     };
@@ -249,12 +252,20 @@ export default {
   created() {
     if (!this.static) window.addEventListener("scroll", this.handleScroll);  
     
-    //if (this.ltrLangs.includes(this.$route.params.lang)) { //english mode 
-      // console.log('en mode')
-      // this.isLtr=true
-      // } else this.isLtr=false; //hebrow mode  
+    this.switchLanguage(this.$route.params.lang);
+    // if (this.ltrLangs.includes(this.$route.params.lang)) { //english mode 
+    //   console.log('en mode')
+    //   this.isLtr=true
+
+    //   } else this.isLtr=false; //hebrow mode  
   },
   methods: {
+    handleClick(){
+      if (this.openMenu) {
+        this.toggleMemu();
+      }
+      
+    },
     toggleMemu() {
       console.log('toggle Menu');
       this.isActive = false;
@@ -269,6 +280,7 @@ export default {
       //document.getElementById('share-button').click();
     },
     setLang() {
+      console.log("setLang()")
       switch (this.$route.params.lang) {
         case "he":
           this.switchLanguage("en");

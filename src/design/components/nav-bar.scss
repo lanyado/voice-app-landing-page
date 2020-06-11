@@ -6,11 +6,27 @@
 
 header{
   width: 100%;
-//   padding: 15px 15px 25px 0px;
-padding: 0px 0px 0px 0px !important;
-z-index: 8;
-  @media only screen and (min-width: 980px) {
-	position: fixed;
+  // padding: 0px 0px 0px 0px !important;
+  // z-index: 8;
+  
+z-index: 1000;
+position: fixed;
+display: flex;
+align-items: flex-end;
+// justify-content: flex-start;
+top: 10px;
+/* height: 0; */
+/* bottom: 20px; */
+/* top: 0; */
+right: 6px;
+
+@media only screen and (min-width: 980px) {
+	// justify-content: space-between;
+	padding: 15px 15px 25px 0px;
+	display: block;
+	top: 0;
+	right: 0;
+	// position: fixed;
     &.scrolled {
       background-color: #fff !important;
       transition: background-color 200ms linear;
@@ -22,26 +38,30 @@ z-index: 8;
 #logo {
   cursor: pointer;
   width: 130px;
+
 }
 
 nav {
 	direction: rtl !important;
 	display: flex;
 	justify-content:space-between;
-	
-	.links{
-		margin-left: 40px;
-		margin-right: 40px;
-		margin-top: 12px;
-		display: flex;
-		justify-content:space-between;
+	// margin: -57px 0px 0px 0px; ///////////////
+	margin: -39px 0px 0px 0px;
 
-		// li{
-		// 	&:hover{
-		// 		// font-size: 18px;
-		// 	}
-		// }
-	}
+	
+.links{
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 12px;
+	display: flex;
+	justify-content:space-between;
+
+	// li{
+	// 	&:hover{
+	// 		// font-size: 18px;
+	// 	}
+	// }
+}
 	
   
 	ul {
@@ -255,28 +275,15 @@ nav {
   }
   }
 
-// .toggle-menu {
-// 	ul {
-// 		display: table;
-// 		width: 25px;
-// 		li {
-// 			width: 100%;
-// 			height: 3px;
-// 			background-color: #002e5b;
-// 			margin-bottom: 4px;
-// 			&:last-child {
-// 				margin-bottom: 0px;
-// 			}
-// 		}
-// 	}
-// }
+
 input[type=checkbox] {
 	display: none;
 }
-// label {
-// 	display: none;
-// }
 
+
+
+
+/////////////// english mode
 .ltr{
 	#logo {
 		width:110px;
@@ -302,7 +309,8 @@ input[type=checkbox] {
 
 
 	.hamburger{
-		float: left ;
+		// float: left ;
+		margin-left: 14px;
 	}
 
 	.toggle-menu{
@@ -312,14 +320,18 @@ input[type=checkbox] {
 		right: auto;
 	}
 }
+///////////
+
+
+
 
 }
 .terms-dialog {
       position: fixed;
       padding: 10px;
       max-width: 70%;
-	  max-height: 80%;
-      top: 50%;
+	  max-height: 70%;
+      top: 55%;
       left: 50%;
       transform: translate(-50%,-50%);
       background: rgba(255,255,255,1);
@@ -328,7 +340,7 @@ input[type=checkbox] {
       /* "delay" the visibility transition */
       -webkit-transition: opacity .5s, visibility 0s linear .5s;
       transition: opacity .5s, visibility 0s linear .5s;
-      z-index: 9;
+      z-index: 9999;
 	  text-align: right;
 	  overflow-y: scroll;
 
@@ -348,7 +360,8 @@ input[type=checkbox] {
 		font-weight: normal;
 		white-space: pre-line
 	  }
-    }
+	}
+	
 	.ltr{
 		 .terms-dialog {
 			text-align: left;
@@ -387,9 +400,12 @@ input[type=checkbox] {
 
 	.hamburger{
 		// display: none;
-		float: right ;
+		// float: right ;
 		visibility: hidden;
-		margin-top: -20px;
+		// margin-top: -20px;
+		margin-top: 2px;
+
+		cursor: pointer;
 
 		&.open-menu {
 			visibility: hidden;
@@ -397,30 +413,36 @@ input[type=checkbox] {
 
 	}
 
-	.toggle-menu{
-		visibility: hidden;
-
+	.toggle-menu{		
+		// visibility: hidden;
+		display: none;
 		&.open-menu {
+		display: table;
 		visibility: visible;
 		position: fixed;
 		z-index: 100;
-		padding: 65px 60px;
+		// padding: 65px 60px;
 		margin-top: -16px;
 		// display: inline-block;
 		background-color: #002e5b;
 		box-shadow: 0px 0px 2px 0px grey;
 		top: 39px;
 		right: 15px;
+		width: 185px;
+		height: 130px !important;
 
 		.x-btn{
-		border: black;
-		background-color: white;
-		color: black;
-		padding: 2px 5px;
+			border: black;
+			background-color: white;
+			color: black;
+			padding: 2px 5px;
+			display: flex;
+			align-items: end;
+			margin: 3px 3px;
 
-		&:hover{
-			background: white !important;
-		}
+			&:hover{
+				background: white !important;
+			}
 		}
 
 		span{
@@ -429,10 +451,11 @@ input[type=checkbox] {
 		}
 
 		li{
-			cursor: pointer;	
+			cursor: pointer;				
 		}
 	}
 }
+
 
 
 @media only screen and (max-width: 980px) {
@@ -451,12 +474,22 @@ input[type=checkbox] {
   nav{
     width: 30%;
   }
+
+  .contact-container {
+//   margin: -72px 0px 0px 0px;
+padding-top: 14% !important;
+
+}
+
   #logo, .spnoserd-container{
 		display: none !important;
 	}
   .links{
     flex-direction: column;
     margin:0 !important;
+
+	
+	
   }
 	input[type=checkbox] {
 		position: absolute;
@@ -507,11 +540,16 @@ input[type=checkbox] {
 	}
 	.terms-dialog {
 		max-width: 80%;
-			height: 70%;
+		height: 70%;
 		top: 45%;
 		left: 50%;
 	}
 
+	#logo-text {
+		top: 15px ;
+		// position: fixed !important;
+		// position: fixed !important;
+	}
 	
 }
 
