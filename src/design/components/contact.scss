@@ -127,9 +127,10 @@ header{
   .contact-container {
     display: block;
     position: relative;
-    padding-top: 25%;
+    padding-top: 25% !important;
     padding-right: 5%;
     max-width: 100%;
+
     .header-container { 
       width: 100%;
 
