@@ -2,23 +2,20 @@
 @import "../base/_variables";
 @import "../base/_base";
 
-
-
 header{
-  width: 100%;
-  // padding: 0px 0px 0px 0px !important;
-  // z-index: 8;
-  
-z-index: 1000;
-position: fixed;
-display: flex;
-align-items: flex-end;
-// justify-content: flex-start;
-top: 10px;
-/* height: 0; */
-/* bottom: 20px; */
-/* top: 0; */
-right: 6px;
+	width: 100%;
+	// padding: 0px 0px 0px 0px !important;
+	// z-index: 8;
+	z-index: 1000;
+	position: fixed;
+	display: flex;
+	align-items: flex-end;
+	// justify-content: flex-start;
+	top: 10px;
+	/* height: 0; */
+	/* bottom: 20px; */
+	/* top: 0; */
+	right: 6px;
 
 @media only screen and (min-width: 980px) {
 	// justify-content: space-between;
@@ -36,9 +33,8 @@ right: 6px;
 }
 
 #logo {
-  cursor: pointer;
   width: 130px;
-
+  cursor: pointer;
 }
 
 nav {
@@ -49,20 +45,20 @@ nav {
 	margin: -39px 0px 0px 0px;
 
 	
-.links{
-	margin-left: 40px;
-	margin-right: 40px;
-	margin-top: 12px;
-	display: flex;
-	justify-content:space-between;
+  .links{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 12px;
+    display: flex;
+    justify-content:space-between;
 
-	// li{
-	// 	&:hover{
-	// 		// font-size: 18px;
-	// 	}
-	// }
-}
-	
+    // li{
+    // 	&:hover{
+    // 		// font-size: 18px;
+    // 	}
+    // }
+  }
+    
   
 	ul {
 		li {
@@ -138,33 +134,33 @@ nav {
 		}
 	  
 	  .icon {
-		display: block;
-		margin: 2em auto;
-		width: 40%;
-		max-width: 150px;
+      display: block;
+      margin: 2em auto;
+      width: 40%;
+      max-width: 150px;
 	  }
 	  span {
-		display: block;
-		width:70%;
-		margin: 0.1em auto;
-		font-size: 18px;
-		font-weight: 600;
+      display: block;
+      width:70%;
+      margin: 0.1em auto;
+      font-size: 18px;
+      font-weight: 600;
 	  }
 	
 	  .share-dialog{
-		position: fixed;
-		padding: 10px;
-		max-width: 500px;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		background: rgba(255,255,255,.9);
-		visibility: hidden;
-		opacity: 0;
-		/* "delay" the visibility transition */
-		-webkit-transition: opacity .5s, visibility 0s linear .5s;
-		transition: opacity .5s, visibility 0s linear .5s;
-		z-index: 1;
+      position: fixed;
+      padding: 10px;
+      max-width: 500px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background: rgba(255,255,255,.9);
+      visibility: hidden;
+      opacity: 0;
+      /* "delay" the visibility transition */
+      -webkit-transition: opacity .5s, visibility 0s linear .5s;
+      transition: opacity .5s, visibility 0s linear .5s;
+      z-index: 1;
 
 		a{
 			display: inline;
@@ -245,32 +241,32 @@ nav {
 	  }
 	
 	  .share-dialog:target {
-		visibility: visible;
-		opacity: 1;
-		/* cancel visibility transition delay */
-		-webkit-transition-delay: 0s;
-		transition-delay: 0s;
+      visibility: visible;
+      opacity: 1;
+      /* cancel visibility transition delay */
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
 	  }
 	  .close-popup {
-		background: rgba(0,0,0,.7);
-		cursor: default;
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		opacity: 0;
-		visibility: hidden;
-		/* "delay" the visibility transition */
-		-webkit-transition: opacity .5s, visibility 0s linear .5s;
-		transition: opacity .5s, visibility 0s linear .5s;
+      background: rgba(0,0,0,.7);
+      cursor: default;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      visibility: hidden;
+      /* "delay" the visibility transition */
+      -webkit-transition: opacity .5s, visibility 0s linear .5s;
+      transition: opacity .5s, visibility 0s linear .5s;
 	  }
 	  .share-dialog:target + .close-popup{  
-		opacity: 1;
-		visibility: visible;
-		/* cancel visibility transition delay */
-		-webkit-transition-delay: 0s;
-		transition-delay: 0s;
+      opacity: 1;
+      visibility: visible;
+      /* cancel visibility transition delay */
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
 	  }	  
   }
   }
@@ -459,7 +455,6 @@ input[type=checkbox] {
 
 
 @media only screen and (max-width: 980px) {
-
 	.hamburger{
 		// display: none;
 		float: right ;
@@ -469,6 +464,7 @@ input[type=checkbox] {
 	}
 
   header {
+    position: absolute;
 		padding: 20px 0px;
   }
   nav{
@@ -476,20 +472,16 @@ input[type=checkbox] {
   }
 
   .contact-container {
-//   margin: -72px 0px 0px 0px;
-padding-top: 14% !important;
+    //   margin: -72px 0px 0px 0px;
+    padding-top: 14% !important;
 
-}
-
+  }
   #logo, .spnoserd-container{
 		display: none !important;
 	}
   .links{
     flex-direction: column;
     margin:0 !important;
-
-	
-	
   }
 	input[type=checkbox] {
 		position: absolute;
@@ -539,7 +531,7 @@ padding-top: 14% !important;
 		}
 	}
 	.terms-dialog {
-		max-width: 80%;
+		width: 100%;
 		height: 70%;
 		top: 45%;
 		left: 50%;

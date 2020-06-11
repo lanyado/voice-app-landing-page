@@ -47,11 +47,6 @@ body {
         background: linear-gradient(180deg, rgba(90,136,255,1) 0%, rgba(255,255,255,1) 100%);
         background-repeat: no-repeat;
     }
-
-    
-    .ltr{
-        direction: ltr;
-    }
 }
  
 h1, h2, h3, h4 {
@@ -95,6 +90,15 @@ details summary::-webkit-details-marker {
 #logo-text{
     display: none;
 }
+.close-icon{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    color: black;
+    cursor: pointer;
+}
 @media only screen and (max-width: 980px) {
     #logo-text{
         display: block;
@@ -102,5 +106,14 @@ details summary::-webkit-details-marker {
         top: 20px;
         width: 200px;
         @include center(true, false);
+    }
+}
+
+.ltr{
+    direction: ltr;
+    
+    .close-icon{
+        left: auto;
+        right: 20px;
     }
 }

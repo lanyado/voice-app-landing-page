@@ -71,6 +71,11 @@
           {{ $t('actions-container.card2.share_btn') }}      
         </button>
         <div id="share-dialog" class="share-dialog">
+          <img src="../assets/svg/close.svg" 
+              alt="x" 
+              class="close-icon"
+              onclick="window.location='##';"
+          />
           <span> {{ $t('actions-container.card2.share_dialog') }}       </span>
           <ul>
             <li>

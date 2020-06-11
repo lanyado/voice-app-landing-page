@@ -57,6 +57,11 @@
             <img src="../assets/svg/blue-share.svg" alt="share icon" />
           </button>
           <div id="share-dialog" class="share-dialog">
+            <img src="../assets/svg/close.svg" 
+                alt="x" 
+                class="close-icon"
+                onclick="window.location='##';"
+            />
             <span>{{ $t('actions-container.card2.share_dialog') }}</span>
             <ul>
               <li>
@@ -115,6 +120,11 @@
       </nav>
     </header>
     <div id="terms-dialog" class="terms-dialog">
+        <img src="../assets/svg/close.svg" 
+        alt="x" 
+        class="close-icon"
+        onclick="document.querySelector('.close-popup').click();"
+        />
         <h4> {{$t('nav_bar.terms.title')}} </h4>
 
         <span> {{$t('nav_bar.terms.body.title1')}} </span>
@@ -138,7 +148,7 @@
         <span> {{$t('nav_bar.terms.body.title7')}} </span>
         <p> {{$t('nav_bar.terms.body.text7')}} </p>
     </div>
-    <a href="#" class="close-popup"></a>
+    <a href="##" class="close-popup"></a>
   </div>
 </template>
 
