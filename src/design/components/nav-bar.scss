@@ -323,22 +323,22 @@ input[type=checkbox] {
 
 }
 .terms-dialog {
-      position: fixed;
-      padding: 10px;
-      max-width: 70%;
-	  max-height: 70%;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      background: rgba(255,255,255,1);
-      visibility: hidden;
-      opacity: 0;
-      /* "delay" the visibility transition */
-      -webkit-transition: opacity .5s, visibility 0s linear .5s;
-      transition: opacity .5s, visibility 0s linear .5s;
-      z-index: 9999;
-	  text-align: right;
-	  overflow-y: scroll;
+    position: fixed;
+    padding: 10px;
+    max-width: 70%;
+    max-height: 70%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(255,255,255,1);
+    visibility: hidden;
+    opacity: 0;
+    /* "delay" the visibility transition */
+    -webkit-transition: opacity .5s, visibility 0s linear .5s;
+    transition: opacity .5s, visibility 0s linear .5s;
+    z-index: 9999;
+    text-align: right;
+    overflow-y: scroll;
 
 	  h4{
 		font-size: 25px;
