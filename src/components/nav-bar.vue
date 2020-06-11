@@ -14,9 +14,9 @@
       <button @click.stop="toggleMemu" class="x-btn">X</button>
          <ul>
           <li>
-            <router-link to>
+            <!--<router-link :to="`##`">-->
               <span @click.stop="toggleMemu" title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
-            </router-link>
+          <!--  </router-link> -->
           </li>
           <li v-if="homePage">
             <router-link :to="`/${$i18n.locale}/contact`">
@@ -263,11 +263,11 @@ export default {
     if (!this.static) window.addEventListener("scroll", this.handleScroll);  
     
     this.switchLanguage(this.$route.params.lang);
-    // if (this.ltrLangs.includes(this.$route.params.lang)) { //english mode 
-    //   console.log('en mode')
-    //   this.isLtr=true
+      // if (this.ltrLangs.includes(this.$route.params.lang)) { //english mode 
+      //   console.log('en mode')
+      //   this.isLtr=true
 
-    //   } else this.isLtr=false; //hebrow mode  
+      //   } else this.isLtr=false; //hebrow mode  
   },
   methods: {
     handleClick(){
@@ -304,13 +304,10 @@ export default {
       this.language = language;
       const LTR_LANGUAGES = ['en'];
       const body = document.body;
-      if (LTR_LANGUAGES.includes(language))
-      {
-          body.classList.add("ltr");
-      }
-      else
-          body.classList.remove("ltr");
-          
+
+      if (LTR_LANGUAGES.includes(language)) body.classList.add("ltr");
+      else body.classList.remove("ltr");
+
       this.$router.push({
           params: { lang: this.language }
       });
