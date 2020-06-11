@@ -10,8 +10,15 @@
       </label>
       <input type="checkbox" id="toggle-1" /> -->
 
-      <div @click.stop="" class="toggle-menu" :class="{'open-menu':openMenu}">    
-      <button @click.stop="toggleMemu" class="x-btn">X</button>
+      <div @click.stop="" class="toggle-menu" :class="{'open-menu':openMenu}">  
+        <img src="../assets/svg/close-white.svg" 
+              alt="x" 
+              id="close-burger"
+              @click.stop="toggleMemu"
+          />
+          <!--
+          <button @click.stop="toggleMemu" class="x-btn">X</button>
+          -->
          <ul>
           <li>
             <!--<router-link :to="`##`">-->
