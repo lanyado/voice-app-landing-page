@@ -21,9 +21,15 @@
 	margin: 0px;
 	padding: 0px;
 	outline: none;
+
+    // to prevent site to be more than 100% width
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
+    margin: 0;
     font-family: $fontFamily !important;
     font-style: normal;
     text-align: center;
