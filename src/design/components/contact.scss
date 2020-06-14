@@ -8,13 +8,11 @@ header{
 
 }
 .header-container {
-  // background-color: rosybrown;  
   display: flex;
   justify-content: center;
   width: 100%;
 
   h1 {
-    // background-color:yellow;
     font-size: 72px;
     color: $secondColor;
     height: fit-content;
@@ -31,7 +29,6 @@ header{
 
 .contact-container {
   display: grid;
-  // grid-template-columns: 1fr 441px 1fr;
   grid-template-columns: minmax(0, auto) 45% 35% 20% minmax(0, auto);
   grid-column-gap: 0 !important;
   padding-top:12%;
@@ -53,10 +50,8 @@ header{
       display: block;    
       margin-bottom: 1rem;
       background: $secondColor;
-      // box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);
       border-radius: 4px;
     }  
-//, ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder
     input:not([type=submit]), textarea{
       text-align: right;
       font-weight: 300;
@@ -73,7 +68,6 @@ header{
       font-size: 18px;
       width: 83px;
       height: 45px;
-      // box-shadow: 2px 2px 15px rgba(90, 136, 255, 0.35);  /* elevation blue */ 
       border-radius: 3px;
       border:0;
     }  
@@ -93,13 +87,11 @@ header{
   }  
   
   form >*{
-    // box-shadow: 2px 2px 15px;
     border-radius: 4px;
   }  
 }  
 
 .header-container {
-  // background-color: rosybrown;  
   display: flex;
   justify-content: center;
   width: 100%;

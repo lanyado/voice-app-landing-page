@@ -1,29 +1,15 @@
 <template>
   <div class="nav-bar-container">
     <header :class="this.scrolled||this.static ? 'scrolled': ''">
-      <!-- <label for="toggle-1" class="toggle-menu">
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </label>
-      <input type="checkbox" id="toggle-1" /> -->
-
       <div @click.stop="" class="toggle-menu" :class="{'open-menu':openMenu}">  
         <img src="../assets/svg/close-white.svg" 
               alt="x" 
               id="close-burger"
               @click.stop="toggleMemu"
           />
-          <!--
-          <button @click.stop="toggleMemu" class="x-btn">X</button>
-          -->
          <ul>
           <li>
-            <!--<router-link :to="`##`">-->
               <span @click.stop="toggleMemu" title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
-          <!--  </router-link> -->
           </li>
           <li v-if="homePage">
             <router-link :to="`/${$i18n.locale}/contact`">
@@ -41,7 +27,7 @@
             </a>
         </li>
         </ul>  
-              </div>
+      </div>
       
       <div class="hamburger" :class="{'open-menu':openMenu}">
           <img
@@ -52,7 +38,6 @@
             alt
           />
       </div>
-
 
       <nav class="nav-bar width-container flex">
         <div v-if="$route.name==='contact'" class="funcs">
@@ -127,33 +112,33 @@
       </nav>
     </header>
     <div id="terms-dialog" class="terms-dialog">
-        <img src="../assets/svg/close.svg" 
-        alt="x" 
-        class="close-icon"
-        onclick="document.querySelector('.close-popup').click();"
-        />
-        <h4> {{$t('nav_bar.terms.title')}} </h4>
+      <img src="../assets/svg/close.svg" 
+      alt="x" 
+      class="close-icon"
+      onclick="document.querySelector('.close-popup').click();"
+      />
+      <h4> {{$t('nav_bar.terms.title')}} </h4>
 
-        <span> {{$t('nav_bar.terms.body.title1')}} </span>
-        <p> {{$t('nav_bar.terms.body.text2')}} </p>
+      <span> {{$t('nav_bar.terms.body.title1')}} </span>
+      <p> {{$t('nav_bar.terms.body.text2')}} </p>
 
-        <span> {{$t('nav_bar.terms.body.title2')}} </span>
-        <p> {{$t('nav_bar.terms.body.text2')}} </p>
+      <span> {{$t('nav_bar.terms.body.title2')}} </span>
+      <p> {{$t('nav_bar.terms.body.text2')}} </p>
 
-        <span> {{$t('nav_bar.terms.body.title3')}} </span>
-        <p> {{$t('nav_bar.terms.body.text3')}} </p>
+      <span> {{$t('nav_bar.terms.body.title3')}} </span>
+      <p> {{$t('nav_bar.terms.body.text3')}} </p>
 
-        <span> {{$t('nav_bar.terms.body.title4')}} </span>
-        <p> {{$t('nav_bar.terms.body.text4')}} </p>
+      <span> {{$t('nav_bar.terms.body.title4')}} </span>
+      <p> {{$t('nav_bar.terms.body.text4')}} </p>
 
-        <span> {{$t('nav_bar.terms.body.title5')}} </span>
-        <p> {{$t('nav_bar.terms.body.text5')}} </p>
+      <span> {{$t('nav_bar.terms.body.title5')}} </span>
+      <p> {{$t('nav_bar.terms.body.text5')}} </p>
 
-        <span> {{$t('nav_bar.terms.body.title6')}} </span>
-        <p> {{$t('nav_bar.terms.body.text6')}} </p>
+      <span> {{$t('nav_bar.terms.body.title6')}} </span>
+      <p> {{$t('nav_bar.terms.body.text6')}} </p>
 
-        <span> {{$t('nav_bar.terms.body.title7')}} </span>
-        <p> {{$t('nav_bar.terms.body.text7')}} </p>
+      <span> {{$t('nav_bar.terms.body.title7')}} </span>
+      <p> {{$t('nav_bar.terms.body.text7')}} </p>
     </div>
     <a href="##" class="close-popup"></a>
   </div>
@@ -170,9 +155,6 @@ export default {
           console.log("clicked")
             toggleMemu();
         }
-        //event.target.id !== "toggle-1" &&
-        //document.getElementById("toggle-1").checked
-        //document.getElementById("toggle-1").checked = false;
     });
     document.body.addEventListener("click",this.handleClick)
   },
@@ -195,7 +177,6 @@ export default {
       isContactPage: false,
       ltrLangs : ["en"],
       isLtr : false,
-      // isActive: false,
       openMenu: false,
     };
   },
@@ -270,11 +251,6 @@ export default {
     if (!this.static) window.addEventListener("scroll", this.handleScroll);  
     
     this.switchLanguage(this.$route.params.lang);
-      // if (this.ltrLangs.includes(this.$route.params.lang)) { //english mode 
-      //   console.log('en mode')
-      //   this.isLtr=true
-
-      //   } else this.isLtr=false; //hebrow mode  
   },
   methods: {
     handleClick(){
@@ -294,7 +270,6 @@ export default {
     },
     openShareDialog: () => {
       location.href = "#share-dialog";
-      //document.getElementById('share-button').click();
     },
     setLang() {
       console.log("setLang()")
@@ -335,7 +310,6 @@ export default {
     }, 
     openTermsDialog: () => {
       location.href ="#terms-dialog";
-      //document.getElementById('share-button').click();
     }
   }
 };
