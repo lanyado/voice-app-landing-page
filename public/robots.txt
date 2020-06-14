@@ -6,5 +6,3 @@
 ser-agent: *
 Allow: //
 Allow: /contact/
-
-Sitemap: https://master.d1uhnfncitfxl5.amplifyapp.com/sitemap.xml
