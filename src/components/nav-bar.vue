@@ -85,30 +85,29 @@
       <router-link :to="`/${$i18n.locale}/`" >
         <img id="logo" :src="logoUrl" alt="Logo"/>
       </router-link>
-    
-
-        <ul class="links">
-          <li>
-            <router-link to>
-              <span title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
-            </router-link>
-          </li>
-          <li v-if="homePage">
-            <router-link :to="`/${$i18n.locale}/contact`">
-              <span>{{$t('nav_bar.contact')}}</span>
-            </router-link>
-          </li>
-          <li v-else>
-            <router-link :to="`/${$i18n.locale}/`">
-              <span>{{$t('nav_bar.about')}}</span>
-            </router-link>
-          </li>
-           <li>
-            <a href="#terms-dialog">
-                <span>{{$t('nav_bar.terms.link')}}</span>
-            </a>
+  
+      <ul class="links">
+        <li>
+          <router-link to>
+            <span title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
+          </router-link>
         </li>
-        </ul>        
+        <li v-if="homePage">
+          <router-link :to="`/${$i18n.locale}/contact`">
+            <span>{{$t('nav_bar.contact')}}</span>
+          </router-link>
+        </li>
+        <li v-else>
+          <router-link :to="`/${$i18n.locale}/`">
+            <span>{{$t('nav_bar.about')}}</span>
+          </router-link>
+        </li>
+        <li>
+        <a href="#terms-dialog">
+            <span>{{$t('nav_bar.terms.link')}}</span>
+        </a>
+        </li>
+      </ul>        
       </nav>
     </header>
     <div id="terms-dialog" class="terms-dialog">

@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
 
 @mixin center($horizontal: true, $vertical: true) {
-    position: absolute;
-    @if ($horizontal and $vertical) {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    } @else if ($horizontal) {
-      left: 50%;
-      transform: translate(-50%, 0);
-    } @else if ($vertical) {
-      top: 50%;
-      transform: translate(0, -50%);
-    }
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
   }
+}
 
 * {
 	text-decoration: none;
@@ -128,90 +128,87 @@ details summary::-webkit-details-marker {
 }
 
 .share-dialog{
-    @include center(true, false);
-    transform: translateX(-50%);
-    z-index: 999;
-    animation-name: fadein;
-    animation-duration: 100ms;
-    animation-timing-function: ease-in-out;
-    background-color: #fff;
-    border: 0;
-    padding: 1em;
-    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
-    min-width: 300px;
-    max-width: 500px;
+  @include center(true, false);
+  transform: translateX(-50%);
+  z-index: 999;
+  animation-name: fadein;
+  animation-duration: 100ms;
+  animation-timing-function: ease-in-out;
+  background-color: #fff;
+  border: 0;
+  padding: 1em;
+  box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+  min-width: 300px;
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: 2px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  pointer-events: auto;
+  opacity: 1;
+  transform-origin: center center;
+  transition: opacity .15s cubic-bezier(.25,.8,.25,1),transform .2s cubic-bezier(.25,.8,.25,1);
+  will-change: opacity,transform;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(255,255,255,.9);
+  visibility: hidden;
+  opacity: 0;
+  /* "delay" the visibility transition */
+  -webkit-transition: opacity .5s, visibility 0s linear .5s;
+  transition: opacity .5s, visibility 0s linear .5s;
 
-    overflow: hidden;
-    border-radius: 2px;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    pointer-events: auto;
+  @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+  span{
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: unset;
+  }
+
+  li{
+    width:60px;
+    &:hover{
+        opacity: 0.8;
+    }
+  }
+}
+.share-dialog:target {
+    visibility: visible;
     opacity: 1;
-    transform-origin: center center;
-    transition: opacity .15s cubic-bezier(.25,.8,.25,1),transform .2s cubic-bezier(.25,.8,.25,1);
-    will-change: opacity,transform;
-
+    /* cancel visibility transition delay */
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+.close-popup {
+    background: rgba(0,0,0,.7);
+    cursor: default;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background: rgba(255,255,255,.9);
-    visibility: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     opacity: 0;
+    visibility: hidden;
     /* "delay" the visibility transition */
     -webkit-transition: opacity .5s, visibility 0s linear .5s;
     transition: opacity .5s, visibility 0s linear .5s;
-
-        @keyframes fadein {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
-        span{
-        width: 100%;
-        font-size: 25px;
-        margin-bottom: 20px;
-        }
-
-        ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: unset;
-        }
-
-        li{
-        width:60px;
-        &:hover{
-            opacity: 0.8;
-        }
-        }
-    }
-
-    .share-dialog:target {
-        visibility: visible;
-        opacity: 1;
-        /* cancel visibility transition delay */
-        -webkit-transition-delay: 0s;
-        transition-delay: 0s;
-    }
-    .close-popup {
-        background: rgba(0,0,0,.7);
-        cursor: default;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0;
-        visibility: hidden;
-        /* "delay" the visibility transition */
-        -webkit-transition: opacity .5s, visibility 0s linear .5s;
-        transition: opacity .5s, visibility 0s linear .5s;
-    }
-    .share-dialog:target + .close-popup{  
-        opacity: 1;
-        visibility: visible;
-        /* cancel visibility transition delay */
-        -webkit-transition-delay: 0s;
-        transition-delay: 0s;
-    }
+}
+.share-dialog:target + .close-popup{  
+    opacity: 1;
+    visibility: visible;
+    /* cancel visibility transition delay */
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
