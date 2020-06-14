@@ -250,7 +250,7 @@ export default {
   created() {
     if (!this.static) window.addEventListener("scroll", this.handleScroll);  
     
-    // this.switchLanguage(this.$route.params.lang);
+    this.switchLanguage(this.$route.params.lang);
   },
   methods: {
     handleClick(){
