@@ -88,9 +88,7 @@
   
       <ul class="links">
         <li>
-          <router-link to>
-            <span title="change language" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
-          </router-link>
+            <span :title="$t('nav_bar.change_lang')" @click="setLang()">{{$t('nav_bar.changeLang')}}</span>
         </li>
         <li v-if="homePage">
           <router-link :to="`/${$i18n.locale}/contact`">

@@ -41,7 +41,15 @@ nav {
     margin-right: 40px;
     margin-top: 12px;
     display: flex;
-    justify-content:space-between;
+	justify-content:space-between;
+	
+	span{
+		&:hover {
+			// font-weig
+			color: black;
+			cursor: pointer;
+		}		
+	}
   }
   
 	ul {
