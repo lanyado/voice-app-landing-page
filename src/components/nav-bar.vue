@@ -78,10 +78,10 @@
 
         <div v-else class="spnoserd-container">
           <span>{{$t('nav_bar.spnoserd_by')}}</span>
-          <img src="../assets/png/mobileye-logo.png" alt="mobileye" />
+          <img src="../assets/png/mobileye-logo.png" alt="Mobileye" />
           <img src="../assets/png/intel-logo.png" alt="Intel" />
+          <img src="../assets/png/weizman-logo.png" alt="Weizman" />
         </div>       
-      </ul>
       <router-link :to="`/${$i18n.locale}/`" >
         <img id="logo" :src="logoUrl" alt="Logo"/>
       </router-link>
