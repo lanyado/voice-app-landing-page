@@ -25,7 +25,9 @@ header{
 }
 
 #logo {
-  width: 130px;
+
+  max-width: 130px;
+  min-width: 130px;
   cursor: pointer;
 }
 
@@ -80,10 +82,10 @@ nav {
     }
     img{
       align-self: center;
-      width: 50px;
+      max-width: 50px;
       vertical-align: middle;
       margin-right: 10px;
-	    margin-left: 10px;
+	  margin-left: 10px;
 	  }	
   }
   
